@@ -1,0 +1,9 @@
+{
+	"to-vue": {
+		"prefix": "to-vue",
+		"body": [
+			":to=\"{ name: '${1:string}'}\""
+		],
+		"description": "to-vue"
+	},
+}

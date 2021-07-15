@@ -1,0 +1,1507 @@
+{
+    "laravel-model-boot":{
+      "prefix": "laravel-model-boot",
+      "body": "/**\n * The \"booting\" method of the model.\n *\n * @return void\n */\nprotected static function boot()\n{\n    parent::boot();\n    // remove deleted_at when reponse\n    static::addGlobalScope('deleted_at', function (Builder \\$builder) {\n        \\$builder->whereNull('deleted_at');\n    });\n}",
+      "description": "boot | laravel.code-snippets"
+    },
+    "laravel-get-all-columns":{
+      "prefix": "laravel-get-all-columns",
+      "body": "$this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());",
+      "description": "all-column | laravel.code-snippets"
+    },
+    "laravel-add-cors":{
+      "prefix": "laravel-add-cors",
+      "body": [
+        "\\$response->headers->set('Access-Control-Allow-Credentials', 'false');",
+        "\\$response->headers->set('Access-Control-Allow-Headers', '*');",
+        "\\$response->headers->set('Access-Control-Allow-Methods', '*');",
+        "\\$response->headers->set('Access-Control-Allow-Origin', '*');",
+        "\\$response->headers->set('Access-Control-Expose-Headers', '*');",
+        "\\$response->headers->set('cache-control', 'no-cache, private');",
+        "\\$response->headers->set('charset', 'utf-8');",
+      ],
+      "description": ""
+    },
+    "laravel-db-log":{
+      "prefix": "laravel-db-log",
+      "body": "\\DB::enableQueryLog();\ndd(\\DB::getQueryLog());",
+      "description": "DB::log | laravel.code-snippets"
+    },
+    "laravel-model-getAttribute":{
+      "prefix": "laravel-model-getAttribute",
+      "body": [
+           "public function get${1:attr}Attribute(\\$val) \r\n    {\r\n        \r\n    }"
+      ],
+      "description": "handle show attribute | laravel.code-snippets"
+    },
+    "validate-required_with:password_confirmation":{
+      "prefix": "validate-required_with:password_confirmation",
+      "body": "required_with:password_confirmation",
+      "description": "Validates | laravel.code-snippets"
+    },
+    "validate-same:password_confirmation":{
+      "prefix": "validate-same:password_confirmation",
+      "body": "same:password_confirmation",
+      "description": "Validates | laravel.code-snippets"
+    },
+    // function
+    "laravel-migration-alter-demo": {
+        "prefix": "laravel-migration-alter-demo",
+        "body": [
+            "// up\r\nSchema::table('users', function (Blueprint \\$table) {\r\n    \\$table->char('user_name');\r\n});\r\n// down\r\nSchema::table('users', function (Blueprint \\$table) {\r\n    \\$table->dropColumn('user_name');\r\n});"
+        ],
+        "description": " | laravel.code-snippets"
+    },
+    "laravel-paginate-transform": {
+        "prefix": "laravel-paginate-transform",
+        "body": [
+            "\\$items->getCollection()->transform(function (\\$item){\r\n    return \\$item\r\n})"
+        ],
+        "description": "map item in pagination | laravel.code-snippets"
+    },
+    "response-json": {
+        "prefix": "response-json",
+        "body": [
+            "response()->json($data);"
+        ],
+        "description": "response | laravel.code-snippets"
+    },
+    "updateOrInsert": {
+        "prefix": "updateOrInsert",
+        "body": [
+            "updateOrInsert( array(), $array() );"
+        ],
+        "description": "Builder | laravel.code-snippets"
+    },
+    "laravel_validate_demo": {
+        "prefix": "laravel_validate_demo",
+        "body": [
+            "$validator = validator($request->all(), [\r\n    'key' => 'required',\r\n], ${1:messages});\r\nif ($validator->fails()) {\r\n    return back()->withInput()->withErrors($validator->errors());\r\n    return response()->json($validator->errors(), 400);\r\n}"
+        ],
+        "description": "Validation | laravel.code-snippets"
+    },
+    "laravel_model_demo": {
+        "prefix": "laravel_model_demo",
+        "body": [
+            "protected \\$table = \"table\";\n\n// Columns in table have fill\nprotected \\$guarded = [];"
+        ],
+        "description": " | laravel.code-snippets"
+    },
+    "Auth::attempt": {
+        "prefix": "Auth::attempt",
+        "body": "Auth::attempt(['email' => ${1:$email}, 'password' => ${2:$password}])\n",
+        "description": "Initiate an Authentication attempt | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Auth::check": {
+        "prefix": "Auth::check",
+        "body": "Auth::check()\n",
+        "description": "Determine if the current user is authenticated. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Auth::guard": {
+        "prefix": "Auth::guard",
+        "body": "Auth::guard(${1:name})\n",
+        "description": "Specify a guard for authentication | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Auth::guest": {
+        "prefix": "Auth::guest",
+        "body": "Auth::guest()\n",
+        "description": "Determine if the current user is a guest. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Auth::id": {
+        "prefix": "Auth::id",
+        "body": "Auth::id()\n",
+        "description": "Get the currently authenticated Id. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Auth::login": {
+        "prefix": "Auth::login",
+        "body": "Auth::login(${1:$user})\n",
+        "description": "Log an existing user instance into your application. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Auth::loginUsingId": {
+        "prefix": "Auth::loginUsingId",
+        "body": "Auth::loginUsingId(${1:$id})\n",
+        "description": "Log a user instance into the application by their Id. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Auth::logout": {
+        "prefix": "Auth::logout",
+        "body": "Auth::logout()\n",
+        "description": "Log the user out of the application. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Auth::once": {
+        "prefix": "Auth::once",
+        "body": "Auth::once(${1:$credentials})\n",
+        "description": "Log an existing user for a single request. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Auth::user": {
+        "prefix": "Auth::user",
+        "body": "Auth::user()\n",
+        "description": "Get the currently authenticated user. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "blade-active-class": {
+        "prefix": "blade-active-class",
+        "body": "\r\n{{ Request::is('$1') ? 'active' : '' }}",
+        "description": "blade-laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::auth": {
+        "prefix": "Blade::auth",
+        "body": "@auth(${1:'optional guard'})\n    ${2:content}\n@endauth\n",
+        "description": "Blade @auth | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::can": {
+        "prefix": "Blade::can",
+        "body": "@can('${1:ability}', ${2:$object})\n    ${3}\n@else\n\t${4}\n@endcan\n",
+        "description": "Blade @can | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::cannot": {
+        "prefix": "Blade::cannot",
+        "body": "@cannot('${1:ability}', ${2:$object})\n    ${3}\n@endcannot\n",
+        "description": "Blade @cannot | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::choice": {
+        "prefix": "Blade::choice",
+        "body": "@choice('${1:file.message}', ${2:$count})\n",
+        "description": "Blade @choice | laravel.code-snippets",
+        "scope": "php"
+    },
+    "{{--": {
+        "prefix": "{{--",
+        "body": "{{-- ${1:some hidden comment} --}}\n",
+        "description": "Blade comments | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::component": {
+        "prefix": "Blade::component",
+        "body": "@component('${1:alert}')\n\t${2:content}\n@endcomponent\n",
+        "description": "Blade @component | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::each": {
+        "prefix": "Blade::each",
+        "body": "@each('${1:view.name}', ${2:$collection}, ${3:'variable name'}, ${4:'view.empty'})\n",
+        "description": "Blade @each | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::elseif": {
+        "prefix": "Blade::elseif",
+        "body": "@elseif (${1:$condition})\n",
+        "description": "Blade @elseif | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::empty": {
+        "prefix": "Blade::empty",
+        "body": "@empty('${1:$records}')\n    ${2:content}\n@endempty\n",
+        "description": "Blade @empty | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::{{": {
+        "prefix": "Blade::{{",
+        "body": "@{{ ${1:This will not be processed by Blade} }}\n",
+        "description": "Blade escape curly braces | laravel.code-snippets",
+        "scope": "php"
+    },
+    "{{": {
+        "prefix": "{{",
+        "body": "{{ ${1:some escaped value} ${2:or 'default'} }}\n",
+        "description": "Blade {{ echo escaped data }}  laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::extends": {
+        "prefix": "Blade::extends",
+        "body": "@extends('${1:layouts.name}')\n",
+        "description": "Blade @extends | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::for": {
+        "prefix": "Blade::for",
+        "body": "@for (${1:$i} = ${2:0}; ${1:$i} < ${3:10}; ${1:$i}++)\n\t${4}\n@endfor\n",
+        "description": "Blade @for | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::foreach": {
+        "prefix": "Blade::foreach",
+        "body": "@foreach (${1:$records} as ${2:$record})\n\t${3}\n@endforeach\n",
+        "description": "Blade @foreach | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::forelse": {
+        "prefix": "Blade::forelse",
+        "body": "@foreach (${1:$records} as ${2:$record})\n\t${3}\n@forelse\n\t${4}\n@endforelse\n",
+        "description": "Blade @forelse | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::guest": {
+        "prefix": "Blade::guest",
+        "body": "@guest(${1:'optional guard'})\n    ${2:content}\n@endguest\n",
+        "description": "Blade @guest | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::if": {
+        "prefix": "Blade::if",
+        "body": "@if (${1:$condition})\n\t${2}\n@endif\n",
+        "description": "Blade @if | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::ifelse": {
+        "prefix": "Blade::ifelse",
+        "body": "@if (${1:$condition})\n\t${2}\n@else\n\t${3}\n@endif\n",
+        "description": "Blade @ifelse | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::include": {
+        "prefix": "Blade::include",
+        "body": "@include('${1:view.name}', ${1:$data})\n",
+        "description": "Blade @include | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::isset": {
+        "prefix": "Blade::isset",
+        "body": "@isset('${1:$records}')\n    ${2:content}\n@endisset\n",
+        "description": "Blade @isset | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::lang": {
+        "prefix": "Blade::lang",
+        "body": "@lang('${1:file.message}')\n",
+        "description": "Blade @lang | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::push": {
+        "prefix": "Blade::push",
+        "body": "@push('${1:stack name}')\n\t${2}\n@endpush\n",
+        "description": "Blade @push | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::section": {
+        "prefix": "Blade::section",
+        "body": "@section('${1:content}')\n\t${2}\n@stop\n",
+        "description": "Blade @section | laravel.code-snippets",
+        "scope": "php"
+    },
+    "blade-session": {
+        "prefix": "blade-session",
+        "body": "\r\n@if(Session::has('error'))\r\n    <div class=\"alert alert-danger\">\r\n      {{ Session::get('error')}}\r\n    </div>\r\n@endif",
+        "description": "blade-laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::slot": {
+        "prefix": "Blade::slot",
+        "body": "@slot('${1:title}')\n\t${2:content}\n@endslot\n",
+        "description": "Blade @slot | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::stack": {
+        "prefix": "Blade::stack",
+        "body": "@stack('${1:name}')\n",
+        "description": "Blade @stack | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::switch": {
+        "prefix": "Blade::switch",
+        "body": "@switch('${1:$value}')\n\t@case(${2:'case1'})\n        ${3:First case...}\n        @break;\n\n    ${4:@default\n        Default case...}\n@endswitch\n",
+        "description": "Blade @switch | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::unescaped": {
+        "prefix": "Blade::unescaped",
+        "body": "{!! ${1:some unescaped value} !!}\n",
+        "description": "Blade {!! echo raw data !!} |  laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::unless": {
+        "prefix": "Blade::unless",
+        "body": "@unless (${1:$condition})\n\t${2}\n@endunless\n",
+        "description": "Blade @unless | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::verbatim": {
+        "prefix": "Blade::verbatim",
+        "body": "@verbatim\n    ${1:content}\n@endverbatim\n",
+        "description": "Blade @verbatim | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::while": {
+        "prefix": "Blade::while",
+        "body": "@while (${1:$condition})\n\t${2}\n@endwhile\n",
+        "description": "Blade @while | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Blade::yield": {
+        "prefix": "Blade::yield",
+        "body": "@yield('${1:content}')\n",
+        "description": "Blade @yield | laravel.code-snippets",
+        "scope": "php"
+    },
+    "meta_csrf": {
+        "prefix": "meta_csrf",
+        "body": "\r\n<meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">",
+        "description": "blade-tag | laravel.code-snippets",
+        "scope": "php"
+    },
+    "blade-validate": {
+        "prefix": "blade-validate",
+        "body": "\r\n@if(!empty($errors->first()))\r\n    <div class=\"alert alert-danger\">\r\n        <span>{{ $errors->first() }}</span>\r\n    </div>\r\n@endif",
+        "description": "blade-laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "blade_auth_role": {
+        "prefix": "blade_auth_role",
+        "body": " @guest\n @else\n @if(Auth::user()->role == 1)\n  ${1:show}\n @endif\n @endguest\n",
+        "description": " | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::add": {
+        "prefix": "Cache::add",
+        "body": "Cache::add('${1:key}', ${2:$value}, ${3:$minutes});\n",
+        "description": "Store an item in the Cache if it doesn't exist. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::decrement": {
+        "prefix": "Cache::decrement",
+        "body": "Cache::decrement('${1:key}', ${2:$amount});\n",
+        "description": "Decrement a Cached value | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::flush": {
+        "prefix": "Cache::flush",
+        "body": "Cache::flush();\n",
+        "description": "Remove all items from the cache. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::forever": {
+        "prefix": "Cache::forever",
+        "body": "Cache::forever('${1:key}', ${2:$value});\n",
+        "description": "Store an item in the Cache Permanently | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::forget": {
+        "prefix": "Cache::forget",
+        "body": "Cache::forget('{1:$key}');\n",
+        "description": "Remove an Item from the Cache | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::get": {
+        "prefix": "Cache::get",
+        "body": "Cache::get('${1:key}', '${2:default}');\n",
+        "description": "Retrieve an Item from the Cache | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::has": {
+        "prefix": "Cache::has",
+        "body": "Cache::has('${1:key}')\n",
+        "description": "Check for existence in Cache | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::increment": {
+        "prefix": "Cache::increment",
+        "body": "Cache::increment('${1:key}', ${2:$amount});\n",
+        "description": "Increment a Cached value | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::pull": {
+        "prefix": "Cache::pull",
+        "body": "Cache::pull('${1:key}');\n",
+        "description": "Pulling An Item From The Cache | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::put": {
+        "prefix": "Cache::put",
+        "body": "Cache::put('${1:key}', ${2:$value}, ${3:\\minutes});\n",
+        "description": "Store an item in the Cache (key, value, minutes) | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::remember": {
+        "prefix": "Cache::remember",
+        "body": "Cache::remember('${1:key}', ${2:\\minutes}, function() {\n    ${3:return 'value';}\n});\n",
+        "description": "Retrieve item or Store a default value if it doesn't exist | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cache::rememberForever": {
+        "prefix": "Cache::rememberForever",
+        "body": "Cache::rememberForever('${1:key}', function() {\n    ${2:return 'value';}\n});\n",
+        "description": "Retrieve item or Store a default value permanently | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Config::all": {
+        "prefix": "Config::all",
+        "body": "Config::all();\n",
+        "description": "Get all of the configuration items for the application. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Config::get": {
+        "prefix": "Config::get",
+        "body": "Config::get('${1:key}', '${2:default}');\n",
+        "description": "Get the specified configuration value. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Config::has": {
+        "prefix": "Config::has",
+        "body": "Config::has('${1:key}')\n",
+        "description": "Determine if the given configuration value exists. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Config::set": {
+        "prefix": "Config::set",
+        "body": "Config::set('${1:key}', ${2:$value});\n",
+        "description": "Set a given configuration value. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Config::setMany": {
+        "prefix": "Config::setMany",
+        "body": "Config::set([\n    '${1:key}' => ${2:$value},\n]);\n",
+        "description": "Set a given configuration value. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::anticipate": {
+        "prefix": "Console::anticipate",
+        "body": "$this->anticipate('${1:Message}');\n",
+        "description": "Give the user options for repsonse | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::argument": {
+        "prefix": "Console::argument",
+        "body": "$this->argument('${1:key}');\n",
+        "description": "Get an argument from constructor | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::ask": {
+        "prefix": "Console::ask",
+        "body": "$this->ask('${1:Question}');\n",
+        "description": "Prompts the user with a question in the console | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::choice": {
+        "prefix": "Console::choice",
+        "body": "$this->choice('${1:What is your name?', ['Taylor', 'Dayle'], false});\n",
+        "description": "Give the user a predefined set of choices | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::comment": {
+        "prefix": "Console::comment",
+        "body": "$this->comment('${1:message}');\n",
+        "description": "Log a comment to the console | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::error": {
+        "prefix": "Console::error",
+        "body": "$this->error('${1:Message}');\n",
+        "description": "Log error to the console in red | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::info": {
+        "prefix": "Console::info",
+        "body": "$this->info('${1:Message}');\n",
+        "description": "Log information to the console in green | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::line": {
+        "prefix": "Console::line",
+        "body": "$this->line('${1:Display this on the screen}');\n",
+        "description": "Log plain information to the console | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::option": {
+        "prefix": "Console::option",
+        "body": "$this->option('${1:key}');\n",
+        "description": "Get an option from constructor | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::question": {
+        "prefix": "Console::question",
+        "body": "$this->question('${1:Message}');\n",
+        "description": "Logs a question to the console | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::secret": {
+        "prefix": "Console::secret",
+        "body": "$this->secret('${1:What is the password?}');\n",
+        "description": "Prompt the user for hidden input | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::table": {
+        "prefix": "Console::table",
+        "body": "$this->table(${1:$headers}, ${2:$rows}');\n",
+        "description": "Prints a nicely formatted table to the console | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Console::warn": {
+        "prefix": "Console::warn",
+        "body": "$this->warn('${1:Message}');\n",
+        "description": "Logs a warn message to the console | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cookie::forever": {
+        "prefix": "Cookie::forever",
+        "body": "$response->cookie(cookie()->forever('${1:key}', ${2:$value}));\n",
+        "description": "Make a Permanent Cookie | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cookie::get": {
+        "prefix": "Cookie::get",
+        "body": "$request->cookie('${1:key}')\n",
+        "description": "Retrieve a Cookie value | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Cookie::set": {
+        "prefix": "Cookie::set",
+        "body": "$response->cookie(cookie('${1:key}', ${2:$value}));\n",
+        "description": "Attach a Cookie to a Response. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Crypt::decrypt": {
+        "prefix": "Crypt::decrypt",
+        "body": "try {\n    ${1:$decrypted} = Crypt::decrypt(${2:$encryptedValue});\n} catch (Illuminate\\Contracts\\Encryption\\DecryptException $e) {\n    ${3://}\n}\n",
+        "description": "Decrypt a value | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Crypt::encrypt": {
+        "prefix": "Crypt::encrypt",
+        "body": "Crypt::encrypt(${1:$value});\n",
+        "description": "Encrypt a value | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::delete": {
+        "prefix": "DB::delete",
+        "body": "DB::table('${1:table}')\n            ->where('id', ${2:id})\n            ->delete();\n",
+        "description": "Run an delete statement against the database. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::insert": {
+        "prefix": "DB::insert",
+        "body": "DB::table('${1:table}')->insertGetId([\n\t$2 => $3,\n\t\"created_at\" =>  \\Carbon\\Carbon::now(),\n\t\"updated_at\" => \\Carbon\\Carbon::now(),\n])\n",
+        "description": "Run an insert statement against the database. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::join": {
+        "prefix": "DB::join",
+        "body": "\r\nDB::table('${1:tableRelationship}')\r\n    ->join( \"${2:tableSelect}\", \"${2:tableSelect}.id\", '=', \"${1:tableRelationship}.${2:tableSelect}\")\r\n    ->where('${1:tableRelationship}.${4:colQuery}', '=', ${3:idSelect})\r\n    ->paginate($total);",
+        "description": "DB laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::select": {
+        "prefix": "DB::select",
+        "body": "DB::select(${1:'select * from users where active = ?'}${2:, [1]})\n",
+        "description": "Run a select statement against the database. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::select1": {
+        "prefix": "DB::select",
+        "body": "DB::statement(${1:'drop table users'})\n",
+        "description": "Execute an SQL statement and return the boolean result. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::table": {
+        "prefix": "DB::table",
+        "body": "DB::table($1)->get(${2:[select]});\n",
+        "description": "Run an Table statement against the database. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::transaction_begin": {
+        "prefix": "DB::transaction_begin",
+        "body": "DB::beginTransaction();\n",
+        "description": "Start a new database transaction. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::transaction_commit": {
+        "prefix": "DB::transaction_commit",
+        "body": "DB::commit();\n",
+        "description": "Commit the active database transaction. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::transaction_rollback": {
+        "prefix": "DB::transaction_rollback",
+        "body": "DB::rollback();\n",
+        "description": "Rollback the active database transaction. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::transaction": {
+        "prefix": "DB::transaction",
+        "body": "DB::transaction(function () {\n    ${1://}\n});\n",
+        "description": "Execute a Closure within a transaction. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::update": {
+        "prefix": "DB::update",
+        "body": "DB::table('${1:table}')\r\n    ->where('id', ${2:id})\r\n    ->update([\r\n        $3,\r\n        \"updated_at\" => now(),\r\n    ]);\r\n",
+        "description": "Run an update statement against the database. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::createClassListener": {
+        "prefix": "Event::createClassListener",
+        "body": "Event::createClassListener(${1:listener})\n",
+        "description": "Create a class based listener using the IoC container. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::fire": {
+        "prefix": "Event::fire",
+        "body": "Event::fire(${1:new MyCustomEvent()});\n",
+        "description": "Fire an event and call the listeners. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::firing": {
+        "prefix": "Event::firing",
+        "body": "Event::firing()\n",
+        "description": "Get the event that is currently firing. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::flush": {
+        "prefix": "Event::flush",
+        "body": "Event::flush('${1:event}');\n",
+        "description": "Flush a set of pushed events. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::forget": {
+        "prefix": "Event::forget",
+        "body": "Event::forget('${1:event}');\n",
+        "description": "Remove a set of listeners from the dispatcher. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::getListeners": {
+        "prefix": "Event::getListeners",
+        "body": "Event::getListeners('${1:eventName}');\n",
+        "description": "Get all of the listeners for a given event name. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::hasListeners": {
+        "prefix": "Event::hasListeners",
+        "body": "Event::hasListeners('${1:eventName}');\n",
+        "description": "Determine if a given event has listeners. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::listen": {
+        "prefix": "Event::listen",
+        "body": "Event::listen(${1:events}, ${2:listener}, ${3:priority});\n",
+        "description": "Register an event listener with the dispatcher. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::makeListener": {
+        "prefix": "Event::makeListener",
+        "body": "Event::makeListener(${1:listener});\n",
+        "description": "Register an event listener with the dispatcher. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::push": {
+        "prefix": "Event::push",
+        "body": "Event::push(${1:event}, ${2:payload});\n",
+        "description": "Register an event and payload to be fired later. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::subscribe": {
+        "prefix": "Event::subscribe",
+        "body": "Event::subscribe(${1:subscriber});\n",
+        "description": "Register an event subscriber with the dispatcher. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Event::until": {
+        "prefix": "Event::until",
+        "body": "Event::until(${1:event}, ${2:payload})\n",
+        "description": "Fire an event until the first non-null response is returned. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Hash::check": {
+        "prefix": "Hash::check",
+        "body": "Hash::check(${1:$value}, ${2:$hashedValue})\n",
+        "description": "Check the given plain value against a hash. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Hash::make": {
+        "prefix": "Hash::make",
+        "body": "Hash::make(${1:$value})\n",
+        "description": "Hash the given value. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Hash::needsRehash": {
+        "prefix": "Hash::needsRehash",
+        "body": "if (Hash::needsRehash(${1:$hashedValue}))\n{\n    ${2:$hashed} = Hash::make(${3:$value});\n}\n",
+        "description": "Check if the given hash has been hashed using the given options. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_add": {
+        "prefix": "Helper::array_add",
+        "body": "array_add(${1:$array}, ${2:'key'}, ${3:'value'});\n",
+        "description": "Add an element to an array using \"dot\" notation if it doesn't exist. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_collapse": {
+        "prefix": "Helper::array_collapse",
+        "body": "array_collapse(${1:$array});\n",
+        "description": "Collapse an array of arrays into a single array. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_divide": {
+        "prefix": "Helper::array_divide",
+        "body": "list(${1:$keys}, ${2:$values}) = array_divide(${3:$array});\n",
+        "description": "Divide an array into two arrays. One with keys and the other with values. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_dot": {
+        "prefix": "Helper::array_dot",
+        "body": "array_dot(${1:$array});\n",
+        "description": "Flatten a multi-dimensional associative array with dots. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_except": {
+        "prefix": "Helper::array_except",
+        "body": "array_except(${1:$array}, ${2:['key', 'otherKey']});\n",
+        "description": "Get all of the given array except for a specified array of items. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_first": {
+        "prefix": "Helper::array_first",
+        "body": "array_first(${1:$array}, function (${2:$key}, ${3:$value}) {\n    return ${4:$value >= 150;}\n});\n",
+        "description": "Return the first element in an array passing a given truth test. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_flatten": {
+        "prefix": "Helper::array_flatten",
+        "body": "array_flatten(${1:$array});\n",
+        "description": "Will flatten a multi-dimensional array into a single level. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_forget": {
+        "prefix": "Helper::array_forget",
+        "body": "array_forget(${1:$array}, ${2:'names.joe'});\n",
+        "description": "Remove one or many array items from a given array using \"dot\" notation. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_get": {
+        "prefix": "Helper::array_get",
+        "body": "array_get(${1:$array}, ${2:'names.john'}, ${3:'default'});\n",
+        "description": "Get an item from an array using \"dot\" notation. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_has": {
+        "prefix": "Helper::array_has",
+        "body": "array_has(${1:$array}, ${2:key});\n",
+        "description": "Check if an item exists in an array using \"dot\" notation. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_last": {
+        "prefix": "Helper::array_last",
+        "body": "array_last(${1:$array}, function (${2:$key}, ${3:$value}) {\n    return ${4:$value >= 150;}\n});\n",
+        "description": "Return the last element in an array passing a given truth test. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_only": {
+        "prefix": "Helper::array_only",
+        "body": "array_only(${1:$array}, ${2:['key', 'otherKey']});\n",
+        "description": "Get a subset of the items from the given array. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_pluck": {
+        "prefix": "Helper::array_pluck",
+        "body": "array_pluck(${1:$array}, ${2:'value'});\n",
+        "description": "Pluck an array of values from an array. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_prepend": {
+        "prefix": "Helper::array_prepend",
+        "body": "array_prepend(${1:$array}, ${2:'value'});\n",
+        "description": "Push an item onto the beginning of an array. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_pull": {
+        "prefix": "Helper::array_pull",
+        "body": "array_pull(${1:$array}, ${2:'value'});\n",
+        "description": "Get a value from the array, and remove it. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_random": {
+        "prefix": "Helper::array_random",
+        "body": "array_random(${1:$array});\n",
+        "description": "Returns a random value from an array. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_set": {
+        "prefix": "Helper::array_set",
+        "body": "array_set(${1:$array}, ${2:'products.desk.price'}, ${3:200});\n",
+        "description": "Set an array item to a given value using \"dot\" notation. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_sort_recursive": {
+        "prefix": "Helper::array_sort_recursive",
+        "body": "array_sort_recursive(${1:$array});\n",
+        "description": "Recursively sort an array by keys and values. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_sort": {
+        "prefix": "Helper::array_sort",
+        "body": "array_values(array_sort(${1:$array}, function(${2:$key}, ${3:$value}) {\n    return ${3:$value}['${4:name}'];\n}));\n",
+        "description": "Sort the array using the given callback. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::array_where": {
+        "prefix": "Helper::array_where",
+        "body": "array_where(${2:$array}, function(${3:$key}, ${4:$value}) {\n    return ${4:is_string($value);}\n});\n",
+        "description": "Filter the array using the given callback. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-abort-if": {
+        "prefix": "Helper::misc-abort-if",
+        "body": "abort_if(${1:! Auth::user()->isAdmin()}, ${2:403});\n",
+        "description": "Throws an HTTP exception if a given boolean expression evaluates to true. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-abort-unless": {
+        "prefix": "Helper::misc-abort-unless",
+        "body": "abort_unless(${1:Auth::user()->isAdmin()}, ${2:403});\n",
+        "description": "Throws an HTTP exception if a given boolean expression evaluates to false. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-abort": {
+        "prefix": "Helper::misc-abort",
+        "body": "abort(403);\n",
+        "description": "Throws an HTTP exception which will be rendered by the exception handler. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-app": {
+        "prefix": "Helper::misc-app",
+        "body": "app();\n",
+        "description": "Returns the service container instance. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-app_resolve": {
+        "prefix": "Helper::misc-app_resolve",
+        "body": "app(${1:'Foo/Bar'});\n",
+        "description": "Resolve the given class from the container. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-auth": {
+        "prefix": "Helper::misc-auth",
+        "body": "auth();\n",
+        "description": "Returns an authenticator instance. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-back": {
+        "prefix": "Helper::misc-back",
+        "body": "back();\n",
+        "description": "Generates a redirect HTTP response to the user's previous location. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-bcrypt": {
+        "prefix": "Helper::misc-bcrypt",
+        "body": "bcrypt(${1:'my-secret-password'});\n",
+        "description": "Hashes the given value with BCrypt. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-blank": {
+        "prefix": "Helper::misc-blank",
+        "body": "blank(${1:$value});\n",
+        "description": "Returns whether the given value is \"blank\". | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-broadcast": {
+        "prefix": "Helper::misc-broadcast",
+        "body": "broadcast(${1:new UserRegistered($user)});\n",
+        "description": "Broacasts the given event to its listeners. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-cache": {
+        "prefix": "Helper::misc-cache",
+        "body": "cache('${1:key}', '${2:default}')\n",
+        "description": "Get values from the cache. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-cache_set": {
+        "prefix": "Helper::misc-cache_set",
+        "body": "cache(['${1:key}' => ${2:$value}], ${3:minutes});\n",
+        "description": "Add items to the cache. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-class_uses_recursive": {
+        "prefix": "Helper::misc-class_uses_recursive",
+        "body": "class_uses_recursive(${1:'Foo\\Bar\\Baz'});\n",
+        "description": "Returns all traits used by a class, its subclasses and trait of their traits. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-collect": {
+        "prefix": "Helper::misc-collect",
+        "body": "collect([${1:'taylor', 'abigail'}]);\n",
+        "description": "Create a collection from the given value. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-config": {
+        "prefix": "Helper::misc-config",
+        "body": "config('${1:key}', '${2:default}')\n",
+        "description": "Get the value of a configuration variable. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-csrf_field": {
+        "prefix": "Helper::misc-csrf_field",
+        "body": "csrf_field();\n",
+        "description": "Get the value of the current CSRF token. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-csrf_token": {
+        "prefix": "Helper::misc-csrf_token",
+        "body": "csrf_token();\n",
+        "description": "Get the value of the current CSRF token. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-dd": {
+        "prefix": "Helper::misc-dd",
+        "body": "dd(${1:$value});\n",
+        "description": "Dump the passed variables and end the script. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-decrypt": {
+        "prefix": "Helper::misc-decrypt",
+        "body": "decrypt(${1:$encryptedValue})\n",
+        "description": "Decrypts the given value. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-dispatch": {
+        "prefix": "Helper::misc-dispatch",
+        "body": "dispatch(${1:new App\\Jobs\\SendEmails});\n",
+        "description": "Pushes the given job onto the Laravel job queue. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-dispatch_now": {
+        "prefix": "Helper::misc-dispatch_now",
+        "body": "dispatch_now(${1:new App\\Jobs\\SendEmails});\n",
+        "description": "Runs the given job immediately and returns the value from its handle method. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-dump": {
+        "prefix": "Helper::misc-dump",
+        "body": "dump(${1:$value});\n",
+        "description": "Dumps the given variables. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-encrypt": {
+        "prefix": "Helper::misc-encrypt",
+        "body": "encrypt(${1:$unencryptedValue})\n",
+        "description": "Encrypts the given value. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-env": {
+        "prefix": "Helper::misc-env",
+        "body": "env('${1:KEY}', '${2:default}')\n",
+        "description": "Retrieves the value of an environment variable. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-event": {
+        "prefix": "Helper::misc-event",
+        "body": "event(${1:new UserRegistered($user)});\n",
+        "description": "Dispatches the given event to its listeners. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-factory": {
+        "prefix": "Helper::misc-factory",
+        "body": "${1:$user} = factory(${2:App\\User::class})->make();\n",
+        "description": "Creates a model factory builder for a given class name. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-filled": {
+        "prefix": "Helper::misc-filled",
+        "body": "filled(${1:$value});\n",
+        "description": "Returns whether the given value is not \"blank\". | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-info": {
+        "prefix": "Helper::misc-info",
+        "body": "info(${1:'debug message'});\n",
+        "description": "Writes information to the log. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-logger": {
+        "prefix": "Helper::misc-logger",
+        "body": "logger(${1:'debug message'});\n",
+        "description": "Writes a debug level message to the log. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-now": {
+        "prefix": "Helper::misc-now",
+        "body": "now()\n",
+        "description": "Creates a new Carbon instance for the current time. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-object_get": {
+        "prefix": "Helper::misc-object_get",
+        "body": "object_get(${1:$object, ${2:'names.john'}, ${3:'default'});\n",
+        "description": "Get an item from an object using \"dot\" notation. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-old": {
+        "prefix": "Helper::misc-old",
+        "body": "old('${1:value}', '${2:default}')\n",
+        "description": "Retrieves an old input value flashed into the session. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-optional": {
+        "prefix": "Helper::misc-optional",
+        "body": "optional(${1:$user->name})\n",
+        "description": "Accepts any argument and allows you to access properties or call methods on that object. If the given object is null, properties and methods will simply return null instead of causing an error. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-policy": {
+        "prefix": "Helper::misc-policy",
+        "body": "policy(${1:App/User::class});\n",
+        "description": "Retrieves a policy instance for a given class. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-resolve": {
+        "prefix": "Helper::misc-resolve",
+        "body": "resolve(${1:'Foo/Bar'});\n",
+        "description": "Resolve the given class from the container. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-today": {
+        "prefix": "Helper::misc-today",
+        "body": "today()\n",
+        "description": "Creates a new Carbon instance for the current date. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-trait_uses_recursive": {
+        "prefix": "Helper::misc-trait_uses_recursive",
+        "body": "trait_uses_recursive(${1:'Foo\\Bar\\Baz'});\n",
+        "description": "Returns all traits used by a trait. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::misc-validator": {
+        "prefix": "Helper::misc-validator",
+        "body": "validator('${1:$data}', '${2:$rules}', '${3:$messages}')\n",
+        "description": "Creates a new validator instance with the given arguments. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "DB::transaction1": {
+        "prefix": "DB::transaction",
+        "body": "${1:$result} = value(function () {\n    ${2:return 'anything, really'}\n});\n",
+        "description": "Returns the value it is given, or executes the closure. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::path-app": {
+        "prefix": "Helper::path-app",
+        "body": "app_path();\n",
+        "description": "Get the fully qualified path to the app directory. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::path-base": {
+        "prefix": "Helper::path-base",
+        "body": "base_path(${1:'file'});\n",
+        "description": "Get the fully qualified path to the root of the application install. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::path-config": {
+        "prefix": "Helper::path-config",
+        "body": "config_path();\n",
+        "description": "Get the fully qualified path to the app directory. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::path-database": {
+        "prefix": "Helper::path-database",
+        "body": "database_path();\n",
+        "description": "Get the fully qualified path to the database directory. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::path-mix": {
+        "prefix": "Helper::path-mix",
+        "body": "mix('${1:file}');\n",
+        "description": "Get the path to the versionned Mix file. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::path-public": {
+        "prefix": "Helper::path-public",
+        "body": "public_path();\n",
+        "description": "Get the fully qualified path to the public directory. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::path-resource": {
+        "prefix": "Helper::path-resource",
+        "body": "resource_path(${1:'file'});\n",
+        "description": "Get the fully qualified path to the resources directory. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::path-storage": {
+        "prefix": "Helper::path-storage",
+        "body": "storage_path(${1:'file'});\n",
+        "description": "Get the fully qualified path to the app/storage directory. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-camel_case": {
+        "prefix": "Helper::strings-camel_case",
+        "body": "camel_case(${1:'foo_bar'});\n",
+        "description": "Convert a value to camelCase. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-class_basename": {
+        "prefix": "Helper::strings-class_basename",
+        "body": "class_basename(${1:'Foo\\Bar\\Baz'});\n",
+        "description": "Get the class \"basename\" of the given object / class. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-e": {
+        "prefix": "Helper::strings-e",
+        "body": "e(${1:'<html>foo</html>'});\n",
+        "description": "Escape HTML entities in a string. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-ends_with": {
+        "prefix": "Helper::strings-ends_with",
+        "body": "ends_with(${1:'haystack'}, ${2:'needles'});\n",
+        "description": "Determine if a given string ends with a given substring. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-kebab_case": {
+        "prefix": "Helper::strings-kebab_case",
+        "body": "kebab_case(${1:'fooBar'});\n",
+        "description": "Convert the given string to kebab-case. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-snake_case": {
+        "prefix": "Helper::strings-snake_case",
+        "body": "snake_case(${1:'fooBar'});\n",
+        "description": "Convert the given string to snake_case. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-starts_with": {
+        "prefix": "Helper::strings-starts_with",
+        "body": "starts_with(${1:'haystack'}, ${2:'needle'});\n",
+        "description": "Determine if the given haystack begins with the given needle. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_after": {
+        "prefix": "Helper::strings-str_after",
+        "body": "str_after(${1:'This is my name'}, ${2:'This is'});\n",
+        "description": "Return everything after the given value in a string. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_before": {
+        "prefix": "Helper::strings-str_before",
+        "body": "str_before(${1:'This is my name'}, ${2:'my name'});\n",
+        "description": "Return everything before the given value in a string. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_contains": {
+        "prefix": "Helper::strings-str_contains",
+        "body": "str_contains(${1:'This is my name'}, ${2:'my'});\n",
+        "description": "Determine if the given haystack contains the given needle. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_finish": {
+        "prefix": "Helper::strings-str_finish",
+        "body": "str_finish(${1:'this/string'}, ${2:'/'});\n",
+        "description": "Adds a single instance of the given value to a string if it does not already end with the value. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_is": {
+        "prefix": "Helper::strings-str_is",
+        "body": "str_is(${1:'foo*'}, ${2:'foobar'});\n",
+        "description": "Determines if a given string matches a given pattern. Asterisks may be used to indicate wildcards. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_limit": {
+        "prefix": "Helper::strings-str_limit",
+        "body": "str_limit(${1:$value}, ${2:100})\n",
+        "description": "Limit the number of characters in a string. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_plural": {
+        "prefix": "Helper::strings-str_plural",
+        "body": "str_plural(${1:'car'});\n",
+        "description": "Convert a string to its plural form (English only). | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_random": {
+        "prefix": "Helper::strings-str_random",
+        "body": "str_random(${1:40});\n",
+        "description": "Generate a random string of the given length. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_singular": {
+        "prefix": "Helper::strings-str_singular",
+        "body": "str_singular(${1:'string'});\n",
+        "description": "Convert a string to its singular form (English only). | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_slug": {
+        "prefix": "Helper::strings-str_slug",
+        "body": "str_slug(${1:'Laravel 5 Framework'}, ${2:'-'});\n",
+        "description": "Generate a URL friendly \"slug\" from a given string. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_start": {
+        "prefix": "Helper::strings-str_start",
+        "body": "str_start(${1:'this/string'}, ${2:'/'});\n",
+        "description": "Adds a single instance of the given value to a string if it does not already start with the value. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-studly_case": {
+        "prefix": "Helper::strings-studly_case",
+        "body": "studly_case(${1:'foo_bar'});\n",
+        "description": "Convert the given string to StudlyCase. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-title_case": {
+        "prefix": "Helper::strings-title_case",
+        "body": "title_case(${1:'fooBar'});\n",
+        "description": "Convert a value to Title Case. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-trans": {
+        "prefix": "Helper::strings-trans",
+        "body": "trans(${1:'validation.required'}):\n",
+        "description": "Translates the given translation key. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-trans_choice": {
+        "prefix": "Helper::strings-trans_choice",
+        "body": "trans_choice('${1:messages.notifications}', ${2:$unreadCount});\n",
+        "description": "Translates the given translation key with inflection. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-__": {
+        "prefix": "Helper::strings-__",
+        "body": "__('${1:messages.welcome}');\n",
+        "description": "Translates the given translation key. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::strings-str_plural1": {
+        "prefix": "Helper::strings-str_plural",
+        "body": "str_plural(${1:'string'});\n",
+        "description": "Convert a string to its plural form (English only). | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::url-action": {
+        "prefix": "Helper::url-action",
+        "body": "action(${1:'HomeController@getIndex'}, ${2:$params});\n",
+        "description": "Generate a URL for a given controller action. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::url-asset": {
+        "prefix": "Helper::url-asset",
+        "body": "asset(${1:'img/photo.jpg'});\n",
+        "description": "Generate a URL for an asset. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::url-route": {
+        "prefix": "Helper::url-route",
+        "body": "route(${1:'routeName'}, ${2:$params});\n",
+        "description": "Generate a URL for a given named route. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::url-secure_asset": {
+        "prefix": "Helper::url-secure_asset",
+        "body": "secure_asset(${1:'foo/bar'}, ${2:$title}, ${3:$attributes});\n",
+        "description": "Generate a HTML link to the given asset using HTTPS. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::secure_url": {
+        "prefix": "Helper::secure_url",
+        "body": "secure_url(${1:'foo/bar'}, ${2:$parameters});\n",
+        "description": "Generate a fully qualified URL to a given path using HTTPS. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Helper::url-url": {
+        "prefix": "Helper::url-url",
+        "body": "url(${1:'foo/bar'}, ${2:$parameters}, ${3:$secure});\n",
+        "description": "Generate a fully qualified URL to the given path. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::all": {
+        "prefix": "Input::all",
+        "body": "$request->all();\n",
+        "description": "Retrieve all Inputs | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::except": {
+        "prefix": "Input::except",
+        "body": "$request->except(${1:['key', 'otherKey']});\n",
+        "description": "Retrieve only some of the Request Input | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::has": {
+        "prefix": "Input::has",
+        "body": "$request->exists('${1:key}')\n",
+        "description": "Determine if the request contains a given input item key. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::file": {
+        "prefix": "Input::file",
+        "body": "$request->file('${1:key}');\n",
+        "description": "Retrieve Uploaded File | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::fileMove": {
+        "prefix": "Input::fileMove",
+        "body": "$request->file('${1:key}')->move(${2:$destinationPath}, ${3:$fileName});\n",
+        "description": "Move an Uploaded File | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::flash": {
+        "prefix": "Input::flash",
+        "body": "$request->flash();\n",
+        "description": "Flash Input to the Session | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::flashExcept": {
+        "prefix": "Input::flashExcept",
+        "body": "$request->flashExcept(${1:['key', 'otherKey']});\n",
+        "description": "Flash only some Input to the Session | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::flashOnly": {
+        "prefix": "Input::flashOnly",
+        "body": "$request->flashOnly('${1:['key', 'otherKey']}');\n",
+        "description": "Flash only some Input to the Session | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::get": {
+        "prefix": "Input::get",
+        "body": "$request->input('${1:key}');\n",
+        "description": "Retrieve an Input value | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::getWithDefault": {
+        "prefix": "Input::getWithDefault",
+        "body": "$request->input('${1:key}', ${2:'default'});\n",
+        "description": "Retrieve an Input value with Default | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::has1": {
+        "prefix": "Input::has",
+        "body": "$request->has('${1:key}')\n",
+        "description": "Determine if the request contains a non-empty value for an input item. | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::hasFile": {
+        "prefix": "Input::hasFile",
+        "body": "$request->hasFile('${1:key}');\n",
+        "description": "Determine if File was Uploaded | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::old": {
+        "prefix": "Input::old",
+        "body": "$request->old('${1:key}');\n",
+        "description": "Retrieve Old Data | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::oldWithDefault": {
+        "prefix": "Input::oldWithDefault",
+        "body": "$request->old('${1:key}', ${2:'default'});\n",
+        "description": "Retrieve Old Data with Default | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Input::only": {
+        "prefix": "Input::only",
+        "body": "$request->only(${1:['key', 'otherKey']});\n",
+        "description": "Retrieve only some of the Request Input | laravel.code-snippets",
+        "scope": "php"
+    },
+    "isMethod": {
+        "prefix": "isMethod",
+        "body": "\r\n$request->isMethod('${1:methods}')",
+        "description": "laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "bcrypt-laravel": {
+        "prefix": "bcrypt-laravel",
+        "body": "bcrypt('${1:id}');\n",
+        "description": "My laravel (parse key token) | laravel.code-snippets",
+        "scope": "php"
+    },
+    "password-laravel": {
+        "prefix": "password-laravel",
+        "body": "bcrypt('${1:password}')$0\n",
+        "description": "bcrypt()-laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "collection-utf8": {
+        "prefix": "collection-utf8",
+        "body": "collection('utf8_unicode_ci');$0\n",
+        "description": "My Laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "laravel-delete-foreach-builder": {
+        "prefix": "laravel-delete-foreach-builder",
+        "body": "\r\nif ($slugMenu == 'menu_chuyen_muc') {\r\n    if(DB::table($slugMenu)->where('id', $id)->count()){\r\n        if(DB::table($slugMenu)->where('id', $id)->count()){\r\n            DB::table($slugMenu)->where('id', $id)->delete();\r\n        }\r\n        $queryRelationship = DB::table('menu_relationship')->where($slugMenu, $id);\r\n        foreach ($queryRelationship->get() as $key => $column) {\r\n            // Table children 1\r\n            if(DB::table('menu_nhom')->where('id', $column->menu_nhom)->count() ){\r\n                DB::table('menu_nhom')->where('id', $column->menu_nhom)->delete();\r\n            }\r\n            // Table children 2\r\n            if(DB::table('menu_loai')->where('id', $column->menu_loai)->count()){\r\n                DB::table('menu_loai')->where('id', $column->menu_loai)->delete();\r\n            }\r\n        }\r\n        if ($queryRelationship->count()) {\r\n            $queryRelationship->delete();\r\n        }\r\n    }\r\n    return ${1:$somthing};\r\n}",
+        "description": "Laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "File::get": {
+        "prefix": "File::get",
+        "body": "File::get(${1:path}) ",
+        "description": "File::get | laravel.code-snippets",
+        "scope": "php"
+    },
+    "File::mimeTye": {
+        "prefix": "File::mimeTye",
+        "body": "File::mimeTye(${1:path}) ",
+        "description": "File::mimeTye | laravel.code-snippets",
+        "scope": "php"
+    },
+    "windows-laravel-csrf_blade_js": {
+        "prefix": "windows-laravel-csrf_blade_js",
+        "body": "window.Laravel = <?php echo json_encode([\n   'csrfToken' => csrf_token(),\n]); ?>\n  ",
+        "description": "windows-laravel-csrf_blade_js | laravel.code-snippets",
+        "scope": "php"
+    },
+    "laravel-start-limit": {
+        "prefix": "laravel-start-limit",
+        "body": "\r\nskip(${1:start})->take(${2:limit}) //interger",
+        "description": "laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "typeFileName": {
+        "prefix": "typeFileName",
+        "body": "$typeFileName = date('d_m_y_h_i_') . rand(1000, 999999999) . preg_replace('/(\\w+)\\//', '.', File::mimeType($image));",
+        "description": "laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "laravel-upload-file": {
+        "prefix": "laravel-upload-file",
+        "body": "\r\nif (count($request->file)) {\r\n    $typeFileName = date('d_m_y_h_i_') . rand(1000, 999999999) . preg_replace('/(\\w+)\\//', '.', File::mimeType($request->file));\r\n    Storage::disk('public')->putFileAs(\"/client-files/\", $request->file, $typeFileName);\r\n    return response()->json(true, 200);\r\n}\r\nreturn response()->json(false, 500);",
+        "description": "laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "laravel_api_user": {
+        "prefix": "laravel_api_user",
+        "body": "namespace App\\Http\\Controllers\\API;\n\nuse App\\Http\\Controllers\\Controller;\nuse App\\User;\nuse Carbon\\Carbon;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Support\\Facades\\DB;\nuse Laravel\\Passport\\Passport;\nuse Validator;\n\nclass UserController extends Controller\n{\n    public $successStatus = 200;\n    /**\n    * login api\n    *\n    * @return \\Illuminate\\Http\\Response\n    */\n    public function login(Request $request)\n    {\n        $input = $request->only('email', 'password');\n        if (Auth::attempt($input)) {\n            $user = Auth::user();\n\n            $checkToken = DB::table('oauth_access_tokens')->where('user_id', $user->id);\n\n            if ($checkToken->exists()) {\n                $checkToken->delete();\n            }\n            $token = $user->createToken($user->name)->accessToken;\n            Passport::tokensExpireIn(Carbon::now()->addDays(1));\n            return response()->json([\n                'success' => true,\n                'token' => $token,\n            ], $this->successStatus);\n        } else {\n            return response()->json([\n                'success' => false,\n                'error' => 'Unauthorised',\n            ], 401);\n        }\n    }\n    /**\n    * Register api\n    *\n    * @return \\Illuminate\\Http\\Response\n    */\n    public function register(Request $request)\n    {\n        $validator = Validator::make($request->all(), [\n            'name' => 'required',\n            'email' => 'required|email',\n            'password' => 'required',\n            // 'c_password' => 'required|same:password',\n        ]);\n        if ($validator->fails()) {\n            return response()->json(['error' => $validator->errors()], 401);\n        }\n        $input = $request->all();\n        $input['password'] = bcrypt($input['password']);\n        $user = User::create($input);\n        $success['token'] = $user->createToken('MyApp')->accessToken;\n        $success['name'] = $user->name;\n        return response()->json(['success' => $success], $this->successStatus);\n    }\n    /**\n    * details api\n    *\n    * @return \\Illuminate\\Http\\Response\n    */\n    public function details()\n    {\n        $user = Auth::user();\n        return response()->json(['success' => $user], $this->successStatus);\n    }\n\n    public function logout()\n    {\n        if (Auth::check()) {\n           $user = Auth::user();\n           $tokenAccess= DB::table('oauth_access_tokens')->where('user_id', $user->id);\n           $tokenAccess->delete();\n           return response()->json(true, 200);\n        }\n           return response()->json(false, 401);\n    }\n}\n\n",
+        "description": " | laravel.code-snippets",
+        "scope": "php"
+    },
+    "File::exists": {
+        "prefix": "File::exists",
+        "body": "File::exists(${1:path}) ",
+        "description": "File::exists BOOLEAN | laravel.code-snippets",
+        "scope": "php"
+    },
+    "laravel_seeder_factory": {
+        "prefix": "laravel_seeder_factory",
+        "body": "$products = new App\\Products;\n$faker = Faker\\Factory::create();\n\nfor ($i=1; $i <= 30; $i++) {\n    $products->insert([\n        'pro_title' => $faker->name,\n        'pro_imagePath' => \"storage/images/image-$i.jpg\",\n        'pro_description' => $faker->text,\n        'pro_price' => $faker->randomNumber(4,true),\n        'created_at' => date('Y-m-d H:i:s'),\n        'updated_at' => date('Y-m-d H:i:s'),\n    ]);\n}\n",
+        "description": " | laravel.code-snippets",
+        "scope": "php"
+    },
+    "laravel_db_builder_beLongsToMany": {
+        "prefix": "laravel_db_builder_beLongsToMany",
+        "body": [
+            "// Liên kết 1 - n\r\n\\\\$query->leftJoinSub(\r\n  DB::table(\\\\$tableRelationships)\r\n    \\\\ Param query column\r\n    ->select(\r\n      \"\\\\$tableRelationships.post_id\",\r\n      DB::raw(\"GROUP_CONCAT( \\\\$tableTags.name SEPARATOR ',') AS tags\")\r\n    )\r\n    ->leftJoin(\\\\$tableTags, \"\\\\$tableTags.id\", \"=\", \"\\\\$tableRelationships.tag_id\")\r\n    ->groupBy(\"\\\\$tableRelationships.post_id\"),\r\n  \"table_relationships\",\r\n  \"table_relationships.post_id\", \"=\", \"\\\\$tablePost.id\"\r\n);"
+        ],
+        "description": "DB::builder | laravel.code-snippets"
+    },
+    "putFileAs": {
+        "prefix": "putFileAs",
+        "body": "putFileAs(${1:path}, ${2:content}, ${3:nameFileput}) ",
+        "description": "laravel | laravel.code-snippets",
+        "scope": "php"
+    },
+    "Log::alert": {
+        "prefix": "Log::alert",
+        "body": "Log::alert('${1:message}');\n",
+        "description": "Log an alert message to the logs. | laravel.code-snippets",
+        "scope": "php"
+    },
+}

@@ -1,0 +1,36 @@
+{
+  "video":{
+    "prefix": "video",
+    "body": "<video width=\"320\" height=\"240\" controls>\n    <source src=\"movie.mp4\" type=\"video/mp4\">\n    <source src=\"movie.ogg\" type=\"video/ogg\">\n    Your browser does not support the video tag.\n</video>",
+    "description": "video"
+  },
+  "audio":{
+    "prefix": "audio",
+    "body": "<audio controls>\n    <source src=\"horse.ogg\" type=\"audio/ogg\">\n    <source src=\"horse.mp3\" type=\"audio/mpeg\">\n    Your browser does not support the audio element.\n</audio>",
+    "description": "audio"
+  },
+  "php": {
+    "prefix": "php",
+    "body": [
+      "<?php${0: ${1:code} }?>"
+    ],
+    "description": "php"
+  },
+  "<?php echo ${0:${1:code} }?>": {
+    "prefix": "php-echo",
+    "body": [
+      "<?php echo ${0:${1:code} }?>"
+    ],
+    "description": "php echo"
+  },
+  "if-else-php": {
+    "prefix": "if-else-php",
+    "body": [
+      "<?php if($1): ?>",
+      "\t$2",
+      "<?php else: ?>",
+      "\t$3",
+      "<?php endif ?>"
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+	 /* HTML global attribute */
+     "src":{
+       "prefix": "src",
+       "body": "src=\"$1\""
+       ,
+       "description": "HTML attr | html-attribute.code-snippets"
+     },
+    "att_placeholder":{
+      "prefix": "placeholder",
+      "body": [
+        "placeholder=\"$1\""
+      ],
+      "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "href":{
+      "prefix": "href",
+      "body": [
+        "href=\"$1\""
+      ],
+      "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "alt":{
+      "prefix": "alt",
+      "body": [
+        "alt=\"$1\""
+      ],
+      "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "attribute_defer": {
+        "prefix": "defer_attribute",
+        "scope": "html, vue-html, vue,php, blade",
+        "body": [
+            "defer"
+        ],
+        "description": "HTML attr | html-attribute.code-snippets"
+    },
+
+    "attribute enctype": {
+        "prefix": "enctype",
+        "body": [
+            "enctype=\"${1:multipart/form-data}\"$0"
+        ],
+        "description": "enctype=\" | html-attribute.code-snippetsmultipart/form-data\""
+    },
+    "attribute id": {
+        "prefix": "id",
+        "body": [
+            "id=\"${1:id}\"$0"
+        ],
+		"description": "HTML attr | html-attribute.code-snippets"
+    },
+    "attribute class": {
+        "prefix": "class",
+        "body": [
+            "class=\"${1:className}\"$0"
+        ],
+        "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "attribute Name": {
+        "prefix": "name",
+        "body": [
+            "name=\"${1:name}\"$0"
+        ],
+        "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "attribute on": {
+        "prefix": "on",
+        "body": [
+            "on$1=\"${2:statement}\"$0"
+        ],
+        "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "attribute rel": {
+        "prefix": "rel",
+        "body": [
+            "rel=\"$1\""
+        ],
+        "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "attribute content": {
+        "prefix": "content",
+        "body": [
+            "content=\"$1\""
+        ],
+        "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "attribute type": {
+        "prefix": "type",
+        "body": [
+            "type=\"$1\""
+        ],
+        "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "attribute charset": {
+        "prefix": "charset",
+        "body": [
+            "charset=\"$1\""
+        ],
+        "description": "HTML attr | html-attribute.code-snippets"
+    },
+    "data-etc": {
+        "scope": "html, vue-html, vue, php, blade",
+        "prefix": "data-",
+        "body": [
+            "data-$1=\"$2\"",
+        ],
+        "description": "HTML attr | html-attribute.code-snippets"
+    },
+}

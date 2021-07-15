@@ -1,0 +1,23 @@
+/*
+     // Place your snippets for jsonc.json here. Each snippet is defined under a snippet name and has a prefix, body and
+     // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+     // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+     // Example:
+     "Print to console": {
+        "prefix": "log",
+        "body": [
+            "console.log('$1');",
+            "$2"
+        ],
+        "description": "Log output to console"
+    }
+*/
+{
+ "task":{
+   "prefix": "task",
+   "body": [
+        "{\r\n  // See https://go.microsoft.com/fwlink/?LinkId=733558\r\n  // for the documentation about the tasks.json format\r\n  \"version\": \"2.0.0\",\r\n  \"tasks\": [\r\n    {\r\n      \"label\": \"npm run serve\",\r\n      \"type\": \"shell\",\r\n      \"command\": \"npm run serve\"\r\n    },\r\n    {\r\n      \"label\": \"npm run dev\",\r\n      \"type\": \"shell\",\r\n      \"command\": \"npm run dev\"\r\n    },\r\n    {\r\n      \"label\": \"npm run watch\",\r\n      \"type\": \"shell\",\r\n      \"command\": \"npm run watch\"\r\n    },\r\n    {\r\n      \"label\": \"npm run build\",\r\n      \"type\": \"shell\",\r\n      \"command\": \"npm run build\"\r\n    },\r\n    {\r\n      \"label\": \"composer install\",\r\n      \"type\": \"shell\",\r\n      \"command\": \"composer install\"\r\n    },\r\n    {\r\n      \"label\": \"composer dum-autoload\",\r\n      \"type\": \"shell\",\r\n      \"command\": \"composer dum-autoload\"\r\n    },\r\n    {\r\n      \"label\": \"composer dum-server\",\r\n      \"type\": \"shell\",\r\n      \"command\": \"composer dum-server\"\r\n    },\r\n    {\r\n      \"label\": \"php artisan serve\",\r\n      \"type\": \"shell\",\r\n      \"command\": \"php artisan serve\"\r\n    },\r\n  ]\r\n}"
+   ],
+   "description": "DEMO"
+ },
+}

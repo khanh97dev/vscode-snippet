@@ -1,0 +1,272 @@
+{
+    "100 Continue": {
+        "prefix": "http-code: 100 Continue",
+        "body": "100 Continue",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/100"
+    },
+    "101 Switching Protocols": {
+        "prefix": "http-code: 101 Switching Protocols",
+        "body": "101 Switching Protocols",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/101"
+    },
+    "103 Early Hints": {
+        "prefix": "http-code: 103 Early Hints",
+        "body": "103 Early Hints",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/103"
+    },
+    "200 OK": {
+        "prefix": "http-code: 200 OK",
+        "body": "200 OK",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200"
+    },
+    "201 Created": {
+        "prefix": "http-code: 201 Created",
+        "body": "201 Created",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201"
+    },
+    "202 Accepted": {
+        "prefix": "http-code: 202 Accepted",
+        "body": "202 Accepted",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202"
+    },
+    "203 Non-Authoritative Information": {
+        "prefix": "http-code: 203 Non-Authoritative Information",
+        "body": "203 Non-Authoritative Information",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/203"
+    },
+    "204 No Content": {
+        "prefix": "http-code: 204 No Content",
+        "body": "204 No Content",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204"
+    },
+    "205 Reset Content": {
+        "prefix": "http-code: 205 Reset Content",
+        "body": "205 Reset Content",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/205"
+    },
+    "206 Partial Content": {
+        "prefix": "http-code: 206 Partial Content",
+        "body": "206 Partial Content",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206"
+    },
+    "300 Multiple Choices": {
+        "prefix": "http-code: 300 Multiple Choices",
+        "body": "300 Multiple Choices",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300"
+    },
+    "301 Moved Permanently": {
+        "prefix": "http-code: 301 Moved Permanently",
+        "body": "301 Moved Permanently",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301"
+    },
+    "302 Found": {
+        "prefix": "http-code: 302 Found",
+        "body": "302 Found",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302"
+    },
+    "303 See Other": {
+        "prefix": "http-code: 303 See Other",
+        "body": "303 See Other",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/303"
+    },
+    "304 Not Modified": {
+        "prefix": "http-code: 304 Not Modified",
+        "body": "304 Not Modified",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304"
+    },
+    "307 Temporary Redirect": {
+        "prefix": "http-code: 307 Temporary Redirect",
+        "body": "307 Temporary Redirect",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307"
+    },
+    "308 Permanent Redirect": {
+        "prefix": "http-code: 308 Permanent Redirect",
+        "body": "308 Permanent Redirect",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/308"
+    },
+    "400 Bad Request": {
+        "prefix": "http-code: 400 Bad Request",
+        "body": "400 Bad Request",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    },
+    "401 Unauthorized": {
+        "prefix": "http-code: 401 Unauthorized",
+        "body": "401 Unauthorized",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"
+    },
+    "402 Payment Required": {
+        "prefix": "http-code: 402 Payment Required",
+        "body": "402 Payment Required",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"
+    },
+    "403 Forbidden": {
+        "prefix": "http-code: 403 Forbidden",
+        "body": "403 Forbidden",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+    },
+    "404 Not Found": {
+        "prefix": "http-code: 404 Not Found",
+        "body": "404 Not Found",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    "405 Method Not Allowed": {
+        "prefix": "http-code: 405 Method Not Allowed",
+        "body": "405 Method Not Allowed",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405"
+    },
+    "406 Not Acceptable": {
+        "prefix": "http-code: 406 Not Acceptable",
+        "body": "406 Not Acceptable",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406"
+    },
+    "407 Proxy Authentication Required": {
+        "prefix": "http-code: 407 Proxy Authentication Required",
+        "body": "407 Proxy Authentication Required",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407"
+    },
+    "408 Request Timeout": {
+        "prefix": "http-code: 408 Request Timeout",
+        "body": "408 Request Timeout",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/408"
+    },
+    "409 Conflict": {
+        "prefix": "http-code: 409 Conflict",
+        "body": "409 Conflict",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409"
+    },
+    "410 Gone": {
+        "prefix": "http-code: 410 Gone",
+        "body": "410 Gone",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/410"
+    },
+    "411 Length Required": {
+        "prefix": "http-code: 411 Length Required",
+        "body": "411 Length Required",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/411"
+    },
+    "412 Precondition Failed": {
+        "prefix": "http-code: 412 Precondition Failed",
+        "body": "412 Precondition Failed",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/412"
+    },
+    "413 Payload Too Large": {
+        "prefix": "http-code: 413 Payload Too Large",
+        "body": "413 Payload Too Large",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413"
+    },
+    "414 URI Too Long": {
+        "prefix": "http-code: 414 URI Too Long",
+        "body": "414 URI Too Long",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/414"
+    },
+    "415 Unsupported Media Type": {
+        "prefix": "http-code: 415 Unsupported Media Type",
+        "body": "415 Unsupported Media Type",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/415"
+    },
+    "416 Range Not Satisfiable": {
+        "prefix": "http-code: 416 Range Not Satisfiable",
+        "body": "416 Range Not Satisfiable",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/416"
+    },
+    "417 Expectation Failed": {
+        "prefix": "http-code: 417 Expectation Failed",
+        "body": "417 Expectation Failed",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/417"
+    },
+    "418 I'm a teapot": {
+        "prefix": "http-code: 418 I'm a teapot",
+        "body": "418 I'm a teapot",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418"
+    },
+    "422 Unprocessable Entity": {
+        "prefix": "http-code: 422 Unprocessable Entity",
+        "body": "422 Unprocessable Entity",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422"
+    },
+    "425 Too Early": {
+        "prefix": "http-code: 425 Too Early",
+        "body": "425 Too Early",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/425"
+    },
+    "426 Upgrade Required": {
+        "prefix": "http-code: 426 Upgrade Required",
+        "body": "426 Upgrade Required",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/426"
+    },
+    "428 Precondition Required": {
+        "prefix": "http-code: 428 Precondition Required",
+        "body": "428 Precondition Required",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/428"
+    },
+    "429 Too Many Requests": {
+        "prefix": "http-code: 429 Too Many Requests",
+        "body": "429 Too Many Requests",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+    },
+    "431 Request Header Fields Too Large": {
+        "prefix": "http-code: 431 Request Header Fields Too Large",
+        "body": "431 Request Header Fields Too Large",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/431"
+    },
+    "451 Unavailable For Legal Reasons": {
+        "prefix": "http-code: 451 Unavailable For Legal Reasons",
+        "body": "451 Unavailable For Legal Reasons",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451"
+    },
+    "500 Internal Server Error": {
+        "prefix": "http-code: 500 Internal Server Error",
+        "body": "500 Internal Server Error",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+    },
+    "501 Not Implemented": {
+        "prefix": "http-code: 501 Not Implemented",
+        "body": "501 Not Implemented",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501"
+    },
+    "502 Bad Gateway": {
+        "prefix": "http-code: 502 Bad Gateway",
+        "body": "502 Bad Gateway",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+    },
+    "503 Service Unavailable": {
+        "prefix": "http-code: 503 Service Unavailable",
+        "body": "503 Service Unavailable",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+    },
+    "504 Gateway Timeout": {
+        "prefix": "http-code: 504 Gateway Timeout",
+        "body": "504 Gateway Timeout",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504"
+    },
+    "505 HTTP Version Not Supported": {
+        "prefix": "http-code: 505 HTTP Version Not Supported",
+        "body": "505 HTTP Version Not Supported",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/505"
+    },
+    "506 Variant Also Negotiates": {
+        "prefix": "http-code: 506 Variant Also Negotiates",
+        "body": "506 Variant Also Negotiates",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/506"
+    },
+    "507 Insufficient Storage": {
+        "prefix": "http-code: 507 Insufficient Storage",
+        "body": "507 Insufficient Storage",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/507"
+    },
+    "508 Loop Detected": {
+        "prefix": "http-code: 508 Loop Detected",
+        "body": "508 Loop Detected",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/508"
+    },
+    "510 Not Extended": {
+        "prefix": "http-code: 510 Not Extended",
+        "body": "510 Not Extended",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/510"
+    },
+    "511 Network Authentication Required": {
+        "prefix": "http-code: 511 Network Authentication Required",
+        "body": "511 Network Authentication Required",
+        "description": "http-code.code-snippets | https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/511"
+    },
+}

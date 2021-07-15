@@ -1,0 +1,58 @@
+{
+	"first-child":{
+	  "prefix": "first-child",
+	  "body": "first-child"
+	},
+	"last-child":{
+	  "prefix": "last-child",
+	  "body": "last-child"
+	},
+	"nth-child(old)":{
+	  "prefix": "nth-child(old)",
+	  "body": "nth-child(old)"
+	},
+	"nth-child(even)":{
+	  "prefix": "nth-child(even)",
+	  "body": "nth-child(even)"
+	},
+    "import":{
+      "prefix": "import",
+      "body": [
+           "@import url('$1');"
+      ],
+      "description": "SCSS"
+    },
+	"prefix-webkit": {
+		"prefix": "webkit",
+		"body": [
+			"$1-webkit-${2:property}",
+			"$1-o-${2:property}",
+			"$1-ms-${2:property}",
+			"$1-moz-${2:property}",
+			"$1${2:property}"
+		]
+	},
+	"prefix": {
+		"prefix": "prefix",
+		"body": [
+			"$1-webkit-${2:property}",
+			"$1-o-${2:property}",
+			"$1-ms-${2:property}",
+			"$1-moz-${2:property}",
+			"$1${2:property}"
+		],
+	},
+	//end
+
+	// keyframes
+	"keyframes": {
+		"prefix": "keyframes",
+		"body":[
+			"@-webkit-keyframes ${1:Key}{\n\t0% {\n\t\t$2\n\t}\n\t100% {\n\t\t$3\n\t}\n}",
+			"@-o-keyframes ${1:Key}{\n\t0% {\n\t\t$2\n\t}\n\t100% {\n\t\t$3\n\t}\n}",
+			"@-ms-keyframes ${1:Key}{\n\t0% {\n\t\t$2\n\t}\n\t100% {\n\t\t$3\n\t}\n}",
+			"@-moz-keyframes ${1:Key}{\n\t0% {\n\t\t$2\n\t}\n\t100% {\n\t\t$3\n\t}\n}",
+			"@keyframes ${1:Key}{\n\t0% {\n\t\t$2\n\t}\n\t100% {\n\t\t$3\n\t}\n}"
+		]
+	}
+}

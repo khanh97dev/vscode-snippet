@@ -1,0 +1,372 @@
+{
+/*
+	// Place your snippets for Laravel Blade here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	"description": "get content"
+	}
+*/
+	"csrf": {
+		"prefix": "csrf",
+		"body": [
+			"{{ csrf_field() }}"
+		],
+		"description": "token post form laravel"
+	},
+	"token": {
+		"prefix": "token_csrf",
+		"body": [
+			"{{ csrf_field() }}"
+		],
+		"description": "token post form laravel"
+	},
+	"@yield": {
+		"prefix": "@yield",
+		"body": [
+			"@yield(\"$id\")"
+		],
+	},
+	"@section": {
+		"prefix": "@section",
+		"body": [
+			"@section($condintion)",
+			"\t$content",
+			"@endsection"
+		],
+		"description": "set content"
+	},
+	"@if": {
+		"prefix": "@if",
+		"body": [
+			"@if($condintion)",
+			"\t$content",
+			"@endif"
+		],
+		"description": "condintion"
+	},
+	"@slot": {
+		"prefix": "@slot",
+		"body": [
+			"@slot($condintion)",
+			"\t$content",
+			"@endslot"
+		],
+		"description": "set content"
+	},
+	"@isset": {
+		"prefix": "@isset",
+		"body": [
+			"@isset($condintion)",
+			"\t$content",
+			"@endisset"
+		],
+		"description": "isset php"
+	},
+	"@empty": {
+		"prefix": "@empty",
+		"body": [
+			"@empty($condintion)",
+			"\t$content",
+			"@endempty"
+		],
+		"description": "empty php"
+	},
+	"@auth": {
+		"prefix": "@auth",
+		"body": [
+			"@auth(${1:condintion})",
+			"\t${2:Authentication}",
+			"@else",
+			"\t${3:UserContent}",
+			"@endauth"
+		],
+		"description": "he @auth and @guest directives may be used to quickly determine if the current user is authenticated or is a guest"
+	},
+	"@guest": {
+		"prefix": "@guest",
+		"body": [
+			"@guest($condintion)",
+			"\t$content",
+			"@endguest"
+		],
+		"description": "he @auth and @guest directives may be used to quickly determine if the current user is authenticated or is a guest"
+	},
+	"@hasSection": {
+		"prefix": "@guest",
+		"body": [
+			"@hasSection(\"$id\")",
+			"\t$content",
+			"@endif"
+		],
+		"description": "You may check if a section has content using the @hasSection directive"
+	},
+	"@foreach": {
+		"prefix": "@foreach",
+		"body": [
+			"@foreach($key as $value)",
+			"\t$content",
+			"@endforeach"
+		],
+		"description": "You may check if a section has content using the @hasSection directive"
+	},
+	"@forelse": {
+		"prefix": "@forelse",
+		"body": [
+			"@forelse ($$users as $$user)",
+			"\t<li>{{ $$user->$name }}",
+			"\t</li>",
+			"@empty",
+    		"\t<p> ${NoUsers} </p>",
+			"@endforelse"
+			],
+		"description": "Foreach and empty() in php"
+	},
+	"@switch": {
+		"prefix": "@switch",
+		"body": [
+			"@switch($$i)",
+			"@case(${1})",
+			"\t${First case...}",
+			"\t@break",
+			"@default",
+			"\t${Default case...}",
+			"@endswitch"
+		],
+		"description": "switch php"
+	},
+	"@env": {
+		"prefix": "@env",
+		"body": [
+			"@env('$local')",
+			"\t ${contentsLocal}",
+			"@elseenv('$testing')",
+			"\t ${contentsTesting}",
+			"@else",
+			"\t ${contentsNotLocal}",
+			"@endenv"
+		],
+		"description": "Once the custom conditional has been defined, we can easily use it on our templates:"
+	},
+	"@include": {
+		"prefix": "@include",
+		"body": [
+			"@include('${1:pathView}'${2:,['$some' => '$data']})"
+		],
+		"description": "include balde file Laravel"
+	},
+	"@includeIf": {
+		"prefix": "@includeIf",
+		"body": [
+			"@includeIf('${1:pathView}'${2:,['$some' => '$data']})"
+		],
+		"description": "condintion include file Laravel"
+	},
+	"@includeWhen": {
+		"prefix": "@includeWhen",
+		"body": [
+			"@includeWhen(${1:$$boolean},'${2:pathView}'${3:,['$some' => '$data']})"
+		],
+		"description": "If you would like to @include a view depending on a given boolean condition, you may use the @includeWhen directive"
+	},
+	"@includeFirst": {
+		"prefix": "@includeFirst",
+		"body": [
+			"@includeFirst(${1:['${2:custom.admin}', '${3:admin}']}, ${4:['${5:some}' => '${6:data}']})"
+		],
+		"description": "To include the first view that exists from a given array of views, you may use the includeFirst directive"
+	},
+	"input class": {
+		"prefix": "inputToken",
+		"body": [
+			"<input type=\"hidden\" name=\"_token\" id=\"csrf-token\" value=\"{{ Session::token() }}\" />"
+		],
+		"description": "token laravel in input form"
+	},
+	"method delete": {
+		"prefix": "inputDelete",
+		"body": [
+			"<input type=\"hidden\" name=\"_method\" id=\"$delete\" value=\"DELETE\" />"
+		],
+		"description": "delete mothod POST"
+	},
+	"$.ajax new":{
+		"prefix":"$ajax",
+		"body":[
+			"e.eventDefault;",
+			"var valuesForm = $(${1:form}).serialize(); // get values all form (event when submit)",
+			"$.ajax({",
+			"\t method: $2 ,",
+			"\t data: $3 ,",
+			"\t beforeSend: function(){ $4 } ,",
+			"\t success: function(reponse){ $5 } ",
+			"\t error: function(){ $6 }",
+			"});"
+		]
+	},
+	"php": {
+		"prefix": "php",
+		"body": [
+			"?>${0:html}<?php"
+		],
+		"description": "PhP close and open"
+	},
+	"mysqli utf-8": {
+		"prefix": "mysqli-utf8",
+		"body": [
+			"mysqli_query($1,\"SET NAMES 'utf8'\");"
+		],
+		"description": "php"
+	},
+	"try_catch": {
+		"prefix": "try-catch",
+		"body": [
+			"try {",
+			"\t$1",
+			"}",
+			"catch(Exception $2) {",
+			"\techo $2->getMessage();",
+			"}"
+		],
+		"description": "try catch faster"
+	},
+	"echo data mysql_fetch connect": {
+		"prefix": "while-mysqli-fetch-array",
+		"body": [
+			"$1 = mysqli_query($2,\"$3\");",
+			"while ( $4 = mysqli_fetch_array($1) ) {",
+			"\techo $4[\"$5\"].\"<br/>\";",
+			"}",
+		],
+		"description": "echo sql test"
+	},
+	"collection Laravel": {
+		"prefix": "collection-utf8",
+		"body": [
+			"collection('utf8_unicode_ci');$0"
+		],
+		"description": "collection('utf8_unicode_ci')"
+	},
+	"timestamps Laravel": {
+		"prefix": "$timestamps",
+		"body": [
+			"${1:public }${2:$$timestamps} = false;$0"
+		],
+		"description": "disable times update and create database"
+	},
+	"middleware Laravel": {
+		"prefix": "middleware",
+		"body": [
+			"middleware(\"$nameMiddle\")$0"
+		],
+		"description": "middleware Laravel"
+	},
+	"public": {
+		"prefix": "public",
+		"body": [
+			"public function ${1:NameFunc}(\\$${2}) \n{\n\t${3:#} \n}"
+		],
+		"description": "public function"
+	},
+	"private": {
+		"prefix": "private",
+		"body": [
+			"private function ${1:NameFunc}(\\$${2}) \n{\n\t${3:#} \n}"
+		],
+		"description": "private function"
+	},
+	"protected": {
+		"prefix": "protected",
+		"body": [
+			"protected function ${1:NameFunc}(\\$${2}) \n{\n\t${3:#} \n}"
+		],
+		"description": "protected function"
+	},
+	"Route Get Laravel": {
+		"prefix": "Route-get",
+		"body": [
+			"Route::get('${1:url}','${2:Contronller}')${3:->name('${name}')}"
+		],
+		"description": "Route::get(Contronller)"
+	},
+	"$_REQUEST": {
+		"prefix": "$_REQUEST",
+		"body": [
+			"\\$_REQUEST['$1']"
+		],
+	},
+	"$_COOKIE": {
+		"prefix": "$_COOKIE",
+		"body": [
+			"\\$_COOKIE['$1']"
+		],
+	},
+	"$_GET": {
+		"prefix": "$_GET",
+		"body": [
+			"\\$_GET['$1']"
+		],
+	},
+	"$_POST": {
+		"prefix": "$_POST",
+		"body": [
+			"\\$_POST['$1']"
+		],
+	},
+	"$_SESSION": {
+		"prefix": "$_SESSION",
+		"body": [
+			"\\$_SESSION['$1']"
+		],
+	},
+	"$_SERVER": {
+		"prefix": "$_SERVER",
+		"body": [
+			"\\$_SERVER['$1']"
+		],
+	},
+	"$_ENV": {
+		"prefix": "$_ENV",
+		"body": [
+			"\\$_ENV['$1']"
+		],
+	},
+	"$_FILES": {
+		"prefix": "$_FILES",
+		"body": [
+			"\\$_FILES['$1']"
+		],
+	},
+	"CommentCSS": {
+		"prefix": "CommentCSS-PHP-JS",
+		"body": "/* $1 */"
+	},
+	"CommentHTML": {
+		"prefix": "CommentHTML",
+		"body": "<!-- $1 -->"
+	},
+	"{!! echo php and html !!}":{
+		"prefix": "!!",
+		"body": "{!! $1 !!}"
+	},
+	"{!! echo php and html !!} sub":{
+		"prefix": "{!!",
+		"body": "{!! $1 !!"
+	},
+	"{!! echo php and html !!} sub2": {
+		"prefix": "{!",
+		"body": "{!! $1 !!"
+	},
+	"{{ echo php and html }}":{
+		"prefix": "{",
+		"body": "{{ $1 }"
+	},
+}

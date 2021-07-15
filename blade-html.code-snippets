@@ -1,0 +1,445 @@
+{
+
+    "csrf": {
+        "prefix": "csrf",
+        "body": [
+            "{{ csrf_field() }}"
+        ],
+        "description": "token post form laravel | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "trans": {
+        "prefix": "b:trans",
+        "body": [
+            "{{ trans('$1'${2: ,[ $3 ]}) }}"
+        ],
+        "description": "translates in blade | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "token": {
+        "prefix": "token_csrf",
+        "body": [
+            "{{ csrf_field() }}"
+        ],
+        "description": "token post form laravel | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@extends":{
+      "prefix": "@extends",
+      "body": [ "@extends('$1'${2:, prams})" ],
+      "description": "blade-html.code-snippets_"
+    },
+    "@error-input": {
+        "prefix": "@error-input",
+        "body": [
+            "@if (\\$errors->has('${1:key}'))\r\n    <span class=\"help-block text-danger\">\r\n        <strong>{{ \\$errors->first('${1:key}') }}</strong>\r\n    </span>\r\n@endif"
+        ],
+        "description": "@error template for input | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@yield": {
+        "prefix": "@yield",
+        "body": [
+            "@yield(\"$id\")"
+        ],
+    },
+    "@section": {
+        "prefix": "@section",
+        "body": [
+            "@section($key)",
+            "\t$content",
+            "@endsection"
+        ],
+        "description": "Blade section for laravel | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@push": {
+        "prefix": "@push",
+        "body": [
+            "@push($key)",
+            "\t$content",
+            "@endpush"
+        ],
+        "description": "Blade section for laravel | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@dd": {
+        "prefix": "@dd",
+        "body": [
+            "@php dd($1) @endphp"
+        ],
+        "description": "Blade section for laravel | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@errors": {
+        "prefix": "@errors",
+        "body": [
+            "@errors->has('$key')",
+            "\t$content",
+            "@endif"
+        ],
+        "description": "error message | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@errors-any": {
+        "prefix": "@errors-any",
+        "body": [
+            "@if(\\$errors->any())",
+            "\t{!! implode('', \\$errors->all('<div>:message</div>')) !!}",
+            "@endif"
+        ],
+        "description": "error message | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@if": {
+        "prefix": "@if",
+        "body": [
+            "@if($condintion)",
+            "\t$content",
+            "@endif"
+        ],
+        "description": "condintion | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@slot": {
+        "prefix": "@slot",
+        "body": [
+            "@slot($condintion)",
+            "\t$content",
+            "@endslot"
+        ],
+        "description": "Blade section for laravel | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@isset": {
+        "prefix": "@isset",
+        "body": [
+            "@isset($condintion)",
+            "\t$content",
+            "@endisset"
+        ],
+        "description": "isset php | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@empty": {
+        "prefix": "@empty",
+        "body": [
+            "@empty($condintion)",
+            "\t$content",
+            "@endempty"
+        ],
+        "description": "empty php | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@auth": {
+        "prefix": "@auth",
+        "body": [
+            "@auth(${1:condintion})",
+            "\t${2:Authentication}",
+            "@else",
+            "\t${3:UserContent}",
+            "@endauth"
+        ],
+        "description": "he @auth and @guest directives may be used to quickly determine if the current user is authenticated or is a guest | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@guest": {
+        "prefix": "@guest",
+        "body": [
+            "@guest($condintion)",
+            "\t$content",
+            "@endguest"
+        ],
+        "description": "he @auth and @guest directives may be used to quickly determine if the current user is authenticated or is a guest | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@hasSection": {
+        "prefix": "@guest",
+        "body": [
+            "@hasSection(\"$id\")",
+            "\t$content",
+            "@endif"
+        ],
+        "description": "You may check if a section has content using the @hasSection directive | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@foreach": {
+        "prefix": "@foreach",
+        "body": [
+            "@foreach($key as $value)",
+            "\t$content",
+            "@endforeach"
+        ],
+        "description": "You may check if a section has content using the @hasSection directive | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@forelse": {
+        "prefix": "@forelse",
+        "body": [
+            "@forelse ($$users as $$user)",
+            "\t<li>{{ $$user->$name }}",
+            "\t</li>",
+            "@empty",
+            "\t<p> ${NoUsers} </p>",
+            "@endforelse"
+        ],
+        "description": "Foreach and empty() in php | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@switch": {
+        "prefix": "@switch",
+        "body": [
+            "@switch($$i)",
+            "@case(${1})",
+            "\t${First case...}",
+            "\t@break",
+            "@default",
+            "\t${Default case...}",
+            "@endswitch"
+        ],
+        "description": "switch php | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@env": {
+        "prefix": "@env",
+        "body": [
+            "@env('$local')",
+            "\t ${contentsLocal}",
+            "@elseenv('$testing')",
+            "\t ${contentsTesting}",
+            "@else",
+            "\t ${contentsNotLocal}",
+            "@endenv"
+        ],
+        "description": "Once the custom conditional has been defined, we can easily use it on our templates: | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@include": {
+        "prefix": "@include",
+        "body": [
+            "@include('${1:pathView}'${2:,['$some' => '$data']})"
+        ],
+        "description": "include balde file Laravel | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@includeIf": {
+        "prefix": "@includeIf",
+        "body": [
+            "@includeIf('${1:pathView}'${2:,['$some' => '$data']})"
+        ],
+        "description": "condintion include file Laravel | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@includeWhen": {
+        "prefix": "@includeWhen",
+        "body": [
+            "@includeWhen(${1:$$boolean},'${2:pathView}'${3:,['$some' => '$data']})"
+        ],
+        "description": "If you would like to @include a view depending on a given boolean condition, you may use the @includeWhen directive | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@includeFirst": {
+        "prefix": "@includeFirst",
+        "body": [
+            "@includeFirst(${1:['${2:custom.admin}', '${3:admin}']}, ${4:['${5:some}' => '${6:data}']})"
+        ],
+        "description": "To include the first view that exists from a given array of views, you may use the includeFirst directive | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "input class": {
+        "prefix": "inputToken",
+        "body": [
+            "<input type=\"hidden\" name=\"_token\" id=\"csrf-token\" value=\"{{ Session::token() }}\" />"
+        ],
+        "description": "token laravel in input form | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "method delete": {
+        "prefix": "inputDelete",
+        "body": [
+            "<input type=\"hidden\" name=\"_method\" id=\"$delete\" value=\"DELETE\" />"
+        ],
+        "description": "delete mothod POST | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "$.ajax new": {
+        "prefix": "$ajax",
+        "body": [
+            "e.eventDefault;",
+            "var valuesForm = $(${1:form}).serialize(); // get values all form (event when submit)",
+            "$.ajax({",
+            "\t method: $2 ,",
+            "\t data: $3 ,",
+            "\t beforeSend: function(){ $4 } ,",
+            "\t success: function(reponse){ $5 } ",
+            "\t error: function(){ $6 }",
+            "});"
+        ]
+    },
+    "mysqli utf-8": {
+        "prefix": "mysqli-utf8",
+        "body": [
+            "mysqli_query($1,\"SET NAMES 'utf8'\");"
+        ],
+        "description": "php | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "try_catch": {
+        "prefix": "try-catch",
+        "body": [
+            "try {",
+            "\t$1",
+            "}",
+            "catch(Exception $2) {",
+            "\techo $2->getMessage();",
+            "}"
+        ],
+        "description": "try catch faster | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "echo data mysql_fetch connect": {
+        "prefix": "while-mysqli-fetch-array",
+        "body": [
+            "$1 = mysqli_query($2,\"$3\");",
+            "while ( $4 = mysqli_fetch_array($1) ) {",
+            "\techo $4[\"$5\"].\"<br/>\";",
+            "}",
+        ],
+        "description": "echo sql test | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "collection Laravel": {
+        "prefix": "collection-utf8",
+        "body": [
+            "collection('utf8_unicode_ci');$0"
+        ],
+        "description": "collection('utf8_unicode_ci') | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "timestamps Laravel": {
+        "prefix": "$timestamps",
+        "body": [
+            "${1:public }${2:$$timestamps} = false;$0"
+        ],
+        "description": "disable times update and create database | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "middleware Laravel": {
+        "prefix": "middleware",
+        "body": [
+            "middleware(\"$nameMiddle\")$0"
+        ],
+        "description": "middleware Laravel | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "public": {
+        "prefix": "public",
+        "body": [
+            "public function ${1:NameFunc}(\\$${2}) \n{\n\t${3:#} \n}"
+        ],
+        "description": "public function | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "private": {
+        "prefix": "private",
+        "body": [
+            "private function ${1:NameFunc}(\\$${2}) \n{\n\t${3:#} \n}"
+        ],
+        "description": "private function | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "protected": {
+        "prefix": "protected",
+        "body": [
+            "protected function ${1:NameFunc}(\\$${2}) \n{\n\t${3:#} \n}"
+        ],
+        "description": "protected function | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "Route Get Laravel": {
+        "prefix": "Route-get",
+        "body": [
+            "Route::get('${1:url}','${2:Contronller}')${3:->name('${name}')}"
+        ],
+        "description": "Route::get(Contronller) | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "$_REQUEST": {
+        "prefix": "$_REQUEST",
+        "body": [
+            "\\$_REQUEST['$1']"
+        ],
+    },
+    "$_COOKIE": {
+        "prefix": "$_COOKIE",
+        "body": [
+            "\\$_COOKIE['$1']"
+        ],
+    },
+    "$_GET": {
+        "prefix": "$_GET",
+        "body": [
+            "\\$_GET['$1']"
+        ],
+    },
+    "$_POST": {
+        "prefix": "$_POST",
+        "body": [
+            "\\$_POST['$1']"
+        ],
+    },
+    "$_SESSION": {
+        "prefix": "$_SESSION",
+        "body": [
+            "\\$_SESSION['$1']"
+        ],
+    },
+    "$_SERVER": {
+        "prefix": "$_SERVER",
+        "body": [
+            "\\$_SERVER['$1']"
+        ],
+    },
+    "$_ENV": {
+        "prefix": "$_ENV",
+        "body": [
+            "\\$_ENV['$1']"
+        ],
+    },
+    "$_FILES": {
+        "prefix": "$_FILES",
+        "body": [
+            "\\$_FILES['$1']"
+        ],
+    },
+    "CommentCSS": {
+        "prefix": "CommentCSS-PHP-JS",
+        "body": "/* $1 */"
+    },
+    "CommentHTML": {
+        "prefix": "CommentHTML",
+        "body": "<!-- $1 -->"
+    },
+    "@pagination": {
+        "prefix": "@pagination",
+        "body": [
+            "{{-- Pagination --}}",
+            "{{ \\$users->appends(request()->input())->links() }}"
+        ],
+        "description": " | blade-html.code-snippets",
+        "scope": "html"
+    },
+    "@error.first": {
+        "prefix": "@error.first",
+        "body": [
+            "{{ \\$errors->has('key') ? ' has-error' : '' }} <!-- class -->",
+            "@if (\\$errors->has('key'))",
+            "\t<small class=\"help-block text-danger\">",
+            "\t\t{{ \\$errors->first('key') }}",
+            "\t</small>",
+            "@endif",
+        ],
+        "description": "error in input | blade-html.code-snippets",
+        "scope": "html"
+    },
+}

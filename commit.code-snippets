@@ -1,0 +1,37 @@
+{
+    "feat:":{
+      "prefix": "commit-feat:",
+      "body": [ "feat: $1" ],
+      "description": "The new feature you're adding to a particular application | Tính năng mới bạn đang thêm vào một ứng dụng cụ thể | commit.code-snippets"
+    },
+    "fix:":{
+      "prefix": "commit-fix:",
+      "body": [ "fix: $1" ],
+      "description": "A bug fix | commit.code-snippets"
+    },
+    "style:":{
+      "prefix": "commit-style:",
+      "body": [ "style: $1" ],
+      "description": "Feature and updates related to styling | commit.code-snippets"
+    },
+    "refactor:":{
+      "prefix": "commit-refactor:",
+      "body": [ "refactor: $1" ],
+      "description": "Refactoring a specific section of the codebase | Cấu trúc lại một phần cụ thể của cơ sở mã | commit.code-snippets"
+    },
+    "test:":{
+      "prefix": "commit-test:",
+      "body": [ "test: $1" ],
+      "description": "Everything related to testing | commit.code-snippets"
+    },
+    "docs:":{
+      "prefix": "commit-docs:",
+      "body": [ "docs: $1" ],
+      "description": "Everything related to documentation | commit.code-snippets"
+    },
+    "chore:":{
+      "prefix": "commit-chore:",
+      "body": [ "chore: $1" ],
+      "description": "Regular code maintenance.[ You can also use emojis to represent commit types] | Bảo trì mã thường xuyên. [Bạn cũng có thể sử dụng biểu tượng cảm xúc để đại diện cho các loại cam kết] | commit.code-snippets"
+    },
+}

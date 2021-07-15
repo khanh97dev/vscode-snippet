@@ -1,0 +1,2520 @@
+{
+    "haha":{
+      "prefix": "haha",
+      "body": [
+           "\\$1$\n$$\naa"
+      ],
+      "description": ""
+    },
+    "leaf":{
+      "prefix": "leaf",
+      "body": "|__ $1",
+      "description": "global.code-snippets"
+    },
+    "http://localhost:8000": {
+        "prefix": "http://localhost:8000/",
+        "body": [
+            "http://localhost:${1:8000}/$0"
+        ],
+        "description": "global.code-snippets"
+    },
+    "multipart/form-data": {
+        "prefix": "multipart/form-data",
+        "body": [
+            "multipart/form-data"
+        ],
+        "description": "multipart/form-data | global.code-snippets"
+    },
+    "rest_api_demo-POST": {
+        "prefix": "rest_api_demo-POST",
+        "body": [
+            "# Ctrl + alt + r (Rest Client: send Request)",
+            "POST ${1:http://localhost:8000/}",
+            "Content-type: application/json",
+            "Accept: application/json",
+            "Authorization: Bearer $2",
+            "",
+            "{",
+            "    \"data\": \"$3\"",
+            "}",
+        ],
+        "description": "Rest api | global.code-snippets"
+    },
+    "rest_api_demo-GET": {
+        "prefix": "rest_api_demo-GET",
+        "body": [
+            "# Ctrl + alt + r (Rest Client: send Request)",
+            "GET ${1:http://localhost:8000/}",
+            "?page=2",
+            "&pageSize=10",
+            "Content-type: application/json",
+            "Accept: application/json",
+            "Authorization: Bearer $2",
+        ],
+        "description": "Rest api | global.code-snippets"
+    },
+    "script-src": {
+        "prefix": "script-src",
+        "body": [
+            "<script src=\"$1\"></script>"
+        ],
+        "description": "HTML | global.code-snippets"
+    },
+    "cdn_bs4": {
+        "prefix": "cdn_bs4",
+        "body": [
+            "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\" integrity=\"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS\" crossorigin=\"anonymous\">\r\n<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\" integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js\" integrity=\"sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k\" crossorigin=\"anonymous\"></script>\r"
+        ],
+        "description": "Boostrap 4 | global.code-snippets"
+    },
+    "cdn_vue": {
+        "prefix": "cdn_vue",
+        "body": [
+            "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js\"></script>\r\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.min.js\"></script>\r\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.min.js\"></script>"
+        ],
+        "description": "CDN VUE | global.code-snippets"
+    },
+    "wp_config": {
+        "prefix": "wp_config",
+        "body": [
+            "<?php\r\n/**\r\n * The base configuration for WordPress\r\n *\r\n * The wp-config.php creation script uses this file during the\r\n * installation. You don't have to use the web site, you can\r\n * copy this file to \"wp-config.php\" and fill in the values.\r\n *\r\n * This file contains the following configurations:\r\n *\r\n * * MySQL settings\r\n * * Secret keys\r\n * * Database table prefix\r\n * * ABSPATH\r\n *\r\n * @link https://codex.wordpress.org/Editing_wp-config.php\r\n *\r\n * @package WordPress\r\n */\r\n\r\n// ** MySQL settings - You can get this info from your web host ** //\r\n/** The name of the database for WordPress */\r\ndefine('DB_NAME', 'wp-vuejs');\r\n\r\n/** MySQL database username */\r\ndefine('DB_USER', 'root');\r\n\r\n/** MySQL database password */\r\ndefine('DB_PASSWORD', '');\r\n\r\n// define( 'WP_CONTENT_DIR', 'http://localhost/wp-vuejs/assets/' );\r\n// define( 'WP_CONTENT_URL', 'http://localhost/wp-vuejs/lib/' );\r\n\r\n/** MySQL hostname */\r\ndefine('DB_HOST', 'localhost');\r\n\r\n/** Database Charset to use in creating database tables. */\r\ndefine('DB_CHARSET', 'utf8');\r\n\r\n/** The Database Collate type. Don't change this if in doubt. */\r\ndefine('DB_COLLATE', '');\r\n\r\n/**#@+\r\n * Authentication Unique Keys and Salts.\r\n *\r\n * Change these to different unique phrases!\r\n * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}\r\n * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.\r\n *\r\n * @since 2.6.0\r\n */\r\ndefine('AUTH_KEY',         'CdYgcJJN10YaK7nIO1syWSS8UP8svZ4PovFSskqqCtyIAdnBCnNZuB0Hfn1jd59J');\r\ndefine('SECURE_AUTH_KEY',  'uOUaZ2qpiSQv03AqF4dSEk8NLZ8dMpvepKfSKVl01RhgaLbaX3kCPOSCho3NC928');\r\ndefine('LOGGED_IN_KEY',    '38rmOQFV33NTQLrU13quT2tUYNjavNhnh9MH59lEmFO7BFexUcmv2oIZS6Rn0X4d');\r\ndefine('NONCE_KEY',        'CfiD2jLEQS0SiIy1NqcthBqTkIiHHpIfz2w4OgwhIPRvrk03Nd3R0kgJHdjJmvtW');\r\ndefine('AUTH_SALT',        'iRb8rIo1OFFE5klZW2Dz8N9qc5BYfCai7lSWIehh55sCwiHTvMFE1mRwgEDtEe3z');\r\ndefine('SECURE_AUTH_SALT', '8DMWQmep3KapH3k6kFQvFmMfT6P05PWYH8fpCT1Ss7GBH5DlTAxOpcU64e3amzyj');\r\ndefine('LOGGED_IN_SALT',   '0nqcDT86AK1JW4HVrKmF8bYdAVINBgJZMMQZSbTcQg2ZnsOwVujOid6LkpaBbenQ');\r\ndefine('NONCE_SALT',       'irrJ31oBloqrgX1fks7i9uvAXkKKXwcUvofCJex1fRrGISvaGNFJPG1SzkLcLNKS');\r\n\r\n/**#@-*/\r\n\r\n/**\r\n * WordPress Database Table prefix.\r\n *\r\n * You can have multiple installations in one database if you give each\r\n * a unique prefix. Only numbers, letters, and underscores please!\r\n */\r\n$table_prefix  = 'wp_';\r\n\r\n/**\r\n * For developers: WordPress debugging mode.\r\n *\r\n * Change this to true to enable the display of notices during development.\r\n * It is strongly recommended that plugin and theme developers use WP_DEBUG\r\n * in their development environments.\r\n *\r\n * For information on other constants that can be used for debugging,\r\n * visit the Codex.\r\n *\r\n * @link https://codex.wordpress.org/Debugging_in_WordPress\r\n */\r\ndefine('WP_DEBUG', true);\r\ndefine( 'WP_DEBUG_LOG', true );\r\n\r\n/* That's all, stop editing! Happy blogging. */\r\n\r\n/** Absolute path to the WordPress directory. */\r\nif ( !defined('ABSPATH') )\r\n    define('ABSPATH', dirname(__FILE__) . '/');\r\n\r\ndefine ('WP_CONTENT_FOLDERNAME', 'wp-content');\r\ndefine ('WP_CONTENT_DIR', ABSPATH . WP_CONTENT_FOLDERNAME) ;\r\n\r\ndefine('WP_SITEURL','http://localhost/wp-vuejs/');\r\ndefine('WP_HOME',WP_SITEURL);\r\n\r\n/** Sets up WordPress vars and included files. */\r\nrequire_once(ABSPATH . 'wp-settings.php');\r\n"
+        ],
+        "description": "WP | global.code-snippets"
+    },
+    "demo_snippet": {
+        "prefix": "demo_snippet",
+        "scope": "json,jsonc",
+        "body": [
+            "\"${1:demo_snippet}\":{",
+            "  \"prefix\": \"$1\",",
+            "  \"body\": [",
+            "       $0",
+            "  ],",
+            "  \"description\": \"$2\"",
+            "},",
+        ],
+        "description": "demo | global.code-snippets"
+    },
+    "${": {
+        "prefix": "${",
+        "body": [
+            "${$1:$2"
+        ],
+        "description": "global.code-snippets"
+    },
+    // global
+
+    //
+    "co mment plugin wp": {
+        "prefix": "wp -comment-plugin",
+        "scope": "php",
+        "body": [
+            "/*",
+            "Plugin Name: plugin test 1",
+            "Plugin URI:",
+            "description:",
+            "Version: 1.0",
+            "Author: test",
+            "Author URI:",
+            "License: plugin test",
+            "*/",
+        ],
+        "description": "comment plugin wp | global.code-snippets"
+    },
+    "varible_snippet": {
+        "prefix": "$",
+        "scope": "json, jsonc",
+        "body": [
+            "\\${$1:$2}"
+        ],
+        "description": "demo_snippet | global.code-snippets"
+    },
+    "interpolation": {
+        "prefix": "{",
+        "body": [
+            "{{ $1 }"
+        ],
+        "description": "interpolation | global.code-snippets"
+    },
+
+
+    // Laravel --------------------
+    "Pagintion Resource Get": {
+        "prefix": "resource_paginate",
+        "scope": "php",
+        "body": [
+            "'total' => $this->total(),",
+            "'count' => $this->count(),",
+            "'per_page' => $this->perPage(),",
+            "'current_page' => $this->currentPage(),",
+            "'total_pages' => $this->lastPage()",
+        ],
+        "description": "Pagintion Resource Get | global.code-snippets"
+    },
+    "Laravel_Schema_deafaultStringlenght": {
+        "prefix": "Schema::defaultStringLength;",
+        "scope": "php",
+        "body": [
+            " Schema::defaultStringLength(191);"
+        ],
+        "description": "Laravel_Schema_deafaultStringlenght | global.code-snippets"
+    },
+    "laravel_blade_meta_csrf": {
+        "prefix": "meta_csrf",
+        "scope": "blade",
+        "body": [
+            "<meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">"
+        ],
+        "description": "laravel_blade_meta_csrf | global.code-snippets"
+    },
+    "laravel_Request_CURL": {
+        "prefix": "Request_CURL",
+        "scope": "php",
+        "body": [
+            "$$request = Request::create('url', 'POST', \\$data);"
+        ],
+        "description": "laravel_Request_CURL | global.code-snippets"
+    },
+    "laravel_unsigned": {
+        "prefix": "unsigned",
+        "scope": "php",
+        "body": [
+            "unsigned()"
+        ],
+        "description": "laravel_unsigned | global.code-snippets"
+    },
+    "laravel_migration_column_nullable": {
+        "prefix": "nullalbe",
+        "scope": "php",
+        "body": [
+            "nullable();"
+        ],
+        "description": "laravel_migration_column_nullable | global.code-snippets"
+    },
+
+    "factory laravel download images": {
+        "scope": "php",
+        "body": [
+            "$faker->image(public_path('storage/images'), 400, 300),"
+        ],
+        "prefix": "factory_imgaes_download"
+    },
+    "factory demo seeder": {
+        "scope": "php",
+        "prefix": "factory_demo",
+        "body": [
+            "\\$products = new App\\Products;",
+            "  \\$faker = Faker\\Factory::create();",
+            "  ",
+            "  for (\\$i=0; \\$i < 30; \\$i++) {",
+            "      \\$products->insert([",
+            "          'pro_title' => \\$faker->name,",
+            "          'pro_imagePath' => public_path(\"storage/images/%20('.\\$i.').jpg\"),",
+            "          'pro_description' => \\$faker->text,",
+            "          'pro_price' => \\$faker->randomNumber(4,true),",
+            "          'created_at' => date('Y-m-d H:i:s'),",
+            "          'updated_at' => date('Y-m-d H:i:s'),",
+            "          ]);",
+            "      }",
+            "  }",
+        ]
+    },
+
+    "laravel login token api": {
+        "scope": "php",
+        "prefix": "login_token",
+        "body": [
+            "public function login(Request \\$request)",
+            "{",
+            "  \\$inputs = \\$request->only('email','password');",
+            "  if (Auth::attempt(\\$inputs)) {",
+            "  \\$user = Auth::user();",
+            "",
+            "  \\$checkToken = DB::table('oauth_access_tokens')->where('user_id',\\$user->id);",
+            "  ",
+            "  if(\\$checkToken->exists())",
+            "  {",
+            "  \\$checkToken->delete();",
+            "  \\$token = \\$user->createToken(\\$user->name)->accessToken;",
+            "  }else{",
+            "  \\$token = \\$user->createToken(\\$user->name)->accessToken;",
+            "  }",
+            "    return response()->json([",
+            "      'success' => true,",
+            "      'token' => \\$token",
+            "    ], \\$this->successStatus);",
+            "  } else {",
+            "    return response()->json([",
+            "      'success' => false,",
+            "      'error' => 'Unauthorised'",
+            "    ], 401);",
+            "  }",
+            "}",
+        ],
+    },
+    "laravel_onDelete": {
+        "prefix": "onDelete_laravel",
+        "scope": "php",
+        "body": [
+            "onDelete('cascade')"
+        ],
+        "description": "laravel_onDelete | global.code-snippets"
+    },
+    "laravel_foreign": {
+        "prefix": "foreign",
+        "scope": "",
+        "body": [
+            "$$table->foreign('${1:user_id}')->references('${2:id}')->on('${3:users}')->onDelete('cascade');"
+        ],
+        "description": "demo_snippet | global.code-snippets"
+    },
+    "laravel route all": {
+        "prefix": "Route-all",
+        "scope": "php",
+        "body": [
+            "Route::any('{all}', function () {",
+            "return view('$1');",
+            "})->where(['all' => '.*']);",
+        ],
+        "description": "global.code-snippets"
+    },
+    "laravel blade asset": {
+        "prefix": "asset",
+        "scope": "blade",
+        "body": "{{ asset('$1') }}"
+    },
+    "laravel blade __": {
+        "prefix": "__",
+        "scope": "blade",
+        "body": "{{ __('${1:language.line}') }}",
+        "description": "language.line | global.code-snippets"
+    },
+
+    "laravel_usercontroller_passport": {
+        "prefix": "laravel_usercontroller_passport",
+        "scope": "php",
+        "body": [
+            "namespace App\\Http\\Controllers\\API;",
+            "",
+            "use App\\Http\\Controllers\\Controller;",
+            "use App\\User;",
+            "use Carbon\\Carbon;",
+            "use Illuminate\\Http\\Request;",
+            "use Illuminate\\Support\\Facades\\Auth;",
+            "use Illuminate\\Support\\Facades\\DB;",
+            "use Laravel\\Passport\\Passport;",
+            "use Validator;",
+            "",
+            "class UserController extends Controller",
+            "{",
+            "    public $successStatus = 200;",
+            "    /**",
+            "    * login api",
+            "    *",
+            "    * @return \\Illuminate\\Http\\Response",
+            "    */",
+            "    public function login(Request $request)",
+            "    {",
+            "        $input = $request->only('email', 'password');",
+            "        if (Auth::attempt($input)) {",
+            "            $user = Auth::user();",
+            "",
+            "            $checkToken = DB::table('oauth_access_tokens')->where('user_id', $user->id);",
+            "",
+            "            if ($checkToken->exists()) {",
+            "                $checkToken->delete();",
+            "            }",
+            "            $token = $user->createToken($user->name)->accessToken;",
+            "            Passport::tokensExpireIn(Carbon::now()->addDays(1));",
+            "            return response()->json([",
+            "                'success' => true,",
+            "                'token' => $token,",
+            "            ], $this->successStatus);",
+            "        } else {",
+            "            return response()->json([",
+            "                'success' => false,",
+            "                'error' => 'Unauthorised',",
+            "            ], 401);",
+            "        }",
+            "    }",
+            "    /**",
+            "    * Register api",
+            "    *",
+            "    * @return \\Illuminate\\Http\\Response",
+            "    */",
+            "    public function register(Request $request)",
+            "    {",
+            "        $validator = Validator::make($request->all(), [",
+            "            'name' => 'required',",
+            "            'email' => 'required|email',",
+            "            'password' => 'required',",
+            "            // 'c_password' => 'required|same:password',",
+            "        ]);",
+            "        if ($validator->fails()) {",
+            "            return response()->json(['error' => $validator->errors()], 401);",
+            "        }",
+            "        $input = $request->all();",
+            "        $input['password'] = bcrypt($input['password']);",
+            "        $user = User::create($input);",
+            "        $success['token'] = $user->createToken('MyApp')->accessToken;",
+            "        $success['name'] = $user->name;",
+            "        return response()->json(['success' => $success], $this->successStatus);",
+            "    }",
+            "    /**",
+            "    * details api",
+            "    *",
+            "    * @return \\Illuminate\\Http\\Response",
+            "    */",
+            "    public function details()",
+            "    {",
+            "        $user = Auth::user();",
+            "        return response()->json(['success' => $user], $this->successStatus);",
+            "    }",
+            "",
+            "    public function logout()",
+            "    {",
+            "        if (Auth::check()) {",
+            "           $user = Auth::user();",
+            "           $tokenAccess= DB::table('oauth_access_tokens')->where('user_id', $user->id);",
+            "           $tokenAccess->delete();",
+            "           return response()->json(true, 200);",
+            "        }",
+            "           return response()->json(false, 401);",
+            "    }",
+            "}",
+            "",
+            ""
+        ],
+        "description": "laravel_usercontroller_passport | global.code-snippets"
+    },
+    //  VUe
+    "to-vue": {
+        "prefix": "to-vue",
+        "body": [
+            ":to=\"{'name':'${1:string}'}\""
+        ],
+        "description": "vue-to | global.code-snippets"
+    },
+    "input class": {
+        "prefix": "laravel-inputToken",
+        "body": [
+            "<input type=\"hidden\" name=\"_token\" id=\"csrf-token\" value=\"{{ Session: :token()}}\" />"
+        ],
+        "description": "token laravel in input form | global.code-snippets"
+    },
+
+    "collection Laravel": {
+        "prefix": "collection-utf8",
+        "scope": "php",
+        "body": [
+            "collection('utf8_unicode_ci');$0"
+        ],
+        "description": "collection('utf8_unicode_ci') | global.code-snippets"
+    },
+    "middleware Laravel": {
+        "prefix": "middleware",
+        "scope": "php",
+        "body": [
+            "middleware(\"$nameMiddle\")$0"
+        ],
+        "description": "middleware Laravel | global.code-snippets"
+    },
+    "Route Get Laravel": {
+        "prefix": "Route-get",
+        "scope": "php",
+        "body": [
+            "Route::get('${1:url}','${2:Contronller}')${3:->name('${name}')}"
+        ],
+        "description": "Route::get(Contronller) | global.code-snippets"
+    },
+    "laravel-AuthController": {
+        "prefix": "Laravel-JWT-AuthController",
+        "scope": "php",
+        "body": [
+            "",
+            "namespace App\\Http\\Controllers;",
+            "use Illuminate\\Http\\Request;",
+            "use Illuminate\\Support\\Facades\\Auth;",
+            "use App\\Http\\Controllers\\Controller;",
+            "use Illuminate\\Support\\Facades\\Validator;",
+            "use App\\User;",
+            "use JWTAuth;",
+            "use Tymon\\JWTAuth\\Exceptions\\JWTException;",
+            "",
+            "class AuthController extends Controller {",
+            "\tpublic $$isLogin = true;",
+            "",
+            "\t/**",
+            "\t * Get a JWT via given credentials.",
+            "\t *",
+            "\t * @return\\Illuminate\\Http\\JsonResponse",
+            "\t */",
+            "",
+            "\tpublic function register(Request $$request) {",
+            "",
+            "\t\t$$validator = $$this->validate($$request, [",
+            "\t\t\t'name' => 'required',",
+            "\t\t\t'email' => 'required|max:191|email|unique:users',",
+            "\t\t\t'password' => 'required'",
+            "\t\t]);",
+            "\t\ttry {",
+            "\t\t\t$$user = new User();",
+            "\t\t\t$$user->name = $$request->input('name');",
+            "\t\t\t$$user->email = $$request->input('email');",
+            "\t\t\t$$user->password = bcrypt($$request->input('password'));",
+            "\t\t\t$$user->save();",
+            "\t\t\tif ($$this->isLogin) {",
+            "\t\t\t\treturn $$this->login($$request);",
+            "\t\t\t}",
+            "",
+            "\t\t\treturn response()->json([",
+            "\t\t\t\t'success' => true,",
+            "\t\t\t\t'data' => $$user",
+            "\t\t\t], 200);",
+            "\t\t} catch (JWTException $$err) {",
+            "\t\t\treturn response()->json([",
+            "\t\t\t\t'errors' => $$validator,",
+            "\t\t\t\t'exception' => $$err",
+            "\t\t\t], 201);",
+            "\t\t}",
+            "",
+            "\t}//End Register",
+            "",
+            "\t/**",
+            "\t * Get a JWT via given credentials.",
+            "\t *",
+            "\t * @return\\Illuminate\\Http\\JsonResponse",
+            "\t */",
+            "",
+            "\tpublic function login(Request $$request) {",
+            "\t\t// $$input = $$request->only('email', 'password');",
+            "",
+            "\t\t// if (! $$token = auth()->attempt($$input)) {",
+            "\t\t\t//     return response()->json(['error' => 'Unauthorized'], 401);",
+            "\t\t// }",
+            "",
+            "\t\t// return $$this->respondWithToken($$token);",
+            "",
+            "",
+            "\t\t$$input = $$request->only('email', 'password');",
+            "\t\tif (!$$token = JWTAuth::attempt($$input)) {",
+            "\t\t\treturn response()->json([",
+            "\t\t\t\t'success' => false,",
+            "\t\t\t\t\t'message' => 'Invalid Email or Password',",
+            "\t\t\t], 401);",
+            "\t\t}",
+            "\t\treturn response()->json([",
+            "\t\t\t'success' => true,",
+            "\t\t\t'token' => $$token,",
+            "\t\t]);",
+            "\t}",
+            "",
+            "\t/**",
+            "\t * Get the authenticated User.",
+            "\t *",
+            "\t * @return\\Illuminate\\Http\\JsonResponse",
+            "\t */",
+            "\tpublic function me(Request $$request) {",
+            "\t\treturn response()->json(auth()->user());",
+            "\t}",
+            "",
+            "\t/**",
+            "\t * Log the user out (Invalidate the token).",
+            "\t *",
+            "\t * @return\\Illuminate\\Http\\JsonResponse",
+            "\t */",
+            "\tpublic function logout(Request $$request) {",
+            "\t\t// auth()->logout();",
+            "\t\t// return response()->json(['message' => 'Successfully logged out']);",
+            "",
+            "\t\t// validate token--------------",
+            "\t\t$$this->validate($$request, [",
+            "\t\t\t'token' => 'required'",
+            "\t\t]);",
+            "",
+            "\t\ttry {",
+            "\t\t\tJWTAuth::invalidate($$request->token);",
+            "",
+            "\t\t\treturn response()->json([",
+            "\t\t\t\t'success' => true,",
+            "\t\t\t\t'message' => 'User logged out successfully'",
+            "\t\t\t]);",
+            "\t\t} catch (JWTException $$exception) {",
+            "\t\t\treturn response()->json([",
+            "\t\t\t\t'success' => false,",
+            "\t\t\t\t'message' => 'Sorry, the user cannot be logged out'",
+            "\t\t\t], 500);",
+            "\t\t}",
+            "\t}",
+            "",
+            "\t/**",
+            "\t * Refresh a token.",
+            "\t *",
+            "\t * @return\\Illuminate\\Http\\JsonResponse",
+            "\t */",
+            "\tpublic function refresh() {",
+            "\t\treturn $$this->respondWithToken(auth()->refresh());",
+            "\t}",
+            "",
+            "\t/**",
+            "\t * Get the token array structure.",
+            "\t *",
+            "\t * @param  string $$token",
+            "\t *",
+            "\t * @return\\Illuminate\\Http\\JsonResponse",
+            "\t */",
+            "\tprotected function respondWithToken($$token) {",
+            "\t\treturn response()->json([",
+            "\t\t\t'access_token' => $$token,",
+            "\t\t\t'token_type' => 'type_token',",
+            "\t\t\t'expires_in' => auth()->factory()->getTTL() * 60",
+            "\t\t]);",
+            "\t}",
+            "\t/**",
+            "\t * Get the token array structure.",
+            "\t *",
+            "\t * @param  string $token",
+            "\t *",
+            "\t * @return\\Illuminate\\Http\\JsonResponse",
+            "\t */",
+            "",
+            "\tpublic function payload()",
+            "\t{",
+            "\t\treturn auth()->payload();",
+            "\t}",
+            "}",
+        ],
+        "description": "global.code-snippets"
+    },
+    "script-tag": {
+        "prefix": "script-tag",
+        "body": [
+            "<script>\n\t$0\n</script>"
+        ],
+        "description": "tag | global.code-snippets"
+    },
+    "style-tag": {
+        "prefix": "style-tag",
+        "body": [
+            "<style>",
+            "\t$0",
+            "</style>"
+        ],
+        "description": "tag | global.code-snippets"
+    },
+    "b4-css-radio": {
+        "prefix": "b4-css-radio-bg",
+        "body": [
+            ".custom-radio .custom-control-label::before {",
+            "    background-color: ${1:bg};",
+            "}",
+        ],
+        "description": "b4-css-radio | global.code-snippets"
+    },
+    "b4 small input": {
+        "prefix": "b4-smallInput",
+        "body": "<small id=\"$2\" class=\"form-text text-muted\">$1</small>",
+    },
+    "SCSS mixin mobile 700px": {
+        "prefix": "mixin-mobile",
+        "scope": "scss, sass",
+        "body": [
+            "@mixin mobileTemplate(\\$gridTemplateColumns: null, \\$gridTemplateAreas: null, \\$large: 700 px, \\$margin: null, \\$padding: null, \\$multipleProperty...) {",
+            "@media screen and(max-width: \\$large) {",
+            "@if \\$gridTemplateColumns != null {",
+            "grid-template-columns: \\$gridTemplateColumns;",
+            "}",
+            "@else",
+            "if \\$gridTemplateAreas != null {",
+            "grid-template-areas: \\$gridTemplateAreas;",
+            "}",
+            "@else",
+            "if \\$margin != null {",
+            "margin: \\$margin;",
+            "}",
+            "@else",
+            "if \\$padding != null {",
+            "padding: \\$padding;",
+            "}",
+            "@else",
+            "if \\$multipleProperty != \"\" {",
+            "@each \\$property, \\$value in \\$multipleProperty {",
+            "#{\\$property}: #{\\$value}",
+            "}",
+            "}",
+            "}",
+            "}",
+            "\n",
+            "// @include mobileTemplate(1fr 1fr, null, 700 px, null, null, (flex-wrap, wrap));",
+        ]
+    },
+    "bootsrap reponsive": {
+        "prefix": "b4-class-reponsive",
+        "body": "col-lg-4 col-xs-12 col-sm-6"
+    },
+    // Sql ---
+    "mysql insert": {
+        "scope": "sql",
+        "prefix": "insert_into_table",
+        "body": "INSERT INTO ${1:database}.${2:table} (${3:column}) VALUES(${4:value1}), (${5:value2});"
+    },
+
+    "charset utf8mb4": {
+        "scope": "sql",
+        "prefix": "charset",
+        "body": [
+            "CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+        ],
+        "description": "CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci | global.code-snippets"
+    },
+    "select limit ": {
+        "scope": "sql",
+        "prefix": "select_limit",
+        "body": [
+            "SELECT * FROM ${1:database}.${2:table} LIMIT ${3:1000};",
+        ],
+    },
+    "delete": {
+        "scope": "sql",
+        "prefix": "delete_table",
+        "body": [
+            "Delete From ${1:database}.${2:table} where (${3:idColumn} = ${4:idValue})",
+        ],
+        "description": "global.code-snippets"
+    },
+    "Update": {
+        "scope": "sql",
+        "prefix": "Update",
+        "body": [
+            "UPDATE ${1:database}.${2:table} SET ${3:column1} = ${4:value1}, ${4:column2} = ${6:value2} where (${7:idColumn} = ${8:idValue})",
+        ],
+        "description": "global.code-snippets"
+    },
+
+
+    // Tag
+    "Tag-Style": {
+        "prefix": "style-tag-scoped",
+        "body": [
+            "<style scoped>\n\t$1\n</style>",
+        ],
+        "description": "Tag | global.code-snippets"
+    },
+    // Css
+    "prefix-webkit": {
+        "scope": "css",
+        "prefix": "webkit",
+        "body": [
+            "$1-webkit-${2:property}",
+            "$1-o-${2:property}",
+            "$1-ms-${2:property}",
+            "$1-moz-${2:property}",
+            "$1${2:property}",
+        ],
+    },
+
+    // BOOTSTRAP 4 -------------------------------------------------------------------------
+    "b4-navbar-custom": {
+        "prefix": "b4-navbar-custom",
+        "scope": "html, blade, vue-html, vue",
+        "body": [
+            "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">",
+            "  <a class=\"navbar-brand\" href=\"#\">Navbar</a>",
+            "  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">",
+            "    <span class=\"navbar-toggler-icon\"></span>",
+            "  </button>",
+            "",
+            "  <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">",
+            "    <ul class=\"navbar-nav mr-auto\">",
+            "      <li class=\"nav-item active\">",
+            "        <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>",
+            "      </li>",
+            "      <li class=\"nav-item\">",
+            "        <a class=\"nav-link\" href=\"#\">Features</a>",
+            "      </li>",
+            "      <li class=\"nav-item\">",
+            "        <a class=\"nav-link\" href=\"#\">Pricing</a>",
+            "      </li>",
+            "      <li class=\"nav-item\">",
+            "        <a class=\"nav-link\" href=\"#\">About</a>",
+            "      </li>",
+            "    </ul>",
+            "    <form class=\"form-inline my-2 my-lg-0\">",
+            "      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">",
+            "      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>",
+            "    </form>",
+            "  </div>",
+            "</nav>"
+        ],
+        "description": "b4-navbar | global.code-snippets"
+    },
+    "b4-btn-block": {
+        "prefix": "b4-btn-block",
+        "scope": "html, blade, vue-html, vue",
+        "body": [
+            "<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\">Block level button</button>"
+        ],
+        "description": "b4-btn-block | global.code-snippets"
+    },
+    "b4-modal-custom": {
+        "prefix": "b4-modal-custom",
+        "scope": "html, blade, vue-html, vue",
+        "body": [
+            "<div class=\"modal\">",
+            "  <div class=\"modal-dialog\" role=\"document\">",
+            "    <div class=\"modal-content\">",
+            "      <div class=\"modal-header\">",
+            "        <h5 class=\"modal-title\">Modal title</h5>",
+            "        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">",
+            "          <span aria-hidden=\"true\">&times;</span>",
+            "        </button>",
+            "      </div>",
+            "      <div class=\"modal-body\">",
+            "        <p>Modal body text goes here.</p>",
+            "      </div>",
+            "      <div class=\"modal-footer\">",
+            "        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>",
+            "        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>",
+            "      </div>",
+            "    </div>",
+            "  </div>",
+            "</div>"
+        ],
+        "description": "b4-modal-custom | global.code-snippets"
+    },
+    "b4-table": {
+        "prefix": "b4-table",
+        "scope": "html, blade, vue-html, vue",
+        "body": [
+            "<table class=\"table table-hover\">",
+            "  <thead>",
+            "    <tr>",
+            "      <th scope=\"col\">Type</th>",
+            "      <th scope=\"col\">Column heading</th>",
+            "      <th scope=\"col\">Column heading</th>",
+            "      <th scope=\"col\">Column heading</th>",
+            "    </tr>",
+            "  </thead>",
+            "  <tbody>",
+            "    <tr class=\"table-active\">",
+            "      <th scope=\"row\">Active</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "    <tr>",
+            "      <th scope=\"row\">Default</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "    <tr class=\"table-primary\">",
+            "      <th scope=\"row\">Primary</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "    <tr class=\"table-secondary\">",
+            "      <th scope=\"row\">Secondary</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "    <tr class=\"table-success\">",
+            "      <th scope=\"row\">Success</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "    <tr class=\"table-danger\">",
+            "      <th scope=\"row\">Danger</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "    <tr class=\"table-warning\">",
+            "      <th scope=\"row\">Warning</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "    <tr class=\"table-info\">",
+            "      <th scope=\"row\">Info</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "    <tr class=\"table-light\">",
+            "      <th scope=\"row\">Light</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "    <tr class=\"table-dark\">",
+            "      <th scope=\"row\">Dark</th>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "      <td>Column content</td>",
+            "    </tr>",
+            "  </tbody>",
+            "</table>"
+        ],
+        "description": "b4-table | global.code-snippets"
+    },
+    "b4-form-all": {
+        "scope": "html, blade, vue-html, vue",
+        "prefix": "b4-form-all",
+        "body": [
+            "<fieldset>",
+            "  <legend>Custom forms</legend>",
+            "  <div class=\"form-group\">",
+            "    <div class=\"custom-control custom-radio\">",
+            "      <input type=\"radio\" id=\"customRadio1\" name=\"customRadio\" class=\"custom-control-input\" checked=\"\">",
+            "      <label class=\"custom-control-label\" for=\"customRadio1\">Toggle this custom radio</label>",
+            "    </div>",
+            "    <div class=\"custom-control custom-radio\">",
+            "      <input type=\"radio\" id=\"customRadio2\" name=\"customRadio\" class=\"custom-control-input\">",
+            "      <label class=\"custom-control-label\" for=\"customRadio2\">Or toggle this other custom radio</label>",
+            "    </div>",
+            "    <div class=\"custom-control custom-radio\">",
+            "      <input type=\"radio\" id=\"customRadio3\" name=\"customRadio\" class=\"custom-control-input\" disabled=\"\">",
+            "      <label class=\"custom-control-label\" for=\"customRadio3\">Disabled custom radio</label>",
+            "    </div>",
+            "  </div>",
+            "  <div class=\"form-group\">",
+            "    <div class=\"custom-control custom-checkbox\">",
+            "      <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck1\" checked=\"\">",
+            "      <label class=\"custom-control-label\" for=\"customCheck1\">Check this custom checkbox</label>",
+            "    </div>",
+            "    <div class=\"custom-control custom-checkbox\">",
+            "      <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck2\" disabled=\"\">",
+            "      <label class=\"custom-control-label\" for=\"customCheck2\">Disabled custom checkbox</label>",
+            "    </div>",
+            "  </div>",
+            "  <div class=\"form-group\">",
+            "    <select class=\"custom-select\">",
+            "      <option selected=\"\">Open this select menu</option>",
+            "      <option value=\"1\">One</option>",
+            "      <option value=\"2\">Two</option>",
+            "      <option value=\"3\">Three</option>",
+            "    </select>",
+            "  </div>",
+            "  <div class=\"form-group\">",
+            "    <div class=\"input-group mb-3\">",
+            "      <div class=\"custom-file\">",
+            "        <input type=\"file\" class=\"custom-file-input\" id=\"inputGroupFile02\">",
+            "        <label class=\"custom-file-label\" for=\"inputGroupFile02\">Choose file</label>",
+            "      </div>",
+            "      <div class=\"input-group-append\">",
+            "        <span class=\"input-group-text\" id=\"\">Upload</span>",
+            "      </div>",
+            "    </div>",
+            "</div></fieldset>"
+        ],
+        "description": "b4-form-all | global.code-snippets"
+    },
+    "b4-modal-login": {
+        "prefix": "b4-modal-login",
+        "scope": "html, blade, vue-html, vue",
+
+        "body": [
+            "<button class=\"btn navbar-btn btn-sm bg-gradient btn-info text-center text-uppercase border-danger align-self-center\" target=\"_blank\" data-toggle=\"modal\" data-target=\"#modelId\">",
+            "    Login",
+            "</button>",
+            "<div id=\"modelId\" class=\"modal fade\">",
+            "  <div class=\"modal-dialog\" role=\"document\">",
+            "    <div class=\"modal-content\">",
+            "      <div class=\"modal-header\">",
+            "        <h1 class=\"modal-title\">Login</h1>",
+            "        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">",
+            "          <span aria-hidden=\"true\">&times;</span>",
+            "        </button>",
+            "      </div>",
+            "      <div class=\"modal-body\">",
+            "        <form role=\"form\" method=\"POST\" action=\"\">",
+            "          <input type=\"hidden\" name=\"_token\" value=\"\">",
+            "          <div class=\"form-group\">",
+            "            <label class=\"control-label label-danger label\">E-Mail Address</label>",
+            "            <div>",
+            "              <input type=\"email\" class=\"form-control input-lg\" name=\"email\" value=\"\">",
+            "            </div>",
+            "          </div>",
+            "          <div class=\"form-group\">",
+            "            <label class=\"control-label label-danger label\">Password</label>",
+            "            <div>",
+            "              <input type=\"password\" class=\"form-control input-lg\" name=\"password\">",
+            "            </div>",
+            "          </div>",
+            "          <div class=\"form-group\">",
+            "            <div>",
+            "              <div class=\"checkbox\">",
+            "                <label>",
+            "                  <input type=\"checkbox\" name=\"remember\"> Remember Me",
+            "                </label>",
+            "              </div>",
+            "            </div>",
+            "          </div>",
+            "          <div class=\"form-group\">",
+            "            <div>",
+            "              <button type=\"submit\" class=\"btn btn-success\">Login</button>",
+            "",
+            "              <a class=\"btn btn-link\" href=\"\">Forgot Your Password?</a>",
+            "            </div>",
+            "          </div>",
+            "        </form>",
+            "      </div>",
+            "    </div>",
+            "    <!-- /.modal-content -->",
+            "  </div>",
+            "  <!-- /.modal-dialog -->",
+            "</div>"
+        ],
+        "description": "b4-modal-login | global.code-snippets"
+    },
+
+    "mysqli utf-8": {
+        "prefix": "mysqli-utf8",
+        "scope": "php",
+        "body": [
+            "mysqli_query($1,\"SET NAMES 'utf8'\");"
+        ],
+        "description": "php | global.code-snippets"
+    },
+    "try_catch": {
+        "prefix": "try-catch",
+        "scope": "php",
+        "body": [
+            "try {",
+            "\t$1",
+            "}",
+            "catch(Exception $2) {",
+            "\techo $2->getMessage();",
+            "}"
+        ],
+        "description": "try catch faster | global.code-snippets"
+    },
+
+    "echo data mysql_fetch connect": {
+        "prefix": "while-mysqli-fetch-array",
+        "scope": "php",
+        "body": [
+            "$1 = mysqli_query($2,\"$3\");",
+            "while ( $4 = mysqli_fetch_array($1) ) {",
+            "\techo $4[\"$5\"].\"<br/>\";",
+            "}",
+        ],
+        "description": "echo sql test | global.code-snippets"
+    },
+    "public": {
+        "prefix": "pub",
+        "scope": "php",
+        "body": [
+            "public function ${1:NameFunc}($2) \n{\n\t${3}\n}"
+        ],
+        "description": "public function | global.code-snippets"
+    },
+    "private": {
+        "prefix": "pri",
+        "scope": "php",
+        "body": [
+            "private function ${1:NameFunc}($2) \n{\n\t${3}\n}"
+        ],
+        "description": "private function | global.code-snippets"
+    },
+    "protected": {
+        "prefix": "pro",
+        "scope": "php",
+        "body": [
+            "protected function ${1:NameFunc}($2) \n{\n\t${3}\n}"
+        ],
+        "description": "protected function | global.code-snippets"
+    },
+    "$_REQUEST": {
+        "prefix": "$_REQUEST",
+        "scope": "php",
+        "body": [
+            "\\$_REQUEST['$1']"
+        ],
+    },
+    "$_COOKIE": {
+        "prefix": "$_COOKIE",
+        "scope": "php",
+        "body": [
+            "\\$_COOKIE['$1']"
+        ],
+    },
+    "$_GET": {
+        "prefix": "$_GET",
+        "scope": "php",
+        "body": [
+            "\\$_GET['$1']"
+        ],
+    },
+    "$_POST": {
+        "prefix": "$_POST",
+        "scope": "php",
+        "body": [
+            "\\$_POST['$1']"
+        ],
+    },
+    "$_SESSION": {
+        "prefix": "$_SESSION",
+        "scope": "php",
+        "body": [
+            "\\$_SESSION['$1']"
+        ],
+    },
+    "$_SERVER": {
+        "prefix": "$_SERVER",
+        "scope": "php",
+        "body": [
+            "\\$_SERVER['$1']"
+        ],
+    },
+    "$_ENV": {
+        "prefix": "$_ENV",
+        "scope": "php",
+        "body": [
+            "\\$_ENV['$1']"
+        ],
+    },
+    "$_FILES": {
+        "prefix": "$_FILES",
+        "scope": "php",
+        "body": [
+            "\\$_FILES['$1']"
+        ],
+    },
+    "CommentCSS": {
+        "prefix": "CommentCSS-PHP-JS",
+        "scope": "php",
+        "body": "/* $1 */"
+    },
+    "CommentHTML": {
+        "prefix": "CommentHTML",
+        "scope": "php",
+        "body": "<!-- $1 -->"
+    },
+    //----------CSS snippet------------//
+    "media_screen": {
+        "prefix": "media_screen",
+        "body": [
+            "@media only screen and (max-width: ${1|600,712,1024|}px) { /* width < ${1|600,712,1024|} */",
+            "\t$2",
+            "}"
+        ],
+        "description": "Scss, css | global.code-snippets",
+        "scope": "css, scss"
+    },
+    /* End CSS */
+    "Constructor": {
+        "prefix": "construct",
+        "scope": "php",
+        "body": [
+            "public function __${1:construct}() {\n\t$2\n}",
+        ],
+        "description": "global.code-snippets"
+    },
+    "protected_varible": {
+        "prefix": "pro_v",
+        "scope": "php",
+        "body": [
+            "protected $$1",
+        ],
+        "description": "global.code-snippets"
+    },
+    "require_once": {
+        "prefix": "req1",
+        "scope": "php",
+        "body": [
+            "require_once '$1';",
+        ],
+        "description": "global.code-snippets"
+    },
+    "include_once": {
+        "prefix": "inc1",
+        "scope": "php",
+        "body": [
+            "include_once '$1';",
+        ],
+        "description": "global.code-snippets"
+    },
+    "date_today": {
+        "prefix": "date-today",
+        "scope": "php",
+        "body": [
+            "date('Y-m-d H:i:s')",
+        ],
+        "description": "date('Y-m-d H:i:s') | global.code-snippets"
+    },
+    "bcrypt": {
+        "prefix": "bcrypt-password",
+        "scope": "php",
+        "body": [
+            "bcrypt($req->input('${password}') )$0",
+        ],
+        "description": "bcrypt($req->input('password')) | global.code-snippets"
+    },
+    "JWTAuth-attempt": {
+        "prefix": "JWTAuth::attempt",
+        "scope": "php",
+        "body": [
+            "JWTAuth::attempt($input)) {",
+            "\treturn response()->json([",
+            "\t\t'success' => false,",
+            "\t\t'message' => 'Invalid Email or Password',",
+            "\t], 401);"
+        ],
+        "description": "global.code-snippets"
+    },
+    "time zone": {
+        "prefix": "timezone",
+        "scope": "php",
+        "body": [
+            "date_default_timezone_set('Asia/Ho_Chi_Minh');",
+        ],
+        "description": "Asia/HoChiMinh | global.code-snippets"
+    },
+
+    /*  ----------- javascript ---------------  */
+    "$ Select": {
+        "prefix": "$",
+        "scope": "javascript, typescript",
+        "body": [
+            "$(${1:document})$2"
+        ],
+        "description": "jquerySelect | global.code-snippets"
+    },
+    "jQuery Select": {
+        "prefix": "jQuery",
+        "scope": "javascript, typescript",
+        "body": [
+            "jQuery(${1:document})$2"
+        ],
+        "description": "jquerySelect | global.code-snippets"
+    },
+    "ready $": {
+        "prefix": "ready",
+        "scope": "javascript, typescript",
+        "body": [
+            "$(${1:document}).ready(function(${2:$}){",
+            "\t$3",
+            "};"
+        ],
+        "description": "$(document).ready | global.code-snippets"
+    },
+    "ready jQuery": {
+        "prefix": "ready",
+        "scope": "javascript, typescript",
+        "body": [
+            "jQuery(${1:document}).ready(function(${2:$}){",
+            "\t$3",
+            "};"
+        ],
+        "description": "jQuery(document).ready | global.code-snippets"
+    },
+    "functionDOM": {
+        "prefix": "function",
+        "scope": "javascript, typescript",
+        "body": [
+            "function(${1:params}) { $2 }$3",
+        ],
+        "description": "function jQuery | global.code-snippets"
+    },
+    ".remove()": {
+        "prefix": "remove()",
+        "scope": "javascript, typescript",
+        "body": [
+            "remove(${1:params})",
+        ],
+        "description": "remove jQuery | global.code-snippets"
+    },
+    ".addClass()": {
+        "prefix": "addClass()",
+        "scope": "javascript, typescript",
+        "body": [
+            "addClass(${1:params})",
+        ],
+        "description": "addClass jQuery | global.code-snippets"
+    },
+    // =======================================================================
+    "After": {
+        "prefix": "After",
+        "scope": "javascript, typescript",
+        "body": [
+            "after(${content});"
+        ],
+        "description": "Insert content, specified by the parameter, after each element in the set of matched elements. | global.code-snippets"
+    },
+    "Ajax": {
+        "prefix": "Ajax",
+        "scope": "javascript, typescript",
+        "body": [
+            "$.ajax({",
+            "\ttype: \"${method}\",",
+            "\turl: \"${url}\",",
+            "\tdata: \"${data}\",",
+            "\tdataType: \"${dataType}\",",
+            "\tsuccess: function (response) {",
+            "\t\t$0",
+            "\t}",
+            "});"
+        ],
+        "description": "Perform an asynchronous HTTP (Ajax) request. | global.code-snippets"
+    },
+    "AjaxAspNetWebService": {
+        "prefix": "AjaxAspNetWebService",
+        "scope": "javascript, typescript",
+        "body": [
+            "$.ajax({",
+            "\ttype: \"POST\",",
+            "\tcontentType: \"application/json; charset=utf-8\",",
+            "\tdataType: \"${dataType}\",",
+            "\turl: \"${url}\",",
+            "\tdata: \"${data}\",",
+            "\tsuccess: function (response) {",
+            "\t\t$0",
+            "\t}",
+            "});"
+        ],
+        "description": "Perform an asynchronous HTTP (Ajax) request to a ASP.NET web service. | global.code-snippets"
+    },
+    "Append": {
+        "prefix": "Append",
+        "scope": "javascript, typescript",
+        "body": [
+            "append(${content});"
+        ],
+        "description": "Insert content, specified by the parameter, to the end of each element in the set of matched elements. | global.code-snippets"
+    },
+    "AppendTo": {
+        "prefix": "AppendTo",
+        "scope": "javascript, typescript",
+        "body": [
+            "$(${content}).appendTo(${selector});"
+        ],
+        "description": "Insert every element in the set of matched elements to the end of the target. | global.code-snippets"
+    },
+    "attrGet": {
+        "prefix": "attrGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "attr(${attributeName});"
+        ],
+        "description": "Get the value of an attribute for the first element in the set of matched elements. | global.code-snippets"
+    },
+    "attrRemove": {
+        "prefix": "attrRemove",
+        "scope": "javascript, typescript",
+        "body": [
+            "removeattr(${attributeName});"
+        ],
+        "description": "Remove an attribute from each element in the set of matched elements. | global.code-snippets"
+    },
+    "attrSet": {
+        "prefix": "attrSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "attr(${attributeName}, ${value});"
+        ],
+        "description": "Set one or more attributes for the set of matched elements. | global.code-snippets"
+    },
+    "attrSetFn": {
+        "prefix": "attrSetFn",
+        "scope": "javascript, typescript",
+        "body": [
+            "attr(${attributeName}, function (index, attr) { ",
+            "\t$0 ",
+            "});"
+        ],
+        "description": "Set one or more attributes for the set of matched elements. | global.code-snippets"
+    },
+    "attrSetObj": {
+        "prefix": "attrSetObj",
+        "scope": "javascript, typescript",
+        "body": [
+            "attr({",
+            "\t${name}: ${value}",
+            "\t$0",
+            "});"
+        ],
+        "description": "Set one or more attributes for the set of matched elements. | global.code-snippets"
+    },
+    "Before": {
+        "prefix": "Before",
+        "scope": "javascript, typescript",
+        "body": [
+            "before(${content});"
+        ],
+        "description": "Insert content, specified by the parameter, before each element in the set of matched elements. | global.code-snippets"
+    },
+    "Bind": {
+        "prefix": "Bind",
+        "scope": "javascript, typescript",
+        "body": [
+            "bind(${eventType}, function (e) {",
+            "\t$0",
+            "});"
+        ],
+        "description": "attach a handler to an event for the elements. | global.code-snippets"
+    },
+    "BindWithData": {
+        "prefix": "BindWithData",
+        "scope": "javascript, typescript",
+        "body": [
+            "bind(${eventType}, ${eventData}, function (e) {",
+            "\t$0",
+            "});"
+        ],
+        "description": "attach a handler to an event for the elements. | global.code-snippets"
+    },
+    "Blur": {
+        "prefix": "Blur",
+        "scope": "javascript, typescript",
+        "body": [
+            "blur(function (e) { ",
+            "\te.preventDefault();",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"blur\" JavaScript event, or trigger that event on an element."
+    },
+    "Change": {
+        "prefix": "Change",
+        "scope": "javascript, typescript",
+        "body": [
+            "change(function (e) { ",
+            "\te.preventDefault();",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"change\" JavaScript event, or trigger that event on an element."
+    },
+    "ClassAdd": {
+        "prefix": "ClassAdd",
+        "scope": "javascript, typescript",
+        "body": [
+            "addClass(${className});"
+        ],
+        "description": "Adds the specified class(es) to each of the set of matched elements. | global.code-snippets"
+    },
+    "ClassRemove": {
+        "prefix": "ClassRemove",
+        "scope": "javascript, typescript",
+        "body": [
+            "removeClass(${className});"
+        ],
+        "description": "Remove a single class, multiple classes, or all classes from each element in the set of matched elements. | global.code-snippets"
+    },
+    "ClassToggle": {
+        "prefix": "ClassToggle",
+        "scope": "javascript, typescript",
+        "body": [
+            "toggleClass(${className});"
+        ],
+        "description": "Add or remove one or more classes from each element in the set of matched elements, depending on either the class\u0027s presence. | global.code-snippets"
+    },
+    "ClassToggleSwitch": {
+        "prefix": "ClassToggleSwitch",
+        "scope": "javascript, typescript",
+        "body": [
+            "toggleClass(${className}, ${switch});"
+        ],
+        "description": "Add or remove one or more classes from each element in the set of matched elements, depending on either the class\u0027s presence or the value of the switch argument. | global.code-snippets"
+    },
+    "Click": {
+        "prefix": "Click",
+        "scope": "javascript, typescript",
+        "body": [
+            "click(function (e) { ",
+            "\te.preventDefault();",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"click\" JavaScript event, or trigger that event on an element."
+    },
+    "Clone": {
+        "prefix": "Clone",
+        "scope": "javascript, typescript",
+        "body": [
+            "clone();"
+        ],
+        "description": "Create a deep copy of the set of matched elements. | global.code-snippets"
+    },
+    "CloneWithEvents": {
+        "prefix": "CloneWithEvents",
+        "scope": "javascript, typescript",
+        "body": [
+            "clone(true);"
+        ],
+        "description": "Create a deep copy of the set of matched elements. | global.code-snippets"
+    },
+    "CssGet": {
+        "prefix": "CssGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "css(${propertyName});"
+        ],
+        "description": "Get the computed style properties for the first element in the set of matched elements. | global.code-snippets"
+    },
+    "CssSet": {
+        "prefix": "CssSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "css(${propertyName}, ${value});"
+        ],
+        "description": "Set one or more CSS properties for the set of matched elements. | global.code-snippets"
+    },
+    "CssSetObj": {
+        "prefix": "CssSetObj",
+        "scope": "javascript, typescript",
+        "body": [
+            "css({",
+            "\t${propertyName}: ${value}",
+            "\t$0",
+            "});"
+        ],
+        "description": "Set one or more CSS properties for the set of matched elements. | global.code-snippets"
+    },
+    "DataGet": {
+        "prefix": "DataGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "data(${key});"
+        ],
+        "description": "Return the value at the named data store for the first element in the jQuery collection, as set by data(name, value) or by an HTML5 data-* attribute. | global.code-snippets"
+    },
+    "DataRemove": {
+        "prefix": "DataRemove",
+        "scope": "javascript, typescript",
+        "body": [
+            "removeData(${element});"
+        ],
+        "description": "Remove a previously-stored piece of data. | global.code-snippets"
+    },
+    "DataSet": {
+        "prefix": "DataSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "data(${key}, ${value});"
+        ],
+        "description": "Store arbitrary data associated with the matched elements. | global.code-snippets"
+    },
+    "DataSetObj": {
+        "prefix": "DataSetObj",
+        "scope": "javascript, typescript",
+        "body": [
+            "data({",
+            "\t${key}: ${value}",
+            "\t$0",
+            "});"
+        ],
+        "description": "Store arbitrary data associated with the matched elements. | global.code-snippets"
+    },
+    "Die": {
+        "prefix": "Die",
+        "scope": "javascript, typescript",
+        "body": [
+            "die(${eventType});"
+        ],
+        "description": "Remove event handlers previously attached using .live() from the elements. | global.code-snippets"
+    },
+    "DieAll": {
+        "prefix": "DieAll",
+        "scope": "javascript, typescript",
+        "body": [
+            "die();"
+        ],
+        "description": "Remove event handlers previously attached using .live() from the elements. | global.code-snippets"
+    },
+    "DieFn": {
+        "prefix": "DieFn",
+        "scope": "javascript, typescript",
+        "body": [
+            "die(${eventType}, ${handler});"
+        ],
+        "description": "Remove event handlers previously attached using .live() from the elements. | global.code-snippets"
+    },
+    "DocReady": {
+        "prefix": "DocReady",
+        "scope": "javascript, typescript",
+        "body": [
+            "$(document).ready(function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Function to execute when the DOM is fully loaded. | global.code-snippets"
+    },
+    "DocReadyShort": {
+        "prefix": "DocReadyShort",
+        "scope": "javascript, typescript",
+        "body": [
+            "$(function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Function to execute when the DOM is fully loaded. | global.code-snippets"
+    },
+    "Each": {
+        "prefix": "Each",
+        "scope": "javascript, typescript",
+        "body": [
+            "$.each(${collection}, function (indexInArray, valueOfElement) { ",
+            "\t$0 ",
+            "});"
+        ],
+        "description": "A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function\u0027s arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties. | global.code-snippets"
+    },
+    "EachElement": {
+        "prefix": "EachElement",
+        "scope": "javascript, typescript",
+        "body": [
+            "each(function (index, element) {",
+            "\t// element == this",
+            "\t$0",
+            "});"
+        ],
+        "description": "Iterate over a jQuery object, executing a function for each matched element.  | global.code-snippets"
+    },
+    "Empty": {
+        "prefix": "Empty",
+        "scope": "javascript, typescript",
+        "body": [
+            "empty();"
+        ],
+        "description": "Remove all child nodes of the set of matched elements from the DOM. | global.code-snippets"
+    },
+    "FadeIn": {
+        "prefix": "FadeIn",
+        "scope": "javascript, typescript",
+        "body": [
+            "fadeIn();"
+        ],
+        "description": "Display the matched elements by fading them to opaque. | global.code-snippets"
+    },
+    "FadeInFull": {
+        "prefix": "FadeInFull",
+        "scope": "javascript, typescript",
+        "body": [
+            "fadeIn(${duration}, function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Display the matched elements by fading them to opaque. | global.code-snippets"
+    },
+    "FadeOut": {
+        "prefix": "FadeOut",
+        "scope": "javascript, typescript",
+        "body": [
+            "fadeOut();"
+        ],
+        "description": "Hide the matched elements by fading them to transparent. | global.code-snippets"
+    },
+    "FadeOutFull": {
+        "prefix": "FadeOutFull",
+        "scope": "javascript, typescript",
+        "body": [
+            "fadeOut(${duration}, function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Hide the matched elements by fading them to transparent. | global.code-snippets"
+    },
+    "FadeTo": {
+        "prefix": "FadeTo",
+        "scope": "javascript, typescript",
+        "body": [
+            "fadeTo(${duration}, ${opacity});"
+        ],
+        "description": "Adjust the opacity of the matched elements. | global.code-snippets"
+    },
+    "FadeToFull": {
+        "prefix": "FadeToFull",
+        "scope": "javascript, typescript",
+        "body": [
+            "fadeTo(${duration}, ${opacity}, function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Adjust the opacity of the matched elements. | global.code-snippets"
+    },
+    "Find": {
+        "prefix": "Find",
+        "scope": "javascript, typescript",
+        "body": [
+            "find(${selector2});"
+        ],
+        "description": "Get the descendants of each element in the current set of matched elements, filtered by a selector, jQuery object, or element. | global.code-snippets"
+    },
+    "Focus": {
+        "prefix": "Focus",
+        "scope": "javascript, typescript",
+        "body": [
+            "focus(function (e) { ",
+            "\te.preventDefault();",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"focus\" JavaScript event, or trigger that event on an element."
+    },
+    "Get": {
+        "prefix": "Get",
+        "scope": "javascript, typescript",
+        "body": [
+            "$.get(\"${url}\", ${data},",
+            "\tfunction (data, textStatus, jqXHR) {",
+            "\t\t$0",
+            "\t},",
+            "\t\"${dataType}\"",
+            ");"
+        ],
+        "description": "Load data from the server using a HTTP GET request. | global.code-snippets"
+    },
+    "GetJson": {
+        "prefix": "GetJson",
+        "scope": "javascript, typescript",
+        "body": [
+            "$.getJSON(\"${url}\", ${data},",
+            "\tfunction (data, textStatus, jqXHR) {",
+            "\t\t$0",
+            "\t}",
+            ");"
+        ],
+        "description": "Load JSON-encoded data from the server using a GET HTTP request. | global.code-snippets"
+    },
+    "GetScript": {
+        "prefix": "GetScript",
+        "scope": "javascript, typescript",
+        "body": [
+            "$.getScript(\"${url}\", function (script, textStatus, jqXHR) {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Load a JavaScript file from the server using a GET HTTP request, then execute it. | global.code-snippets"
+    },
+    "HasClass": {
+        "prefix": "HasClass",
+        "scope": "javascript, typescript",
+        "body": [
+            "hasClass(${className});"
+        ],
+        "description": "Determine whether any of the matched elements are assigned the given class. | global.code-snippets"
+    },
+    "HeightGet": {
+        "prefix": "HeightGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "height();"
+        ],
+        "description": "Get the current computed height for the first element in the set of matched elements. | global.code-snippets"
+    },
+    "HeightSet": {
+        "prefix": "HeightSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "height(${value});"
+        ],
+        "description": "Set the CSS height of every matched element. | global.code-snippets"
+    },
+    "Hide": {
+        "prefix": "Hide",
+        "scope": "javascript, typescript",
+        "body": [
+            "hide();"
+        ],
+        "description": "Hide the matched elements. | global.code-snippets"
+    },
+    "HideFull": {
+        "prefix": "HideFull",
+        "scope": "javascript, typescript",
+        "body": [
+            "hide(${duration}, function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Hide the matched elements. | global.code-snippets"
+    },
+    "Hover": {
+        "prefix": "Hover",
+        "scope": "javascript, typescript",
+        "body": [
+            "hover(function () {",
+            "\t\t// over",
+            "\t\t$0",
+            "\t}, function () {",
+            "\t\t// out",
+            "\t}",
+            ");"
+        ],
+        "description": "Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements. | global.code-snippets"
+    },
+    "HtmlGet": {
+        "prefix": "HtmlGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "html();"
+        ],
+        "description": "Get the HTML contents of the first element in the set of matched elements. | global.code-snippets"
+    },
+    "HtmlSet": {
+        "prefix": "HtmlSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "html(${htmlString});"
+        ],
+        "description": "Set the HTML contents of each element in the set of matched elements. | global.code-snippets"
+    },
+    "InnerHeight": {
+        "prefix": "InnerHeight",
+        "scope": "javascript, typescript",
+        "body": [
+            "innerHeight();"
+        ],
+        "description": "Get the current computed height for the first element in the set of matched elements, including padding but not border. | global.code-snippets"
+    },
+    "InnerWidth": {
+        "prefix": "InnerWidth",
+        "scope": "javascript, typescript",
+        "body": [
+            "innerWidth();"
+        ],
+        "description": "Get the current computed inner width for the first element in the set of matched elements, including padding but not border. | global.code-snippets"
+    },
+    "InsertAfter": {
+        "prefix": "InsertAfter",
+        "scope": "javascript, typescript",
+        "body": [
+            "$(${target}).insertAfter(${selector});"
+        ],
+        "description": "Insert every element in the set of matched elements after the target. | global.code-snippets"
+    },
+    "jqInsertBefore": {
+        "prefix": "jqInsertBefore",
+        "scope": "javascript, typescript",
+        "body": [
+            "$(${target}).insertBefore(${selector});"
+        ],
+        "description": "Insert every element in the set of matched elements before the target. | global.code-snippets"
+    },
+    "jqKeyDown": {
+        "prefix": "jqKeyDown",
+        "scope": "javascript, typescript",
+        "body": [
+            "keydown(function (e) { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"keydown\" JavaScript event, or trigger that event on an element."
+    },
+    "KeyPress": {
+        "prefix": "KeyPress",
+        "scope": "javascript, typescript",
+        "body": [
+            "keypress(function (e) { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"keypress\" JavaScript event, or trigger that event on an element."
+    },
+    "KeyUp": {
+        "prefix": "KeyUp",
+        "scope": "javascript, typescript",
+        "body": [
+            "keyup(function (e) { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"keyup\" JavaScript event, or trigger that event on an element."
+    },
+    "LoadGet": {
+        "prefix": "LoadGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "load(\"${url}\", \"${data}\", function (response, status, request) {",
+            "\tthis; // dom element",
+            "\t$0",
+            "});"
+        ],
+        "description": "Load data from the server and place the returned HTML into the matched element. | global.code-snippets"
+    },
+    "LoadPost": {
+        "prefix": "LoadPost",
+        "scope": "javascript, typescript",
+        "body": [
+            "load(\"${url}\", \"${data}\", function (response, status, request) {",
+            "\tthis; // dom element",
+            "\t$0",
+            "});"
+        ],
+        "description": "Load data from the server and place the returned HTML into the matched element. | global.code-snippets"
+    },
+    "Map": {
+        "prefix": "Map",
+        "scope": "javascript, typescript",
+        "body": [
+            "$.map(${arrayOrObject}, function (elementOrValue, indexOrKey) {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Translate all items in an array or object to new array of items. | global.code-snippets"
+    },
+    "MouseDown": {
+        "prefix": "MouseDown",
+        "scope": "javascript, typescript",
+        "body": [
+            "mousedown(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"mousedown\" JavaScript event, or trigger that event on an element. | global.code-snippets"
+    },
+    "MouseEnter": {
+        "prefix": "MouseEnter",
+        "scope": "javascript, typescript",
+        "body": [
+            "mouseenter(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element. | global.code-snippets"
+    },
+    "MouseLeave": {
+        "prefix": "MouseLeave",
+        "scope": "javascript, typescript",
+        "body": [
+            "mouseleave(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element. | global.code-snippets"
+    },
+    "MouseMove": {
+        "prefix": "MouseMove",
+        "scope": "javascript, typescript",
+        "body": [
+            "mousemove(function (e) { ",
+            "\t// values: e.clientX, e.clientY, e.pageX, e.pageY",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"mousemove\" JavaScript event, or trigger that event on an element.  | global.code-snippets"
+    },
+    "MouseOut": {
+        "prefix": "MouseOut",
+        "scope": "javascript, typescript",
+        "body": [
+            "mouseout(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"mouseout\" JavaScript event, or trigger that event on an element.  | global.code-snippets"
+    },
+    "MouseOver": {
+        "prefix": "MouseOver",
+        "scope": "javascript, typescript",
+        "body": [
+            "mouseover(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"mouseover\" JavaScript event, or trigger that event on an element.  | global.code-snippets"
+    },
+    "MouseUp": {
+        "prefix": "MouseUp",
+        "scope": "javascript, typescript",
+        "body": [
+            "mouseup(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"mouseup\" JavaScript event, or trigger that event on an element.  | global.code-snippets"
+    },
+    "Namespace": {
+        "prefix": "Namespace",
+        "scope": "javascript, typescript",
+        "body": [
+            "(function ( ${name}, $, undefined ) {",
+            "\t// Private Property",
+            "\tmyPrivateProperty = \"Private Property\";",
+            "\t\t",
+            "\t// Public Property",
+            "\t${name}.myPublicProperty = \"Publically Accessible Property\";",
+            "\t\t",
+            "\t// Private Method",
+            "\tfunction myPrivateMethod () {",
+            "\t\t",
+            "\t}",
+            "\t\t",
+            "\t// Public Method",
+            "\t${name}.myPublicMethod = function () {",
+            "\t\t",
+            "\t};  ",
+            "}(window.${name} = window.${name} || {}, jQuery ));"
+        ],
+        "description": "A namespace template. ref: http://enterprisejquery.com/2010/10/how-good-c-habits-can-encourage-bad-javascript-habits-part-1/ | global.code-snippets"
+    },
+    "OffsetGet": {
+        "prefix": "OffsetGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "var offset = offset();",
+            "var top = offset.top;",
+            "var left = offset.left;",
+            "$0"
+        ],
+        "description": "Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document. | global.code-snippets"
+    },
+    "OffsetParent": {
+        "prefix": "OffsetParent",
+        "scope": "javascript, typescript",
+        "body": [
+            "var offset = offsetParent();",
+            "var top = offset.top;",
+            "var left = offset.left;",
+            "$0"
+        ],
+        "description": "Get the closest ancestor element that is positioned. | global.code-snippets"
+    },
+    "On": {
+        "prefix": "On",
+        "scope": "javascript, typescript",
+        "body": [
+            "on(${1:click}, ${2:selector,}function (${3:event}) {",
+            "\t${3:event}.preventDefault();",
+            "\t$0",
+            "});"
+        ],
+        "description": "attach an event handler function for one or more events to the selected elements. | global.code-snippets"
+    },
+    "One": {
+        "prefix": "One",
+        "scope": "javascript, typescript",
+        "body": [
+            "one(${1:click}, ${2:selector,}function (${3:event}) {",
+            "\t${3:event}.preventDefault();",
+            "\t$0",
+            "});"
+        ],
+        "description": "attach a handler to an event for the elements. The handler is executed at most once per element per event type. | global.code-snippets"
+    },
+    "OneWithData": {
+        "prefix": "OneWithData",
+        "scope": "javascript, typescript",
+        "body": [
+            "one(${events}, ${data}, function (e) {",
+            "\t$0",
+            "});"
+        ],
+        "description": "attach a handler to an event for the elements. The handler is executed at most once per element per event type. | global.code-snippets"
+    },
+    "OuterHeight": {
+        "prefix": "OuterHeight",
+        "scope": "javascript, typescript",
+        "body": [
+            "outerHeight(${includeMargin});"
+        ],
+        "description": "Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin. Returns a number (without \"px\") representation of the value or null if called on an empty set of elements.  | global.code-snippets"
+    },
+    "OuterWidth": {
+        "prefix": "OuterWidth",
+        "scope": "javascript, typescript",
+        "body": [
+            "outerWidth(${includeMargin});"
+        ],
+        "description": "Get the current computed width for the first element in the set of matched elements, including padding and border. | global.code-snippets"
+    },
+    "jqPlugin": {
+        "prefix": "jqPlugin",
+        "scope": "javascript, typescript",
+        "body": [
+            "(function ($) {",
+            "\tjQuery.fn.${pluginName} = function (settings) {",
+            "\t\tvar config = {\u0027foo\u0027: \u0027bar\u0027};",
+            " ",
+            "\t\tif (settings) jQuery.extend(config, settings);",
+            " ",
+            "\t\tthis.each(function () {",
+            "\t\t\t// element-specific code here",
+            "\t\t\t$0",
+            "\t\t});",
+            " ",
+            "\t\treturn this;",
+            "\t};",
+            "})(jQuery);"
+        ],
+        "description": "Plugin template. | global.code-snippets"
+    },
+    "jqPosition": {
+        "prefix": "jqPosition",
+        "scope": "javascript, typescript",
+        "body": [
+            "var position = position();",
+            "var top = position.top;",
+            "var left = position.left;",
+            "$0"
+        ],
+        "description": "Get the current coordinates of the first element in the set of matched elements, relative to the offset parent. | global.code-snippets"
+    },
+    "jqPost": {
+        "prefix": "jqPost",
+        "scope": "javascript, typescript",
+        "body": [
+            "$.post(\"${url}\", ${data},",
+            "\tfunction (data, textStatus, jqXHR) {",
+            "\t\t$0",
+            "\t},",
+            "\t\"${dataType}\"",
+            ");"
+        ],
+        "description": "Load data from the server using a HTTP POST request. | global.code-snippets"
+    },
+    "Prepend": {
+        "prefix": "Prepend",
+        "scope": "javascript, typescript",
+        "body": [
+            "prepend(${content});"
+        ],
+        "description": "Insert content, specified by the parameter, to the beginning of each element in the set of matched elements. | global.code-snippets"
+    },
+    "PrependTo": {
+        "prefix": "jqPrependTo",
+        "scope": "javascript, typescript",
+        "body": [
+            "prependTo(${selector});"
+        ],
+        "description": "Insert every element in the set of matched elements to the beginning of the target. | global.code-snippets"
+    },
+    "Remove": {
+        "prefix": "Remove",
+        "scope": "javascript, typescript",
+        "body": [
+            "remove();"
+        ],
+        "description": "Remove the set of matched elements from the DOM. | global.code-snippets"
+    },
+    "RemoveExp": {
+        "prefix": "RemoveExp",
+        "scope": "javascript, typescript",
+        "body": [
+            "remove(${expression});"
+        ],
+        "description": "Remove the set of matched elements from the DOM. | global.code-snippets"
+    },
+    "ReplaceAll": {
+        "prefix": "ReplaceAll",
+        "scope": "javascript, typescript",
+        "body": [
+            "replaceAll(${target});"
+        ],
+        "description": "Replace each target element with the set of matched elements. | global.code-snippets"
+    },
+    "ReplaceWith": {
+        "prefix": "ReplaceWith",
+        "scope": "javascript, typescript",
+        "body": [
+            "replaceWith(${newContent});"
+        ],
+        "description": "Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed. | global.code-snippets"
+    },
+    "Resize": {
+        "prefix": "Resize",
+        "scope": "javascript, typescript",
+        "body": [
+            "resize(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"resize\" JavaScript event, or trigger that event on an element.  | global.code-snippets"
+    },
+    "Scroll": {
+        "prefix": "Scroll",
+        "scope": "javascript, typescript",
+        "body": [
+            "scroll(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"scroll\" JavaScript event, or trigger that event on an element.  | global.code-snippets"
+    },
+    "ScrollLeftGet": {
+        "prefix": "ScrollLeftGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "scrollLeft();"
+        ],
+        "description": "Get the current horizontal position of the scroll bar for the first element in the set of matched elements. | global.code-snippets"
+    },
+    "ScrollLeftSet": {
+        "prefix": "ScrollLeftSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "scrollLeft(${value});"
+        ],
+        "description": "Set the current horizontal position of the scroll bar for each of the set of matched elements. | global.code-snippets"
+    },
+    "ScrollTopGet": {
+        "prefix": "ScrollTopGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "scrollTop();"
+        ],
+        "description": "Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element. | global.code-snippets"
+    },
+    "ScrollTopSet": {
+        "prefix": "ScrollTopSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "scrollTop(${value});"
+        ],
+        "description": "Set the current vertical position of the scroll bar for each of the set of matched elements. | global.code-snippets"
+    },
+    "Select": {
+        "prefix": "Select",
+        "scope": "javascript, typescript",
+        "body": [
+            "select(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"select\" JavaScript event, or trigger that event on an element. | global.code-snippets"
+    },
+    "SelectTrigger": {
+        "prefix": "SelectTrigger",
+        "scope": "javascript, typescript",
+        "body": [
+            "select();"
+        ],
+        "description": "Bind an event handler to the \"select\" JavaScript event, or trigger that event on an element. | global.code-snippets"
+    },
+    "Show": {
+        "prefix": "Show",
+        "scope": "javascript, typescript",
+        "body": [
+            "show();"
+        ],
+        "description": "Display the matched elements. | global.code-snippets"
+    },
+    "ShowFull": {
+        "prefix": "ShowFull",
+        "scope": "javascript, typescript",
+        "body": [
+            "show(${duration}, function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Display the matched elements. | global.code-snippets"
+    },
+    "SlideDown": {
+        "prefix": "SlideDown",
+        "scope": "javascript, typescript",
+        "body": [
+            "slideDown();"
+        ],
+        "description": "Display the matched elements with a sliding motion. | global.code-snippets"
+    },
+    "SlideDownFull": {
+        "prefix": "SlideDownFull",
+        "scope": "javascript, typescript",
+        "body": [
+            "slideDown(${duration}, function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Display the matched elements with a sliding motion. | global.code-snippets"
+    },
+    "SlideToggle": {
+        "prefix": "SlideToggle",
+        "scope": "javascript, typescript",
+        "body": [
+            "slideToggle();"
+        ],
+        "description": "Display or hide the matched elements with a sliding motion. | global.code-snippets"
+    },
+    "SlideToggleFull": {
+        "prefix": "SlideToggleFull",
+        "scope": "javascript, typescript",
+        "body": [
+            "slideToggle(${duration}, function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Display or hide the matched elements with a sliding motion. | global.code-snippets"
+    },
+    "SlideUp": {
+        "prefix": "SlideUp",
+        "scope": "javascript, typescript",
+        "body": [
+            "slideUp();"
+        ],
+        "description": "Display the matched elements with a sliding motion. | global.code-snippets"
+    },
+    "SlideUpFull": {
+        "prefix": "SlideUpFull",
+        "scope": "javascript, typescript",
+        "body": [
+            "slideUp(${duration}, function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Display the matched elements with a sliding motion. | global.code-snippets"
+    },
+    "Submit": {
+        "prefix": "Submit",
+        "scope": "javascript, typescript",
+        "body": [
+            "submit(function (e) { ",
+            "\te.preventDefault();",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"submit\" JavaScript event, or trigger that event on an element.  | global.code-snippets"
+    },
+    "SubmitTrigger": {
+        "prefix": "SubmitTrigger",
+        "scope": "javascript, typescript",
+        "body": [
+            "submit();"
+        ],
+        "description": "Bind an event handler to the \"submit\" JavaScript event, or trigger that event on an element.  | global.code-snippets"
+    },
+    "TextGet": {
+        "prefix": "TextGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "text();"
+        ],
+        "description": "Get the combined text contents of each element in the set of matched elements, including their descendants. | global.code-snippets"
+    },
+    "TextSet": {
+        "prefix": "TextSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "text(${textString});"
+        ],
+        "description": "Set the content of each element in the set of matched elements to the specified text. | global.code-snippets"
+    },
+    "Toggle": {
+        "prefix": "Toggle",
+        "scope": "javascript, typescript",
+        "body": [
+            "toggle();"
+        ],
+        "description": "Display or hide the matched elements. | global.code-snippets"
+    },
+    "ToggleFull": {
+        "prefix": "ToggleFull",
+        "scope": "javascript, typescript",
+        "body": [
+            "toggle(${duration}, function () {",
+            "\t$0",
+            "});"
+        ],
+        "description": "Display or hide the matched elements. | global.code-snippets"
+    },
+    "ToggleSwitch": {
+        "prefix": "ToggleSwitch",
+        "scope": "javascript, typescript",
+        "body": [
+            "toggle(${showOrHide});"
+        ],
+        "description": "Display or hide the matched elements. | global.code-snippets"
+    },
+    "Trigger": {
+        "prefix": "Trigger",
+        "scope": "javascript, typescript",
+        "body": [
+            "trigger(${eventType});"
+        ],
+        "description": "Execute all handlers and behaviors attached to the matched elements for the given event type. | global.code-snippets"
+    },
+    "TriggerHandler": {
+        "prefix": "TriggerHandler",
+        "scope": "javascript, typescript",
+        "body": [
+            "triggerHandler(${eventType});"
+        ],
+        "description": "Execute all handlers attached to an element for an event. | global.code-snippets"
+    },
+    "TriggerHandlerWithData": {
+        "prefix": "TriggerHandlerWithData",
+        "scope": "javascript, typescript",
+        "body": [
+            "triggerHandler(${eventType}, { ${name}: ${value} });"
+        ],
+        "description": "Execute all handlers attached to an element for an event. | global.code-snippets"
+    },
+    "TriggerWithData": {
+        "prefix": "TriggerWithData",
+        "scope": "javascript, typescript",
+        "body": [
+            "trigger(${eventType}, { ${name}: ${value} });"
+        ],
+        "description": "Execute all handlers and behaviors attached to the matched elements for the given event type. | global.code-snippets"
+    },
+    "Unbind": {
+        "prefix": "Unbind",
+        "scope": "javascript, typescript",
+        "body": [
+            "unbind(${eventType});"
+        ],
+        "description": "Remove a previously-attached event handler from the elements. | global.code-snippets"
+    },
+    "UnbindAll": {
+        "prefix": "UnbindAll",
+        "scope": "javascript, typescript",
+        "body": [
+            "unbind();"
+        ],
+        "description": "Remove a previously-attached event handler from the elements. | global.code-snippets"
+    },
+    "Unload": {
+        "prefix": "Unload",
+        "scope": "javascript, typescript",
+        "body": [
+            "unload(function () { ",
+            "\t$0",
+            "});"
+        ],
+        "description": "Bind an event handler to the \"unload\" JavaScript event.  | global.code-snippets"
+    },
+    "ValGet": {
+        "prefix": "ValGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "val();"
+        ],
+        "description": "Get the current value of the first element in the set of matched elements. | global.code-snippets"
+    },
+    "ValSet": {
+        "prefix": "ValSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "val(${value});"
+        ],
+        "description": "Set the value of each element in the set of matched elements. | global.code-snippets"
+    },
+    "WidthGet": {
+        "prefix": "WidthGet",
+        "scope": "javascript, typescript",
+        "body": [
+            "width();"
+        ],
+        "description": "Get the current computed width for the first element in the set of matched elements. | global.code-snippets"
+    },
+    "WidthSet": {
+        "prefix": "WidthSet",
+        "scope": "javascript, typescript",
+        "body": [
+            "width(${value});"
+        ],
+        "description": "Set the CSS width of each element in the set of matched elements. | global.code-snippets"
+    },
+    "Wrap": {
+        "prefix": "Wrap",
+        "scope": "javascript, typescript",
+        "body": [
+            "wrap(\"\u003c${wrappingElement}\u003e\u003c/${wrappingElement}\u003e\");"
+        ],
+        "description": "Wrap an HTML structure around each element in the set of matched elements. | global.code-snippets"
+    },
+    "WrapAll": {
+        "prefix": "WrapAll",
+        "scope": "javascript, typescript",
+        "body": [
+            "wrapAll(\"\u003c${wrappingElement}\u003e\u003c/${wrappingElement}\u003e\");"
+        ],
+        "description": "Wrap an HTML structure around all elements in the set of matched elements. | global.code-snippets"
+    },
+    "WrapInner": {
+        "prefix": "WrapInner",
+        "scope": "javascript, typescript",
+        "body": [
+            "wrapInner(\"\u003c${wrappingElement}\u003e\u003c/${wrappingElement}\u003e\");"
+        ],
+        "description": "Wrap an HTML structure around the content of each element in the set of matched elements. | global.code-snippets"
+    },
+
+    /* VUEHTML  */
+    "RouteLinkToName": {
+        "prefix": "RouterLinkToName",
+        "scope": "vue-html",
+        "body": [
+            "<router-link :to=\"{name: '$1'}\">$2</router-link>",
+        ],
+        "description": "<router-link :to=\"{name: 'home'}\">home</router-link>  | global.code-snippets"
+    },
+    "Authorization": {
+        "prefix": "authorization",
+        "scope": "javascript, typescript, vue, vue-html",
+        "body": [
+            "Authorization"
+        ],
+        "description": "Authorization | global.code-snippets"
+    },
+    "laravel_hasOne": {
+        "prefix": "hasOne_laravel",
+        "scope": "php",
+        "body": [
+            "hasOne(\"${1:class}\", \"foreign_key\", \"local_key\")"
+        ],
+        "description": "laravel_hasOne | global.code-snippets"
+    },
+    "JS-this": {
+        "prefix": "this",
+        "scope": "javascript,typescript",
+        "body": [
+            "this.$1"
+        ],
+        "description": "JS-this | global.code-snippets"
+    },
+
+    "cdn_images": {
+        "prefix": "cdn_images",
+        "scope": "typescript, javascript, html, xml, vue, php, vue-html, blade",
+        "body": [
+            "http://placehold.it/${width}x${height}/${333}&text=Image$0"
+        ],
+        "description": "cdn_images | global.code-snippets"
+    },
+    "laravel_collection_transform": {
+        "prefix": "collcection_transform",
+        "scope": "php",
+        "body": [
+            "collection->transform(function ($item) {",
+            "    return [",
+            "            'id' => $item->id,",
+            "            'title' => $item->title,",
+            "            'created_at' => $item->created_at,",
+            "    ];",
+            "}),",
+        ],
+        "description": "laravel_collection_transform | global.code-snippets"
+    },
+    "laravel_passport_token_delete": {
+        "prefix": "token_delete_laravel",
+        "scope": "php",
+        "body": [
+            "auth()->user()->tokens->each(function(\\$token, \\$key){ ",
+            "  \\$token->delete();",
+            "});"
+        ],
+        "description": "laravel_passport_token_delete | global.code-snippets"
+    },
+    "composer-autoload": {
+        "prefix": "composer-autoload",
+        "body": [
+            "\"autoload\": {",
+            "    \"psr-4\": {",
+            "        \"Inc\\\\\": \"./${0:path}\"",
+            "    }",
+            "}",
+        ],
+        "description": "composer-autoload | global.code-snippets"
+    },
+    "<?= $1 ?>":{
+      "prefix": "php-echo",
+      "body": "<?= $1 ?>",
+      "description": "<?= TEXT ?> | global.code-snippets",
+      "scope": "html,twig,blade,php"
+    },
+}

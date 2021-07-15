@@ -1,0 +1,3567 @@
+{
+    "Promise-demo":{
+      "prefix": "Promise-demo",
+      "body": [
+           "return new Promise((resolve, reject) => {}"
+      ],
+      "description": ""
+    },
+    "is-dark-mode":{
+      "prefix": "is-dark-mode",
+      "body": "if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {\r\n    alert('dark')\r\n} else { \r\n    alert('light') \r\n}",
+      "description": "Handle dark mode"
+    },
+    "helpers-create-file-from-url":{
+      "prefix": "helpers-create-file-from-url",
+      "body": [
+        "createFileFromUrl = urlFile => {\r\n  return new Promise((resolve, reject) => {\r\n    fetch(urlFile)\r\n      .then(res => res.blob())\r\n      .then(blob => {\r\n        const format = blob.type.replace('image/', '')\r\n        const file = new File([blob], (new Date()).getTime() + '.' + format, blob)\r\n        const reader = new FileReader()\r\n        reader.readAsDataURL(blob)\r\n        reader.onloadend = () => {\r\n          const base64 = reader.result.replace(/data:image\\/\\w+;base64,/g, '')\r\n          resolve({\r\n            format,\r\n            file,\r\n            blob,\r\n            base64\r\n          })\r\n        }\r\n      })\r\n  })\r\n}"
+      ],
+      "description": "helpers"
+    },
+    "document-ready":{
+      "prefix": "document-ready",
+      "body": [
+        "document.addEventListener(\"DOMContentLoaded\", function() {",
+            "\t$1",
+        "});"
+      ],
+      "description": ""
+    },
+    "deviceready":{
+      "prefix": "deviceready",
+      "body": "document.addEventListener('deviceready', () => {\r\n  $1\r\n})",
+      "description": "addEventListener deviceready"
+    },
+    "handsontable-renderer-arguments": {
+        "prefix": "handsontable-renderer-arguments",
+        "body": [
+            "instance, td, row, col, prop, value, cellProperties"
+        ],
+        "description": "arguments in function renderer for columns"
+    },
+    "jquery-graphql": {
+        "prefix": "jquery-graphql",
+        "body": [
+            "jQuery.ajax({\r\n  method: \"POST\",\r\n  url: \"http://wordpress-bedrock.test/wp/index.php?graphql\",\r\n  contentType: \"application/json\",\r\n  data: JSON.stringify({\r\n    query: `${1:query}`,\r\n  })\r\n })"
+        ],
+        "description": "graphql demo query"
+    },
+    "fun": {
+        "prefix": "fun",
+        "body": [
+            "function $1() {",
+            "\t$2",
+            "}"
+        ],
+    },
+    "webpack-config-js": {
+        "prefix": "webpack-config-js",
+        "body": "const path = require('path');\n  const {\n    CleanWebpackPlugin\n  } = require('clean-webpack-plugin');\n\n  module.exports = {\n    mode: 'development',\n    entry: {\n      app: './assets/js/app.js'\n    },\n    module: {\n      rules: [\n        { test: /\\.css$/, use: 'css-loader' },\n      ]\n    },\n    plugins: [\n      new CleanWebpackPlugin()\n    ],\n    output: {\n      filename: '[name].js',\n      path: path.resolve(__dirname, 'dist')\n    },\n    resolve: { alias: { vue: 'vue/dist/vue.esm.js' } }\n  };",
+        "description": "template webpack"
+    },
+    "then": {
+        "prefix": "then",
+        "body": [
+            ".then(() => {\r\n  $1\r\n})"
+        ],
+        "description": "then"
+    },
+    "findNode": {
+        "prefix": "findNode",
+        "body": [
+            "findNode(id, currentNode) {\r\n    let i,\r\n        currentChild,\r\n        result;\r\n\r\n    if (id == currentNode.id) {\r\n        return currentNode;\r\n    } else {\r\n\r\n        // Use a for loop instead of forEach to avoid nested functions\r\n        // Otherwise \"return\" will not work properly\r\n        for (i = 0; i < currentNode.children.length; i += 1) {\r\n            currentChild = currentNode.children[i];\r\n\r\n            // Search in the current child\r\n            result = findNode(id, currentChild);\r\n\r\n            // Return the result if the node has been found\r\n            if (result !== false) {\r\n                return result;\r\n            }\r\n        }\r\n\r\n        // The node has not been found and we have no more options\r\n        return false;\r\n    }\r\n},"
+        ],
+        "description": "JS"
+    },
+    "log": {
+        "prefix": "log",
+        "body": [
+            "console.log($1)"
+        ],
+        "description": "console.log()"
+    },
+    "export_default": {
+        "prefix": "export_default",
+        "body": [
+            "export default $1"
+        ],
+        "description": "export default $1"
+    },
+    "function_es6": {
+        "prefix": "function_es6",
+        "body": [
+            "() => {$1}"
+        ],
+        "description": "() => {}"
+    },
+    "resolve-require": {
+        "prefix": "resolve-require",
+        "body": [
+            "const $2 =  resolve => require(['$1'], resolve)"
+        ],
+        "description": "resolve-require"
+    },
+    "js_keyup_search": {
+        "prefix": "js_keyup_search",
+        "body": [
+            "jQuery(function () {\r\n        jQuery('input[name=\"s\"]').keyup(function(e) {\r\n            clearTimeout(jQuery.data(this, 'timer'));\r\n            jQuery(this).data('timer', setTimeout(search, 500));\r\n        });\r\n\r\n        function toggleReload(addClass, removeClass){\r\n            var reload = jQuery('form.app-search').find('i.fa');\r\n            if(reload.hasClass(removeClass)){\r\n                reload.removeClass(removeClass);\r\n                reload.addClass(addClass);\r\n            }\r\n        }\r\n        function search() {\r\n            var value = jQuery('input[name=\"s\"]').val();\r\n            var searchResults = jQuery('#search-result');\r\n            if (value.length < 3) {\r\n                return searchResults.html('')\r\n            };\r\n            toggleReload('fa-refresh','fa-close');\r\n            jQuery.post('{{  admin_url('admin-ajax.php') }}',\r\n                {\r\n                    action : 'get_ajax_posts',\r\n                    keyword:value\r\n                }\r\n            ).done(function(data){\r\n                toggleReload('fa-close','fa-refresh');\r\n                if(value && data){\r\n                    searchResults.html(data)\r\n                }\r\n                else\r\n                    searchResults.html('{{ __( 'No Results Found', 'vue_theme' ) }}')\r\n            });\r\n        }\r\n    })"
+        ],
+        "description": "JS"
+    },
+    "clg-js": {
+        "prefix": "clg-js",
+        "body": [
+            "console.log($1)"
+        ],
+        "description": "js"
+    },
+    "getElementById": {
+        "prefix": "getElementById",
+        "body": [
+            "getElementById(\"$1\")"
+        ],
+        "description": "js",
+    },
+    "getElementsByClassName": {
+        "prefix": "getElementsByClassName",
+        "body": [
+            "getElementsByClassName(\"$1\")"
+        ],
+        "description": "js",
+    },
+    "getElementsByTagName": {
+        "prefix": "getElementsByTagName",
+        "body": [
+            "getElementsByTagName(\"$1\")"
+        ],
+        "description": "js",
+    },
+    "getElementsByTagNameNS": {
+        "prefix": "getElementsByTagNameNS",
+        "body": [
+            "getElementsByTagNameNS(\"$1\")"
+        ],
+        "description": "js",
+    },
+    "querySelectorAll": {
+        "prefix": "querySelectorAll",
+        "body": [
+            "querySelectorAll(\"$1\")"
+        ],
+        "description": "js",
+    },
+    "getElementsByName": {
+        "prefix": "getElementsByName",
+        "body": [
+            "getElementsByName(\"$1\")"
+        ],
+    },
+    "forEach": {
+        "prefix": "forEach",
+        "body": [
+            "forEach( ${1:(item, index)} =>{",
+            "\t$2",
+            "})"
+        ],
+        "description": "js",
+    },
+    "helper_input_currency": {
+        "prefix": "helper_input_currency",
+        "body": [
+            // Jquery Dependency
+            "$(\"input[data-type='currency']\").on({\n              keyup: function() {\n                formatCurrency($(this));\n              },\n              blur: function() { \n                formatCurrency($(this), \"blur\");\n              }\n          });\n\n\n          function formatNumber(n) {\n            // format number 1000000 to 1,234,567\n            return n.replace(/\\D/g, \"\").replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\")\n          }\n\n\n          function formatCurrency(input, blur) {\n            // appends $ to value, validates decimal side\n            // and puts cursor back in right position.\n            \n            // get input value\n            var input_val = input.val();\n            \n            // don't validate empty input\n            if (input_val === \"\") { return; }\n            \n            // original length\n            var original_len = input_val.length;\n\n            // initial caret position \n            var caret_pos = input.prop(\"selectionStart\");\n              \n            // check for decimal\n            if (input_val.indexOf(\".\") >= 0) {\n\n              // get position of first decimal\n              // this prevents multiple decimals from\n              // being entered\n              var decimal_pos = input_val.indexOf(\".\");\n\n              // split number by decimal point\n              var left_side = input_val.substring(0, decimal_pos);\n              var right_side = input_val.substring(decimal_pos);\n\n              // add commas to left side of number\n              left_side = formatNumber(left_side);\n\n              // validate right side\n              right_side = formatNumber(right_side);\n              \n              // On blur make sure 2 numbers after decimal\n              if (blur === \"blur\") {\n                right_side += \"00\";\n              }\n              \n              // Limit decimal to only 2 digits\n              right_side = right_side.substring(0, 2);\n\n              // join number by .\n              input_val = left_side + \".\" + right_side;\n\n            } else {\n              // no decimal entered\n              // add commas to number\n              // remove all non-digits\n              input_val = formatNumber(input_val);\n              input_val = input_val;\n              \n              // final formatting\n              if (blur === \"blur\") {\n                input_val += \".00\";\n              }\n            }\n            \n            // send updated string to input\n            input.val(input_val);\n\n            // put caret back in the right position\n            var updated_len = input_val.length;\n            caret_pos = updated_len - original_len + caret_pos;\n            input[0].setSelectionRange(caret_pos, caret_pos);\n          }\n"
+        ],
+        "description": ""
+    },
+    // axios
+    "axios-header": {
+        "prefix": "axios-header",
+        "body": [
+            "axios.defaults.headers.common = {",
+            "\t'Authorization': `Bearer \\${token}`,",
+            "}",
+        ],
+        "description": "axios configs header default"
+    },
+    "axios": {
+        "prefix": "axios",
+        "body": [
+            "axios({",
+            "\turl: $1,",
+            "\tmethod: $2,",
+            "\theaders: $3,",
+            "\tdata: $4,",
+            "})",
+            ".then(${5:callback})"
+        ],
+        "description": ""
+    },
+    "axios-post": {
+        "prefix": "axios-post",
+        "body": [
+            "axios.post('${1:url}', data, ${2:configs})"
+        ],
+        "description": "axios"
+    },
+    /* ---------------------------------------------------- */
+    "js-return": {
+        "prefix": "rt",
+        "body": [
+            "return $1;"
+        ],
+        "description": "js-return"
+    },
+    "require": {
+        "prefix": "req",
+        "body": [
+            "require('$1')${2:.default}$0"
+        ],
+        "description": "require"
+    },
+    "resolve-require2": {
+        "prefix": "resolve-require",
+        "body": [
+            "const $2 =  resolve => require(['${1:path}'], resolve)"
+        ],
+        "description": "resolve-require"
+    },
+    "import-resoleve": {
+        "prefix": "import-resolve",
+        "body": [
+            "() => import($1)"
+        ],
+        "description": "import-resoleve"
+    },
+    "onUploadPgrogress": {
+        "prefix": "js-onUploadPgrogress",
+        "body": [
+            "onUploadProgress: (progressEvent) => {",
+            "            const totalLength = progressEvent.lengthComputable ? progressEvent.total : progressEvent.target.getResponseHeader('content-length') || progressEvent.target.getResponseHeader('x-decompressed-content-length');",
+            "            if (totalLength !== null) {",
+            "                this.progressValue = Math.round((progressEvent.loaded * 100) / totalLength);",
+            "            }",
+            "        }",
+        ],
+        "description": "onUploadPgrogress"
+    },
+    "meta icon": {
+        "prefix": "meta-icons",
+        "body": [
+            "<link rel=\"icon\" href=\"$1\" type=\"image/gif\" sizes=\"${2:32}x$2\">$0"
+        ],
+        "description": "<link rel=\"icon\" href=\"\" type=\"image/gif\" sizes=\"32x32\">"
+    },
+    "interval": {
+        "prefix": "js-interval",
+        "body": [
+            "const interval = setInterval(() => {",
+            "    clearInterval(interval);",
+            "   $1",
+            "}, ${2:100});",
+        ],
+        "description": "interval"
+    },
+    "map_vue_javascript": {
+        "prefix": "vue-Map_Properties",
+        "body": [
+            "Object.defineProperties(Vue.prototype,{",
+            "  $${1:property}: { get(){ return ${2:Object} } }",
+            "})",
+        ],
+        "description": "map_vue_javascript"
+    },
+    "return": {
+        "prefix": "ret",
+        "body": [
+            "return $1;"
+        ],
+        "description": "return"
+    },
+    // methods support string
+    "constructor": {
+        "prefix": "constructor",
+        "body": "constructor",
+        "description": "js string"
+    },
+    "length": {
+        "prefix": "length",
+        "body": "length",
+        "description": "js string"
+    },
+    "prototype": {
+        "prefix": "prototype",
+        "body": "prototype",
+        "description": "js string"
+    },
+    "charAt()": {
+        "prefix": "charAt()",
+        "body": "charAt()",
+        "description": "js string"
+    },
+    "charCodeAt()": {
+        "prefix": "charCodeAt()",
+        "body": "charCodeAt()",
+        "description": "js string"
+    },
+    "concat()": {
+        "prefix": "concat()",
+        "body": "concat()",
+        "description": "js string"
+    },
+    "endsWith()": {
+        "prefix": "endsWith()",
+        "body": "endsWith()",
+        "description": "js string"
+    },
+    "fromCharCode()": {
+        "prefix": "fromCharCode()",
+        "body": "fromCharCode()",
+        "description": "js string"
+    },
+    "lastIndexOf()": {
+        "prefix": "lastIndexOf()",
+        "body": "lastIndexOf()",
+        "description": "js string"
+    },
+    "localeCompare()": {
+        "prefix": "localeCompare()",
+        "body": "localeCompare()",
+        "description": "js string"
+    },
+    "match()": {
+        "prefix": "match()",
+        "body": "match()",
+        "description": "js string"
+    },
+    "repeat()": {
+        "prefix": "repeat()",
+        "body": "repeat()",
+        "description": "js string"
+    },
+    "replace()": {
+        "prefix": "replace()",
+        "body": "replace()",
+        "description": "js string"
+    },
+    "search()": {
+        "prefix": "search()",
+        "body": "search()",
+        "description": "js string"
+    },
+    "slice()": {
+        "prefix": "slice()",
+        "body": "slice()",
+        "description": "js string"
+    },
+    "split()": {
+        "prefix": "split()",
+        "body": "split()",
+        "description": "js string"
+    },
+    "startsWith()": {
+        "prefix": "startsWith()",
+        "body": "startsWith()",
+        "description": "js string"
+    },
+    "substr()": {
+        "prefix": "substr()",
+        "body": "substr()",
+        "description": "js string"
+    },
+    "substring()": {
+        "prefix": "substring()",
+        "body": "substring()",
+        "description": "js string"
+    },
+    "toLocaleLowerCase()": {
+        "prefix": "toLocaleLowerCase()",
+        "body": "toLocaleLowerCase()",
+        "description": "js string"
+    },
+    "toLocaleUpperCase()": {
+        "prefix": "toLocaleUpperCase()",
+        "body": "toLocaleUpperCase()",
+        "description": "js string"
+    },
+    "toLowerCase()": {
+        "prefix": "toLowerCase()",
+        "body": "toLowerCase()",
+        "description": "js string"
+    },
+    "toString()": {
+        "prefix": "toString()",
+        "body": "toString()",
+        "description": "js string"
+    },
+    "toUpperCase()": {
+        "prefix": "toUpperCase()",
+        "body": "toUpperCase()",
+        "description": "js string"
+    },
+    "trim()": {
+        "prefix": "trim()",
+        "body": "trim()",
+        "description": "js string"
+    },
+    "anchor()": {
+        "prefix": "anchor()",
+        "body": "anchor()",
+        "description": "js string"
+    },
+    "big()": {
+        "prefix": "big()",
+        "body": "big()",
+        "description": "js string"
+    },
+    "blink()": {
+        "prefix": "blink()",
+        "body": "blink()",
+        "description": "js string"
+    },
+    "bold()": {
+        "prefix": "bold()",
+        "body": "bold()",
+        "description": "js string"
+    },
+    "fixed()": {
+        "prefix": "fixed()",
+        "body": "fixed()",
+        "description": "js string"
+    },
+    "fontcolor()": {
+        "prefix": "fontcolor()",
+        "body": "fontcolor()",
+        "description": "js string"
+    },
+    "fontsize()": {
+        "prefix": "fontsize()",
+        "body": "fontsize()",
+        "description": "js string"
+    },
+    "italics()": {
+        "prefix": "italics()",
+        "body": "italics()",
+        "description": "js string"
+    },
+    "link()": {
+        "prefix": "link()",
+        "body": "link()",
+        "description": "js string"
+    },
+    "small()": {
+        "prefix": "small()",
+        "body": "small()",
+        "description": "js string"
+    },
+    "strike()": {
+        "prefix": "strike()",
+        "body": "strike()",
+        "description": "js string"
+    },
+    "sub()": {
+        "prefix": "sub()",
+        "body": "sub()",
+        "description": "js string"
+    },
+    // methods Number
+    "MAX_VALUE": {
+        "prefix": "MAX_VALUE",
+        "body": "MAX_VALUE",
+        "description": "js Number"
+    },
+    "MIN_VALUE": {
+        "prefix": "MIN_VALUE",
+        "body": "MIN_VALUE",
+        "description": "js Number"
+    },
+    "NEGATIVE_INFINITY": {
+        "prefix": "NEGATIVE_INFINITY",
+        "body": "NEGATIVE_INFINITY",
+        "description": "js Number"
+    },
+    "NaN": {
+        "prefix": "NaN",
+        "body": "NaN",
+        "description": "js Number"
+    },
+    "POSITIVE_INFINITY": {
+        "prefix": "POSITIVE_INFINITY",
+        "body": "POSITIVE_INFINITY",
+        "description": "js Number"
+    },
+    "isFinite()": {
+        "prefix": "isFinite()",
+        "body": "isFinite()",
+        "description": "js Number"
+    },
+    "isInteger()": {
+        "prefix": "isInteger()",
+        "body": "isInteger()",
+        "description": "js Number"
+    },
+    "isNaN()": {
+        "prefix": "isNaN()",
+        "body": "isNaN()",
+        "description": "js Number"
+    },
+    "isSafeInteger()": {
+        "prefix": "isSafeInteger()",
+        "body": "isSafeInteger()",
+        "description": "js Number"
+    },
+    "toExponential(x)": {
+        "prefix": "toExponential(x)",
+        "body": "toExponential(x)",
+        "description": "js Number"
+    },
+    "toFixed(x)": {
+        "prefix": "toFixed(x)",
+        "body": "toFixed(x)",
+        "description": "js Number"
+    },
+    "toLocaleString()": {
+        "prefix": "toLocaleString()",
+        "body": "toLocaleString()",
+        "description": "js Number"
+    },
+    "toPrecision(x)": {
+        "prefix": "toPrecision(x)",
+        "body": "toPrecision(x)",
+        "description": "js Number"
+    },
+    "  constructor": {
+        "prefix": "  constructor",
+        "body": "  constructor",
+        "description": "js Array"
+    },
+    "copyWithin()": {
+        "prefix": "copyWithin()",
+        "body": "copyWithin()",
+        "description": "js Array"
+    },
+    "entries()": {
+        "prefix": "entries()",
+        "body": "entries()",
+        "description": "js Array"
+    },
+    "every()": {
+        "prefix": "every()",
+        "body": "every()",
+        "description": "js Array"
+    },
+    "fill()": {
+        "prefix": "fill()",
+        "body": "fill()",
+        "description": "js Array"
+    },
+    "filter()": {
+        "prefix": "filter()",
+        "body": "filter()",
+        "description": "js Array"
+    },
+    "find()": {
+        "prefix": "find()",
+        "body": "find()",
+        "description": "js Array"
+    },
+    "findIndex()": {
+        "prefix": "findIndex()",
+        "body": "findIndex()",
+        "description": "js Array"
+    },
+    "forEach()": {
+        "prefix": "forEach()",
+        "body": "forEach()",
+        "description": "js Array"
+    },
+    "from()": {
+        "prefix": "from()",
+        "body": "from()",
+        "description": "js Array"
+    },
+    "includes()": {
+        "prefix": "includes()",
+        "body": "includes()",
+        "description": "js Array"
+    },
+    "indexOf()": {
+        "prefix": "indexOf()",
+        "body": "indexOf()",
+        "description": "js Array"
+    },
+    "isArray()": {
+        "prefix": "isArray()",
+        "body": "isArray()",
+        "description": "js Array"
+    },
+    "join()": {
+        "prefix": "join()",
+        "body": "join()",
+        "description": "js Array"
+    },
+    "keys()": {
+        "prefix": "keys()",
+        "body": "keys()",
+        "description": "js Array"
+    },
+    "map()": {
+        "prefix": "map()",
+        "body": "map()",
+        "description": "js Array"
+    },
+    "pop()": {
+        "prefix": "pop()",
+        "body": "pop()",
+        "description": "js Array"
+    },
+    "push()": {
+        "prefix": "push()",
+        "body": "push()",
+        "description": "js Array"
+    },
+    "reduce()": {
+        "prefix": "reduce()",
+        "body": "reduce()",
+        "description": "js Array"
+    },
+    "reduceRight()": {
+        "prefix": "reduceRight()",
+        "body": "reduceRight()",
+        "description": "js Array"
+    },
+    "reverse()": {
+        "prefix": "reverse()",
+        "body": "reverse()",
+        "description": "js Array"
+    },
+    "shift()": {
+        "prefix": "shift()",
+        "body": "shift()",
+        "description": "js Array"
+    },
+    "some()": {
+        "prefix": "some()",
+        "body": "some()",
+        "description": "js Array"
+    },
+    "sort()": {
+        "prefix": "sort()",
+        "body": "sort()",
+        "description": "js Array"
+    },
+    "splice()": {
+        "prefix": "splice()",
+        "body": "splice()",
+        "description": "js Array"
+    },
+    "unshift()": {
+        "prefix": "unshift()",
+        "body": "unshift()",
+        "description": "js Array"
+    },
+    // js Date
+    "  getDate()": {
+        "prefix": "  getDate()",
+        "body": "  getDate()",
+        "description": "js Date"
+    },
+    "getDay()": {
+        "prefix": "getDay()",
+        "body": "getDay()",
+        "description": "js Date"
+    },
+    "getHours()": {
+        "prefix": "getHours()",
+        "body": "getHours()",
+        "description": "js Date"
+    },
+    "getMilliseconds()": {
+        "prefix": "getMilliseconds()",
+        "body": "getMilliseconds()",
+        "description": "js Date"
+    },
+    "getMinutes()": {
+        "prefix": "getMinutes()",
+        "body": "getMinutes()",
+        "description": "js Date"
+    },
+    "getMonth()": {
+        "prefix": "getMonth()",
+        "body": "getMonth()",
+        "description": "js Date"
+    },
+    "getSeconds()": {
+        "prefix": "getSeconds()",
+        "body": "getSeconds()",
+        "description": "js Date"
+    },
+    "getTime()": {
+        "prefix": "getTime()",
+        "body": "getTime()",
+        "description": "js Date"
+    },
+    "getTimezoneOffset()": {
+        "prefix": "getTimezoneOffset()",
+        "body": "getTimezoneOffset()",
+        "description": "js Date"
+    },
+    "getUTCDate()": {
+        "prefix": "getUTCDate()",
+        "body": "getUTCDate()",
+        "description": "js Date"
+    },
+    "getUTCDay()": {
+        "prefix": "getUTCDay()",
+        "body": "getUTCDay()",
+        "description": "js Date"
+    },
+    "getUTCFullYear()": {
+        "prefix": "getUTCFullYear()",
+        "body": "getUTCFullYear()",
+        "description": "js Date"
+    },
+    "getUTCHours()": {
+        "prefix": "getUTCHours()",
+        "body": "getUTCHours()",
+        "description": "js Date"
+    },
+    "getUTCMilliseconds()": {
+        "prefix": "getUTCMilliseconds()",
+        "body": "getUTCMilliseconds()",
+        "description": "js Date"
+    },
+    "getUTCMinutes()": {
+        "prefix": "getUTCMinutes()",
+        "body": "getUTCMinutes()",
+        "description": "js Date"
+    },
+    "getUTCMonth()": {
+        "prefix": "getUTCMonth()",
+        "body": "getUTCMonth()",
+        "description": "js Date"
+    },
+    "getUTCSeconds()": {
+        "prefix": "getUTCSeconds()",
+        "body": "getUTCSeconds()",
+        "description": "js Date"
+    },
+    "getFullYear()": {
+        "prefix": "getFullYear()",
+        "body": "getFullYear()",
+        "description": "js Date"
+    },
+    "now()": {
+        "prefix": "now()",
+        "body": "now()",
+        "description": "js Date"
+    },
+    "parse()": {
+        "prefix": "parse()",
+        "body": "parse()",
+        "description": "js Date"
+    },
+    "setDate()": {
+        "prefix": "setDate()",
+        "body": "setDate()",
+        "description": "js Date"
+    },
+    "setHours()": {
+        "prefix": "setHours()",
+        "body": "setHours()",
+        "description": "js Date"
+    },
+    "setMilliseconds()": {
+        "prefix": "setMilliseconds()",
+        "body": "setMilliseconds()",
+        "description": "js Date"
+    },
+    "setMinutes()": {
+        "prefix": "setMinutes()",
+        "body": "setMinutes()",
+        "description": "js Date"
+    },
+    "setMonth()": {
+        "prefix": "setMonth()",
+        "body": "setMonth()",
+        "description": "js Date"
+    },
+    "setSeconds()": {
+        "prefix": "setSeconds()",
+        "body": "setSeconds()",
+        "description": "js Date"
+    },
+    "setTime()": {
+        "prefix": "setTime()",
+        "body": "setTime()",
+        "description": "js Date"
+    },
+    "setUTCDate()": {
+        "prefix": "setUTCDate()",
+        "body": "setUTCDate()",
+        "description": "js Date"
+    },
+    "setUTCFullYear()": {
+        "prefix": "setUTCFullYear()",
+        "body": "setUTCFullYear()",
+        "description": "js Date"
+    },
+    "setUTCHours()": {
+        "prefix": "setUTCHours()",
+        "body": "setUTCHours()",
+        "description": "js Date"
+    },
+    "setUTCMilliseconds()": {
+        "prefix": "setUTCMilliseconds()",
+        "body": "setUTCMilliseconds()",
+        "description": "js Date"
+    },
+    "setUTCMinutes()": {
+        "prefix": "setUTCMinutes()",
+        "body": "setUTCMinutes()",
+        "description": "js Date"
+    },
+    "setUTCMonth()": {
+        "prefix": "setUTCMonth()",
+        "body": "setUTCMonth()",
+        "description": "js Date"
+    },
+    "setUTCSeconds()": {
+        "prefix": "setUTCSeconds()",
+        "body": "setUTCSeconds()",
+        "description": "js Date"
+    },
+    "setFullYear()": {
+        "prefix": "setFullYear()",
+        "body": "setFullYear()",
+        "description": "js Date"
+    },
+    "toDateString()": {
+        "prefix": "toDateString()",
+        "body": "toDateString()",
+        "description": "js Date"
+    },
+    "toUTCString()": {
+        "prefix": "toUTCString()",
+        "body": "toUTCString()",
+        "description": "js Date"
+    },
+    "toISOString()": {
+        "prefix": "toISOString()",
+        "body": "toISOString()",
+        "description": "js Date"
+    },
+    "toJSON()": {
+        "prefix": "toJSON()",
+        "body": "toJSON()",
+        "description": "js Date"
+    },
+    "toLocaleDateString()": {
+        "prefix": "toLocaleDateString()",
+        "body": "toLocaleDateString()",
+        "description": "js Date"
+    },
+    "toLocaleTimeString()": {
+        "prefix": "toLocaleTimeString()",
+        "body": "toLocaleTimeString()",
+        "description": "js Date"
+    },
+    "toTimeString()": {
+        "prefix": "toTimeString()",
+        "body": "toTimeString()",
+        "description": "js Date"
+    },
+    "UTC()": {
+        "prefix": "UTC()",
+        "body": "UTC()",
+        "description": "js Date"
+    },
+    // js Maths
+    "LN2": {
+        "prefix": "LN2",
+        "body": "LN2",
+        "description": "js Math"
+    },
+    "LN10": {
+        "prefix": "LN10",
+        "body": "LN10",
+        "description": "js Math"
+    },
+    "LOG2E": {
+        "prefix": "LOG2E",
+        "body": "LOG2E",
+        "description": "js Math"
+    },
+    "LOG10E": {
+        "prefix": "LOG10E",
+        "body": "LOG10E",
+        "description": "js Math"
+    },
+    "PI": {
+        "prefix": "PI",
+        "body": "PI",
+        "description": "js Math"
+    },
+    "SQRT1_2": {
+        "prefix": "SQRT1_2",
+        "body": "SQRT1_2",
+        "description": "js Math"
+    },
+    "SQRT2": {
+        "prefix": "SQRT2",
+        "body": "SQRT2",
+        "description": "js Math"
+    },
+    "abs(x)": {
+        "prefix": "abs(x)",
+        "body": "abs(x)",
+        "description": "js Math"
+    },
+    "acos(x)": {
+        "prefix": "acos(x)",
+        "body": "acos(x)",
+        "description": "js Math"
+    },
+    "acosh(x)": {
+        "prefix": "acosh(x)",
+        "body": "acosh(x)",
+        "description": "js Math"
+    },
+    "asin(x)": {
+        "prefix": "asin(x)",
+        "body": "asin(x)",
+        "description": "js Math"
+    },
+    "asinh(x)": {
+        "prefix": "asinh(x)",
+        "body": "asinh(x)",
+        "description": "js Math"
+    },
+    "atan(x)": {
+        "prefix": "atan(x)",
+        "body": "atan(x)",
+        "description": "js Math"
+    },
+    "atan2(y, x)": {
+        "prefix": "atan2(y, x)",
+        "body": "atan2(y, x)",
+        "description": "js Math"
+    },
+    "atanh(x)": {
+        "prefix": "atanh(x)",
+        "body": "atanh(x)",
+        "description": "js Math"
+    },
+    "cbrt(x)": {
+        "prefix": "cbrt(x)",
+        "body": "cbrt(x)",
+        "description": "js Math"
+    },
+    "ceil(x)": {
+        "prefix": "ceil(x)",
+        "body": "ceil(x)",
+        "description": "js Math"
+    },
+    "cos(x)": {
+        "prefix": "cos(x)",
+        "body": "cos(x)",
+        "description": "js Math"
+    },
+    "cosh(x)": {
+        "prefix": "cosh(x)",
+        "body": "cosh(x)",
+        "description": "js Math"
+    },
+    "exp(x)": {
+        "prefix": "exp(x)",
+        "body": "exp(x)",
+        "description": "js Math"
+    },
+    "floor(x)": {
+        "prefix": "floor(x)",
+        "body": "floor(x)",
+        "description": "js Math"
+    },
+    "log(x)": {
+        "prefix": "log(x)",
+        "body": "log(x)",
+        "description": "js Math"
+    },
+    "max(x, y, z, ..., n)": {
+        "prefix": "max(x, y, z, ..., n)",
+        "body": "max(x, y, z, ..., n)",
+        "description": "js Math"
+    },
+    "min(x, y, z, ..., n)": {
+        "prefix": "min(x, y, z, ..., n)",
+        "body": "min(x, y, z, ..., n)",
+        "description": "js Math"
+    },
+    "pow(x, y)": {
+        "prefix": "pow(x, y)",
+        "body": "pow(x, y)",
+        "description": "js Math"
+    },
+    "random()": {
+        "prefix": "random()",
+        "body": "random()",
+        "description": "js Math"
+    },
+    "round(x)": {
+        "prefix": "round(x)",
+        "body": "round(x)",
+        "description": "js Math"
+    },
+    "sin(x)": {
+        "prefix": "sin(x)",
+        "body": "sin(x)",
+        "description": "js Math"
+    },
+    "sinh(x)": {
+        "prefix": "sinh(x)",
+        "body": "sinh(x)",
+        "description": "js Math"
+    },
+    "sqrt(x)": {
+        "prefix": "sqrt(x)",
+        "body": "sqrt(x)",
+        "description": "js Math"
+    },
+    "tan(x)": {
+        "prefix": "tan(x)",
+        "body": "tan(x)",
+        "description": "js Math"
+    },
+    "tanh(x)": {
+        "prefix": "tanh(x)",
+        "body": "tanh(x)",
+        "description": "js Math"
+    },
+    "trunc(x)": {
+        "prefix": "trunc(x)",
+        "body": "trunc(x)",
+        "description": "js Math"
+    },
+    // DOM Style
+    "alignContent": {
+        "prefix": "alignContent",
+        "body": "alignContent",
+        "description": "DOM STYLE"
+    },
+    "alignItems": {
+        "prefix": "alignItems",
+        "body": "alignItems",
+        "description": "DOM STYLE"
+    },
+    "alignSelf": {
+        "prefix": "alignSelf",
+        "body": "alignSelf",
+        "description": "DOM STYLE"
+    },
+    "animation": {
+        "prefix": "animation",
+        "body": "animation",
+        "description": "DOM STYLE"
+    },
+    "animationDelay": {
+        "prefix": "animationDelay",
+        "body": "animationDelay",
+        "description": "DOM STYLE"
+    },
+    "animationDirection": {
+        "prefix": "animationDirection",
+        "body": "animationDirection",
+        "description": "DOM STYLE"
+    },
+    "animationDuration": {
+        "prefix": "animationDuration",
+        "body": "animationDuration",
+        "description": "DOM STYLE"
+    },
+    "animationFillMode": {
+        "prefix": "animationFillMode",
+        "body": "animationFillMode",
+        "description": "DOM STYLE"
+    },
+    "animationIterationCount": {
+        "prefix": "animationIterationCount",
+        "body": "animationIterationCount",
+        "description": "DOM STYLE"
+    },
+    "animationName": {
+        "prefix": "animationName",
+        "body": "animationName",
+        "description": "DOM STYLE"
+    },
+    "animationTimingFunction": {
+        "prefix": "animationTimingFunction",
+        "body": "animationTimingFunction",
+        "description": "DOM STYLE"
+    },
+    "animationPlayState": {
+        "prefix": "animationPlayState",
+        "body": "animationPlayState",
+        "description": "DOM STYLE"
+    },
+    "background": {
+        "prefix": "background",
+        "body": "background",
+        "description": "DOM STYLE"
+    },
+    "backgroundAttachment": {
+        "prefix": "backgroundAttachment",
+        "body": "backgroundAttachment",
+        "description": "DOM STYLE"
+    },
+    "backgroundColor": {
+        "prefix": "backgroundColor",
+        "body": "backgroundColor",
+        "description": "DOM STYLE"
+    },
+    "backgroundImage": {
+        "prefix": "backgroundImage",
+        "body": "backgroundImage",
+        "description": "DOM STYLE"
+    },
+    "backgroundPosition": {
+        "prefix": "backgroundPosition",
+        "body": "backgroundPosition",
+        "description": "DOM STYLE"
+    },
+    "backgroundRepeat": {
+        "prefix": "backgroundRepeat",
+        "body": "backgroundRepeat",
+        "description": "DOM STYLE"
+    },
+    "backgroundClip": {
+        "prefix": "backgroundClip",
+        "body": "backgroundClip",
+        "description": "DOM STYLE"
+    },
+    "backgroundOrigin": {
+        "prefix": "backgroundOrigin",
+        "body": "backgroundOrigin",
+        "description": "DOM STYLE"
+    },
+    "backgroundSize": {
+        "prefix": "backgroundSize",
+        "body": "backgroundSize",
+        "description": "DOM STYLE"
+    },
+    "backfaceVisibility": {
+        "prefix": "backfaceVisibility",
+        "body": "backfaceVisibility",
+        "description": "DOM STYLE"
+    },
+    "border": {
+        "prefix": "border",
+        "body": "border",
+        "description": "DOM STYLE"
+    },
+    "borderBottom": {
+        "prefix": "borderBottom",
+        "body": "borderBottom",
+        "description": "DOM STYLE"
+    },
+    "borderBottomColor": {
+        "prefix": "borderBottomColor",
+        "body": "borderBottomColor",
+        "description": "DOM STYLE"
+    },
+    "borderBottomLeftRadius": {
+        "prefix": "borderBottomLeftRadius",
+        "body": "borderBottomLeftRadius",
+        "description": "DOM STYLE"
+    },
+    "borderBottomRightRadius": {
+        "prefix": "borderBottomRightRadius",
+        "body": "borderBottomRightRadius",
+        "description": "DOM STYLE"
+    },
+    "borderBottomStyle": {
+        "prefix": "borderBottomStyle",
+        "body": "borderBottomStyle",
+        "description": "DOM STYLE"
+    },
+    "borderBottomWidth": {
+        "prefix": "borderBottomWidth",
+        "body": "borderBottomWidth",
+        "description": "DOM STYLE"
+    },
+    "borderCollapse": {
+        "prefix": "borderCollapse",
+        "body": "borderCollapse",
+        "description": "DOM STYLE"
+    },
+    "borderColor": {
+        "prefix": "borderColor",
+        "body": "borderColor",
+        "description": "DOM STYLE"
+    },
+    "borderImage": {
+        "prefix": "borderImage",
+        "body": "borderImage",
+        "description": "DOM STYLE"
+    },
+    "borderImageOutset": {
+        "prefix": "borderImageOutset",
+        "body": "borderImageOutset",
+        "description": "DOM STYLE"
+    },
+    "borderImageRepeat": {
+        "prefix": "borderImageRepeat",
+        "body": "borderImageRepeat",
+        "description": "DOM STYLE"
+    },
+    "borderImageSlice": {
+        "prefix": "borderImageSlice",
+        "body": "borderImageSlice",
+        "description": "DOM STYLE"
+    },
+    "borderImageSource": {
+        "prefix": "borderImageSource",
+        "body": "borderImageSource",
+        "description": "DOM STYLE"
+    },
+    "borderImageWidth": {
+        "prefix": "borderImageWidth",
+        "body": "borderImageWidth",
+        "description": "DOM STYLE"
+    },
+    "borderLeft": {
+        "prefix": "borderLeft",
+        "body": "borderLeft",
+        "description": "DOM STYLE"
+    },
+    "borderLeftColor": {
+        "prefix": "borderLeftColor",
+        "body": "borderLeftColor",
+        "description": "DOM STYLE"
+    },
+    "borderLeftStyle": {
+        "prefix": "borderLeftStyle",
+        "body": "borderLeftStyle",
+        "description": "DOM STYLE"
+    },
+    "borderLeftWidth": {
+        "prefix": "borderLeftWidth",
+        "body": "borderLeftWidth",
+        "description": "DOM STYLE"
+    },
+    "borderRadius": {
+        "prefix": "borderRadius",
+        "body": "borderRadius",
+        "description": "DOM STYLE"
+    },
+    "borderRight": {
+        "prefix": "borderRight",
+        "body": "borderRight",
+        "description": "DOM STYLE"
+    },
+    "borderRightColor": {
+        "prefix": "borderRightColor",
+        "body": "borderRightColor",
+        "description": "DOM STYLE"
+    },
+    "borderRightStyle": {
+        "prefix": "borderRightStyle",
+        "body": "borderRightStyle",
+        "description": "DOM STYLE"
+    },
+    "borderRightWidth": {
+        "prefix": "borderRightWidth",
+        "body": "borderRightWidth",
+        "description": "DOM STYLE"
+    },
+    "borderSpacing": {
+        "prefix": "borderSpacing",
+        "body": "borderSpacing",
+        "description": "DOM STYLE"
+    },
+    "borderStyle": {
+        "prefix": "borderStyle",
+        "body": "borderStyle",
+        "description": "DOM STYLE"
+    },
+    "borderTop": {
+        "prefix": "borderTop",
+        "body": "borderTop",
+        "description": "DOM STYLE"
+    },
+    "borderTopColor": {
+        "prefix": "borderTopColor",
+        "body": "borderTopColor",
+        "description": "DOM STYLE"
+    },
+    "borderTopLeftRadius": {
+        "prefix": "borderTopLeftRadius",
+        "body": "borderTopLeftRadius",
+        "description": "DOM STYLE"
+    },
+    "borderTopRightRadius": {
+        "prefix": "borderTopRightRadius",
+        "body": "borderTopRightRadius",
+        "description": "DOM STYLE"
+    },
+    "borderTopStyle": {
+        "prefix": "borderTopStyle",
+        "body": "borderTopStyle",
+        "description": "DOM STYLE"
+    },
+    "borderTopWidth": {
+        "prefix": "borderTopWidth",
+        "body": "borderTopWidth",
+        "description": "DOM STYLE"
+    },
+    "borderWidth": {
+        "prefix": "borderWidth",
+        "body": "borderWidth",
+        "description": "DOM STYLE"
+    },
+    "bottom": {
+        "prefix": "bottom",
+        "body": "bottom",
+        "description": "DOM STYLE"
+    },
+    "boxShadow": {
+        "prefix": "boxShadow",
+        "body": "boxShadow",
+        "description": "DOM STYLE"
+    },
+    "boxSizing": {
+        "prefix": "boxSizing",
+        "body": "boxSizing",
+        "description": "DOM STYLE"
+    },
+    "captionSide": {
+        "prefix": "captionSide",
+        "body": "captionSide",
+        "description": "DOM STYLE"
+    },
+    "clear": {
+        "prefix": "clear",
+        "body": "clear",
+        "description": "DOM STYLE"
+    },
+    "clip": {
+        "prefix": "clip",
+        "body": "clip",
+        "description": "DOM STYLE"
+    },
+    "color": {
+        "prefix": "color",
+        "body": "color",
+        "description": "DOM STYLE"
+    },
+    "columnCount": {
+        "prefix": "columnCount",
+        "body": "columnCount",
+        "description": "DOM STYLE"
+    },
+    "columnFill": {
+        "prefix": "columnFill",
+        "body": "columnFill",
+        "description": "DOM STYLE"
+    },
+    "columnGap": {
+        "prefix": "columnGap",
+        "body": "columnGap",
+        "description": "DOM STYLE"
+    },
+    "columnRule": {
+        "prefix": "columnRule",
+        "body": "columnRule",
+        "description": "DOM STYLE"
+    },
+    "columnRuleColor": {
+        "prefix": "columnRuleColor",
+        "body": "columnRuleColor",
+        "description": "DOM STYLE"
+    },
+    "columnRuleStyle": {
+        "prefix": "columnRuleStyle",
+        "body": "columnRuleStyle",
+        "description": "DOM STYLE"
+    },
+    "columnRuleWidth": {
+        "prefix": "columnRuleWidth",
+        "body": "columnRuleWidth",
+        "description": "DOM STYLE"
+    },
+    "columns": {
+        "prefix": "columns",
+        "body": "columns",
+        "description": "DOM STYLE"
+    },
+    "columnSpan": {
+        "prefix": "columnSpan",
+        "body": "columnSpan",
+        "description": "DOM STYLE"
+    },
+    "columnWidth": {
+        "prefix": "columnWidth",
+        "body": "columnWidth",
+        "description": "DOM STYLE"
+    },
+    "counterIncrement": {
+        "prefix": "counterIncrement",
+        "body": "counterIncrement",
+        "description": "DOM STYLE"
+    },
+    "counterReset": {
+        "prefix": "counterReset",
+        "body": "counterReset",
+        "description": "DOM STYLE"
+    },
+    "cursor": {
+        "prefix": "cursor",
+        "body": "cursor",
+        "description": "DOM STYLE"
+    },
+    "direction": {
+        "prefix": "direction",
+        "body": "direction",
+        "description": "DOM STYLE"
+    },
+    "display": {
+        "prefix": "display",
+        "body": "display",
+        "description": "DOM STYLE"
+    },
+    "emptyCells": {
+        "prefix": "emptyCells",
+        "body": "emptyCells",
+        "description": "DOM STYLE"
+    },
+    "filter": {
+        "prefix": "filter",
+        "body": "filter",
+        "description": "DOM STYLE"
+    },
+    "flex": {
+        "prefix": "flex",
+        "body": "flex",
+        "description": "DOM STYLE"
+    },
+    "flexBasis": {
+        "prefix": "flexBasis",
+        "body": "flexBasis",
+        "description": "DOM STYLE"
+    },
+    "flexDirection": {
+        "prefix": "flexDirection",
+        "body": "flexDirection",
+        "description": "DOM STYLE"
+    },
+    "flexFlow": {
+        "prefix": "flexFlow",
+        "body": "flexFlow",
+        "description": "DOM STYLE"
+    },
+    "flexGrow": {
+        "prefix": "flexGrow",
+        "body": "flexGrow",
+        "description": "DOM STYLE"
+    },
+    "flexShrink": {
+        "prefix": "flexShrink",
+        "body": "flexShrink",
+        "description": "DOM STYLE"
+    },
+    "flexWrap": {
+        "prefix": "flexWrap",
+        "body": "flexWrap",
+        "description": "DOM STYLE"
+    },
+    "cssFloat": {
+        "prefix": "cssFloat",
+        "body": "cssFloat",
+        "description": "DOM STYLE"
+    },
+    "font": {
+        "prefix": "font",
+        "body": "font",
+        "description": "DOM STYLE"
+    },
+    "fontFamily": {
+        "prefix": "fontFamily",
+        "body": "fontFamily",
+        "description": "DOM STYLE"
+    },
+    "fontSize": {
+        "prefix": "fontSize",
+        "body": "fontSize",
+        "description": "DOM STYLE"
+    },
+    "fontStyle": {
+        "prefix": "fontStyle",
+        "body": "fontStyle",
+        "description": "DOM STYLE"
+    },
+    "fontVariant": {
+        "prefix": "fontVariant",
+        "body": "fontVariant",
+        "description": "DOM STYLE"
+    },
+    "fontWeight": {
+        "prefix": "fontWeight",
+        "body": "fontWeight",
+        "description": "DOM STYLE"
+    },
+    "fontSizeAdjust": {
+        "prefix": "fontSizeAdjust",
+        "body": "fontSizeAdjust",
+        "description": "DOM STYLE"
+    },
+    "height": {
+        "prefix": "height",
+        "body": "height",
+        "description": "DOM STYLE"
+    },
+    "isolation": {
+        "prefix": "isolation",
+        "body": "isolation",
+        "description": "DOM STYLE"
+    },
+    "justifyContent": {
+        "prefix": "justifyContent",
+        "body": "justifyContent",
+        "description": "DOM STYLE"
+    },
+    "left": {
+        "prefix": "left",
+        "body": "left",
+        "description": "DOM STYLE"
+    },
+    "letterSpacing": {
+        "prefix": "letterSpacing",
+        "body": "letterSpacing",
+        "description": "DOM STYLE"
+    },
+    "lineHeight": {
+        "prefix": "lineHeight",
+        "body": "lineHeight",
+        "description": "DOM STYLE"
+    },
+    "listStyle": {
+        "prefix": "listStyle",
+        "body": "listStyle",
+        "description": "DOM STYLE"
+    },
+    "listStyleImage": {
+        "prefix": "listStyleImage",
+        "body": "listStyleImage",
+        "description": "DOM STYLE"
+    },
+    "listStylePosition": {
+        "prefix": "listStylePosition",
+        "body": "listStylePosition",
+        "description": "DOM STYLE"
+    },
+    "listStyleType": {
+        "prefix": "listStyleType",
+        "body": "listStyleType",
+        "description": "DOM STYLE"
+    },
+    "margin": {
+        "prefix": "margin",
+        "body": "margin",
+        "description": "DOM STYLE"
+    },
+    "marginBottom": {
+        "prefix": "marginBottom",
+        "body": "marginBottom",
+        "description": "DOM STYLE"
+    },
+    "marginLeft": {
+        "prefix": "marginLeft",
+        "body": "marginLeft",
+        "description": "DOM STYLE"
+    },
+    "marginRight": {
+        "prefix": "marginRight",
+        "body": "marginRight",
+        "description": "DOM STYLE"
+    },
+    "marginTop": {
+        "prefix": "marginTop",
+        "body": "marginTop",
+        "description": "DOM STYLE"
+    },
+    "maxHeight": {
+        "prefix": "maxHeight",
+        "body": "maxHeight",
+        "description": "DOM STYLE"
+    },
+    "maxWidth": {
+        "prefix": "maxWidth",
+        "body": "maxWidth",
+        "description": "DOM STYLE"
+    },
+    "minHeight": {
+        "prefix": "minHeight",
+        "body": "minHeight",
+        "description": "DOM STYLE"
+    },
+    "minWidth": {
+        "prefix": "minWidth",
+        "body": "minWidth",
+        "description": "DOM STYLE"
+    },
+    "objectFit": {
+        "prefix": "objectFit",
+        "body": "objectFit",
+        "description": "DOM STYLE"
+    },
+    "objectPosition": {
+        "prefix": "objectPosition",
+        "body": "objectPosition",
+        "description": "DOM STYLE"
+    },
+    "opacity": {
+        "prefix": "opacity",
+        "body": "opacity",
+        "description": "DOM STYLE"
+    },
+    "order": {
+        "prefix": "order",
+        "body": "order",
+        "description": "DOM STYLE"
+    },
+    "orphans": {
+        "prefix": "orphans",
+        "body": "orphans",
+        "description": "DOM STYLE"
+    },
+    "outline": {
+        "prefix": "outline",
+        "body": "outline",
+        "description": "DOM STYLE"
+    },
+    "outlineColor": {
+        "prefix": "outlineColor",
+        "body": "outlineColor",
+        "description": "DOM STYLE"
+    },
+    "outlineOffset": {
+        "prefix": "outlineOffset",
+        "body": "outlineOffset",
+        "description": "DOM STYLE"
+    },
+    "outlineStyle": {
+        "prefix": "outlineStyle",
+        "body": "outlineStyle",
+        "description": "DOM STYLE"
+    },
+    "outlineWidth": {
+        "prefix": "outlineWidth",
+        "body": "outlineWidth",
+        "description": "DOM STYLE"
+    },
+    "overflow": {
+        "prefix": "overflow",
+        "body": "overflow",
+        "description": "DOM STYLE"
+    },
+    "overflowX": {
+        "prefix": "overflowX",
+        "body": "overflowX",
+        "description": "DOM STYLE"
+    },
+    "overflowY": {
+        "prefix": "overflowY",
+        "body": "overflowY",
+        "description": "DOM STYLE"
+    },
+    "padding": {
+        "prefix": "padding",
+        "body": "padding",
+        "description": "DOM STYLE"
+    },
+    "paddingBottom": {
+        "prefix": "paddingBottom",
+        "body": "paddingBottom",
+        "description": "DOM STYLE"
+    },
+    "paddingLeft": {
+        "prefix": "paddingLeft",
+        "body": "paddingLeft",
+        "description": "DOM STYLE"
+    },
+    "paddingRight": {
+        "prefix": "paddingRight",
+        "body": "paddingRight",
+        "description": "DOM STYLE"
+    },
+    "paddingTop": {
+        "prefix": "paddingTop",
+        "body": "paddingTop",
+        "description": "DOM STYLE"
+    },
+    "pageBreakAfter": {
+        "prefix": "pageBreakAfter",
+        "body": "pageBreakAfter",
+        "description": "DOM STYLE"
+    },
+    "pageBreakBefore": {
+        "prefix": "pageBreakBefore",
+        "body": "pageBreakBefore",
+        "description": "DOM STYLE"
+    },
+    "pageBreakInside": {
+        "prefix": "pageBreakInside",
+        "body": "pageBreakInside",
+        "description": "DOM STYLE"
+    },
+    "perspective": {
+        "prefix": "perspective",
+        "body": "perspective",
+        "description": "DOM STYLE"
+    },
+    "perspectiveOrigin": {
+        "prefix": "perspectiveOrigin",
+        "body": "perspectiveOrigin",
+        "description": "DOM STYLE"
+    },
+    "position": {
+        "prefix": "position",
+        "body": "position",
+        "description": "DOM STYLE"
+    },
+    "quotes": {
+        "prefix": "quotes",
+        "body": "quotes",
+        "description": "DOM STYLE"
+    },
+    "resize": {
+        "prefix": "resize",
+        "body": "resize",
+        "description": "DOM STYLE"
+    },
+    "right": {
+        "prefix": "right",
+        "body": "right",
+        "description": "DOM STYLE"
+    },
+    "tableLayout": {
+        "prefix": "tableLayout",
+        "body": "tableLayout",
+        "description": "DOM STYLE"
+    },
+    "tabSize": {
+        "prefix": "tabSize",
+        "body": "tabSize",
+        "description": "DOM STYLE"
+    },
+    "textAlign": {
+        "prefix": "textAlign",
+        "body": "textAlign",
+        "description": "DOM STYLE"
+    },
+    "textAlignLast": {
+        "prefix": "textAlignLast",
+        "body": "textAlignLast",
+        "description": "DOM STYLE"
+    },
+    "textDecoration": {
+        "prefix": "textDecoration",
+        "body": "textDecoration",
+        "description": "DOM STYLE"
+    },
+    "textDecorationColor": {
+        "prefix": "textDecorationColor",
+        "body": "textDecorationColor",
+        "description": "DOM STYLE"
+    },
+    "textDecorationLine": {
+        "prefix": "textDecorationLine",
+        "body": "textDecorationLine",
+        "description": "DOM STYLE"
+    },
+    "textDecorationStyle": {
+        "prefix": "textDecorationStyle",
+        "body": "textDecorationStyle",
+        "description": "DOM STYLE"
+    },
+    "textIndent": {
+        "prefix": "textIndent",
+        "body": "textIndent",
+        "description": "DOM STYLE"
+    },
+    "textOverflow": {
+        "prefix": "textOverflow",
+        "body": "textOverflow",
+        "description": "DOM STYLE"
+    },
+    "textShadow": {
+        "prefix": "textShadow",
+        "body": "textShadow",
+        "description": "DOM STYLE"
+    },
+    "textTransform": {
+        "prefix": "textTransform",
+        "body": "textTransform",
+        "description": "DOM STYLE"
+    },
+    "top": {
+        "prefix": "top",
+        "body": "top",
+        "description": "DOM STYLE"
+    },
+    "transform": {
+        "prefix": "transform",
+        "body": "transform",
+        "description": "DOM STYLE"
+    },
+    "transformOrigin": {
+        "prefix": "transformOrigin",
+        "body": "transformOrigin",
+        "description": "DOM STYLE"
+    },
+    "transformStyle": {
+        "prefix": "transformStyle",
+        "body": "transformStyle",
+        "description": "DOM STYLE"
+    },
+    "transition": {
+        "prefix": "transition",
+        "body": "transition",
+        "description": "DOM STYLE"
+    },
+    "transitionProperty": {
+        "prefix": "transitionProperty",
+        "body": "transitionProperty",
+        "description": "DOM STYLE"
+    },
+    "transitionDuration": {
+        "prefix": "transitionDuration",
+        "body": "transitionDuration",
+        "description": "DOM STYLE"
+    },
+    "transitionTimingFunction": {
+        "prefix": "transitionTimingFunction",
+        "body": "transitionTimingFunction",
+        "description": "DOM STYLE"
+    },
+    "transitionDelay": {
+        "prefix": "transitionDelay",
+        "body": "transitionDelay",
+        "description": "DOM STYLE"
+    },
+    "unicodeBidi": {
+        "prefix": "unicodeBidi",
+        "body": "unicodeBidi",
+        "description": "DOM STYLE"
+    },
+    "userSelect": {
+        "prefix": "userSelect",
+        "body": "userSelect",
+        "description": "DOM STYLE"
+    },
+    "verticalAlign": {
+        "prefix": "verticalAlign",
+        "body": "verticalAlign",
+        "description": "DOM STYLE"
+    },
+    "visibility": {
+        "prefix": "visibility",
+        "body": "visibility",
+        "description": "DOM STYLE"
+    },
+    "whiteSpace": {
+        "prefix": "whiteSpace",
+        "body": "whiteSpace",
+        "description": "DOM STYLE"
+    },
+    "width": {
+        "prefix": "width",
+        "body": "width",
+        "description": "DOM STYLE"
+    },
+    "wordBreak": {
+        "prefix": "wordBreak",
+        "body": "wordBreak",
+        "description": "DOM STYLE"
+    },
+    "wordSpacing": {
+        "prefix": "wordSpacing",
+        "body": "wordSpacing",
+        "description": "DOM STYLE"
+    },
+    "wordWrap": {
+        "prefix": "wordWrap",
+        "body": "wordWrap",
+        "description": "DOM STYLE"
+    },
+    "widows": {
+        "prefix": "widows",
+        "body": "widows",
+        "description": "DOM STYLE"
+    },
+    "zIndex": {
+        "prefix": "zIndex",
+        "body": "zIndex",
+        "description": "DOM STYLE"
+    },
+    //  DOM Screen
+    "availHeight": {
+        "prefix": "availHeight",
+        "body": "availHeight",
+        "description": "DOM STYLE"
+    },
+    "availWidth": {
+        "prefix": "availWidth",
+        "body": "availWidth",
+        "description": "DOM STYLE"
+    },
+    "colorDepth": {
+        "prefix": "colorDepth",
+        "body": "colorDepth",
+        "description": "DOM STYLE"
+    },
+    "pixelDepth": {
+        "prefix": "pixelDepth",
+        "body": "pixelDepth",
+        "description": "DOM STYLE"
+    },
+    "closed": {
+        "prefix": "closed",
+        "body": "closed",
+        "description": "DOM Window"
+    },
+    "console": {
+        "prefix": "console",
+        "body": "console",
+        "description": "DOM Window"
+    },
+    "See Console object": {
+        "prefix": "See Console object",
+        "body": "See Console object",
+        "description": "DOM Window"
+    },
+    "defaultStatus": {
+        "prefix": "defaultStatus",
+        "body": "defaultStatus",
+        "description": "DOM Window"
+    },
+    "document": {
+        "prefix": "document",
+        "body": "document",
+        "description": "DOM Window"
+    },
+    "See Document object": {
+        "prefix": "See Document object",
+        "body": "See Document object",
+        "description": "DOM Window"
+    },
+    "frameElement": {
+        "prefix": "frameElement",
+        "body": "frameElement",
+        "description": "DOM Window"
+    },
+    "frames": {
+        "prefix": "frames",
+        "body": "frames",
+        "description": "DOM Window"
+    },
+    "history": {
+        "prefix": "history",
+        "body": "history",
+        "description": "DOM Window"
+    },
+    "See History object": {
+        "prefix": "See History object",
+        "body": "See History object",
+        "description": "DOM Window"
+    },
+    "innerHeight": {
+        "prefix": "innerHeight",
+        "body": "innerHeight",
+        "description": "DOM Window"
+    },
+    "innerWidth": {
+        "prefix": "innerWidth",
+        "body": "innerWidth",
+        "description": "DOM Window"
+    },
+    "localStorage": {
+        "prefix": "localStorage",
+        "body": "localStorage",
+        "description": "DOM Window"
+    },
+    "location": {
+        "prefix": "location",
+        "body": "location",
+        "description": "DOM Window"
+    },
+    "See Location object": {
+        "prefix": "See Location object",
+        "body": "See Location object",
+        "description": "DOM Window"
+    },
+    "name": {
+        "prefix": "name",
+        "body": "name",
+        "description": "DOM Window"
+    },
+    "navigator": {
+        "prefix": "navigator",
+        "body": "navigator",
+        "description": "DOM Window"
+    },
+    "See Navigator object": {
+        "prefix": "See Navigator object",
+        "body": "See Navigator object",
+        "description": "DOM Window"
+    },
+    "opener": {
+        "prefix": "opener",
+        "body": "opener",
+        "description": "DOM Window"
+    },
+    "outerHeight": {
+        "prefix": "outerHeight",
+        "body": "outerHeight",
+        "description": "DOM Window"
+    },
+    "outerWidth": {
+        "prefix": "outerWidth",
+        "body": "outerWidth",
+        "description": "DOM Window"
+    },
+    "pageXOffset": {
+        "prefix": "pageXOffset",
+        "body": "pageXOffset",
+        "description": "DOM Window"
+    },
+    "pageYOffset": {
+        "prefix": "pageYOffset",
+        "body": "pageYOffset",
+        "description": "DOM Window"
+    },
+    "parent": {
+        "prefix": "parent",
+        "body": "parent",
+        "description": "DOM Window"
+    },
+    "screen": {
+        "prefix": "screen",
+        "body": "screen",
+        "description": "DOM Window"
+    },
+    "(See Screen object)": {
+        "prefix": "(See Screen object)",
+        "body": "(See Screen object)",
+        "description": "DOM Window"
+    },
+    "screenLeft": {
+        "prefix": "screenLeft",
+        "body": "screenLeft",
+        "description": "DOM Window"
+    },
+    "screenTop": {
+        "prefix": "screenTop",
+        "body": "screenTop",
+        "description": "DOM Window"
+    },
+    "screenX": {
+        "prefix": "screenX",
+        "body": "screenX",
+        "description": "DOM Window"
+    },
+    "screenY": {
+        "prefix": "screenY",
+        "body": "screenY",
+        "description": "DOM Window"
+    },
+    "sessionStorage": {
+        "prefix": "sessionStorage",
+        "body": "sessionStorage",
+        "description": "DOM Window"
+    },
+    "self": {
+        "prefix": "self",
+        "body": "self",
+        "description": "DOM Window"
+    },
+    "status": {
+        "prefix": "status",
+        "body": "status",
+        "description": "DOM Window"
+    },
+    "alert()": {
+        "prefix": "alert()",
+        "body": "alert()",
+        "description": "DOM Window"
+    },
+    "atob()": {
+        "prefix": "atob()",
+        "body": "atob()",
+        "description": "DOM Window"
+    },
+    "blur()": {
+        "prefix": "blur()",
+        "body": "blur()",
+        "description": "DOM Window"
+    },
+    "btoa()": {
+        "prefix": "btoa()",
+        "body": "btoa()",
+        "description": "DOM Window"
+    },
+    "clearInterval()": {
+        "prefix": "clearInterval()",
+        "body": "clearInterval()",
+        "description": "DOM Window"
+    },
+    "clearTimeout()": {
+        "prefix": "clearTimeout()",
+        "body": "clearTimeout()",
+        "description": "DOM Window"
+    },
+    "confirm()": {
+        "prefix": "confirm()",
+        "body": "confirm()",
+        "description": "DOM Window"
+    },
+    "focus()": {
+        "prefix": "focus()",
+        "body": "focus()",
+        "description": "DOM Window"
+    },
+    "getComputedStyle()": {
+        "prefix": "getComputedStyle()",
+        "body": "getComputedStyle()",
+        "description": "DOM Window"
+    },
+    "matchMedia()": {
+        "prefix": "matchMedia()",
+        "body": "matchMedia()",
+        "description": "DOM Window"
+    },
+    "moveBy()": {
+        "prefix": "moveBy()",
+        "body": "moveBy()",
+        "description": "DOM Window"
+    },
+    "moveTo()": {
+        "prefix": "moveTo()",
+        "body": "moveTo()",
+        "description": "DOM Window"
+    },
+    "open()": {
+        "prefix": "open()",
+        "body": "open()",
+        "description": "DOM Window"
+    },
+    "print()": {
+        "prefix": "print()",
+        "body": "print()",
+        "description": "DOM Window"
+    },
+    "prompt()": {
+        "prefix": "prompt()",
+        "body": "prompt()",
+        "description": "DOM Window"
+    },
+    "resizeBy()": {
+        "prefix": "resizeBy()",
+        "body": "resizeBy()",
+        "description": "DOM Window"
+    },
+    "resizeTo()": {
+        "prefix": "resizeTo()",
+        "body": "resizeTo()",
+        "description": "DOM Window"
+    },
+    "scrollTo()": {
+        "prefix": "scrollTo()",
+        "body": "scrollTo()",
+        "description": "DOM Window"
+    },
+    "scrollBy()": {
+        "prefix": "scrollBy()",
+        "body": "scrollBy()",
+        "description": "DOM Window"
+    },
+    "setInterval()": {
+        "prefix": "setInterval()",
+        "body": "setInterval()",
+        "description": "DOM Window"
+    },
+    "setTimeout()": {
+        "prefix": "setTimeout()",
+        "body": "setTimeout()",
+        "description": "DOM Window"
+    },
+    "stop()": {
+        "prefix": "stop()",
+        "body": "stop()",
+        "description": "DOM Window"
+    },
+    "abort": {
+        "prefix": "abort",
+        "body": "abort",
+        "description": "DOM event"
+    },
+    "UiEvent": {
+        "prefix": "UiEvent",
+        "body": "UiEvent",
+        "description": "DOM event"
+    },
+    "Event": {
+        "prefix": "Event",
+        "body": "Event",
+        "description": "DOM event"
+    },
+    "afterprint": {
+        "prefix": "afterprint",
+        "body": "afterprint",
+        "description": "DOM event"
+    },
+    "animationend": {
+        "prefix": "animationend",
+        "body": "animationend",
+        "description": "DOM event"
+    },
+    "AnimationEvent": {
+        "prefix": "AnimationEvent",
+        "body": "AnimationEvent",
+        "description": "DOM event"
+    },
+    "animationiteration": {
+        "prefix": "animationiteration",
+        "body": "animationiteration",
+        "description": "DOM event"
+    },
+    "animationstart": {
+        "prefix": "animationstart",
+        "body": "animationstart",
+        "description": "DOM event"
+    },
+    "beforeprint": {
+        "prefix": "beforeprint",
+        "body": "beforeprint",
+        "description": "DOM event"
+    },
+    "beforeunload": {
+        "prefix": "beforeunload",
+        "body": "beforeunload",
+        "description": "DOM event"
+    },
+    "blur": {
+        "prefix": "blur",
+        "body": "blur",
+        "description": "DOM event"
+    },
+    "FocusEvent": {
+        "prefix": "FocusEvent",
+        "body": "FocusEvent",
+        "description": "DOM event"
+    },
+    "canplay": {
+        "prefix": "canplay",
+        "body": "canplay",
+        "description": "DOM event"
+    },
+    "canplaythrough": {
+        "prefix": "canplaythrough",
+        "body": "canplaythrough",
+        "description": "DOM event"
+    },
+    "change": {
+        "prefix": "change",
+        "body": "change",
+        "description": "DOM event"
+    },
+    "click": {
+        "prefix": "click",
+        "body": "click",
+        "description": "DOM event"
+    },
+    "MouseEvent": {
+        "prefix": "MouseEvent",
+        "body": "MouseEvent",
+        "description": "DOM event"
+    },
+    "contextmenu": {
+        "prefix": "contextmenu",
+        "body": "contextmenu",
+        "description": "DOM event"
+    },
+    "copy": {
+        "prefix": "copy",
+        "body": "copy",
+        "description": "DOM event"
+    },
+    "ClipboardEvent": {
+        "prefix": "ClipboardEvent",
+        "body": "ClipboardEvent",
+        "description": "DOM event"
+    },
+    "cut": {
+        "prefix": "cut",
+        "body": "cut",
+        "description": "DOM event"
+    },
+    "dblclick": {
+        "prefix": "dblclick",
+        "body": "dblclick",
+        "description": "DOM event"
+    },
+    "drag": {
+        "prefix": "drag",
+        "body": "drag",
+        "description": "DOM event"
+    },
+    "DragEvent": {
+        "prefix": "DragEvent",
+        "body": "DragEvent",
+        "description": "DOM event"
+    },
+    "dragend": {
+        "prefix": "dragend",
+        "body": "dragend",
+        "description": "DOM event"
+    },
+    "dragenter": {
+        "prefix": "dragenter",
+        "body": "dragenter",
+        "description": "DOM event"
+    },
+    "dragleave": {
+        "prefix": "dragleave",
+        "body": "dragleave",
+        "description": "DOM event"
+    },
+    "dragover": {
+        "prefix": "dragover",
+        "body": "dragover",
+        "description": "DOM event"
+    },
+    "dragstart": {
+        "prefix": "dragstart",
+        "body": "dragstart",
+        "description": "DOM event"
+    },
+    "drop": {
+        "prefix": "drop",
+        "body": "drop",
+        "description": "DOM event"
+    },
+    "durationchange": {
+        "prefix": "durationchange",
+        "body": "durationchange",
+        "description": "DOM event"
+    },
+    "ended": {
+        "prefix": "ended",
+        "body": "ended",
+        "description": "DOM event"
+    },
+    "error": {
+        "prefix": "error",
+        "body": "error",
+        "description": "DOM event"
+    },
+    "ProgressEvent": {
+        "prefix": "ProgressEvent",
+        "body": "ProgressEvent",
+        "description": "DOM event"
+    },
+    "focus": {
+        "prefix": "focus",
+        "body": "focus",
+        "description": "DOM event"
+    },
+    "focusin": {
+        "prefix": "focusin",
+        "body": "focusin",
+        "description": "DOM event"
+    },
+    "focusout": {
+        "prefix": "focusout",
+        "body": "focusout",
+        "description": "DOM event"
+    },
+    "fullscreenchange": {
+        "prefix": "fullscreenchange",
+        "body": "fullscreenchange",
+        "description": "DOM event"
+    },
+    "fullscreenerror": {
+        "prefix": "fullscreenerror",
+        "body": "fullscreenerror",
+        "description": "DOM event"
+    },
+    "hashchange": {
+        "prefix": "hashchange",
+        "body": "hashchange",
+        "description": "DOM event"
+    },
+    "HashChangeEvent": {
+        "prefix": "HashChangeEvent",
+        "body": "HashChangeEvent",
+        "description": "DOM event"
+    },
+    "input": {
+        "prefix": "input",
+        "body": "input",
+        "description": "DOM event"
+    },
+    "InputEvent": {
+        "prefix": "InputEvent",
+        "body": "InputEvent",
+        "description": "DOM event"
+    },
+    "invalid": {
+        "prefix": "invalid",
+        "body": "invalid",
+        "description": "DOM event"
+    },
+    "keydown": {
+        "prefix": "keydown",
+        "body": "keydown",
+        "description": "DOM event"
+    },
+    "KeyboardEvent": {
+        "prefix": "KeyboardEvent",
+        "body": "KeyboardEvent",
+        "description": "DOM event"
+    },
+    "keypress": {
+        "prefix": "keypress",
+        "body": "keypress",
+        "description": "DOM event"
+    },
+    "keyup": {
+        "prefix": "keyup",
+        "body": "keyup",
+        "description": "DOM event"
+    },
+    "load": {
+        "prefix": "load",
+        "body": "load",
+        "description": "DOM event"
+    },
+    "loadeddata": {
+        "prefix": "loadeddata",
+        "body": "loadeddata",
+        "description": "DOM event"
+    },
+    "loadedmetadata": {
+        "prefix": "loadedmetadata",
+        "body": "loadedmetadata",
+        "description": "DOM event"
+    },
+    "loadstart": {
+        "prefix": "loadstart",
+        "body": "loadstart",
+        "description": "DOM event"
+    },
+    "message": {
+        "prefix": "message",
+        "body": "message",
+        "description": "DOM event"
+    },
+    "mousedown": {
+        "prefix": "mousedown",
+        "body": "mousedown",
+        "description": "DOM event"
+    },
+    "mouseenter": {
+        "prefix": "mouseenter",
+        "body": "mouseenter",
+        "description": "DOM event"
+    },
+    "mouseleave": {
+        "prefix": "mouseleave",
+        "body": "mouseleave",
+        "description": "DOM event"
+    },
+    "mousemove": {
+        "prefix": "mousemove",
+        "body": "mousemove",
+        "description": "DOM event"
+    },
+    "mouseover": {
+        "prefix": "mouseover",
+        "body": "mouseover",
+        "description": "DOM event"
+    },
+    "mouseout": {
+        "prefix": "mouseout",
+        "body": "mouseout",
+        "description": "DOM event"
+    },
+    "mouseup": {
+        "prefix": "mouseup",
+        "body": "mouseup",
+        "description": "DOM event"
+    },
+    "wheel": {
+        "prefix": "wheel",
+        "body": "wheel",
+        "description": "DOM event"
+    },
+    "WheelEvent": {
+        "prefix": "WheelEvent",
+        "body": "WheelEvent",
+        "description": "DOM event"
+    },
+    "offline": {
+        "prefix": "offline",
+        "body": "offline",
+        "description": "DOM event"
+    },
+    "online": {
+        "prefix": "online",
+        "body": "online",
+        "description": "DOM event"
+    },
+    "open": {
+        "prefix": "open",
+        "body": "open",
+        "description": "DOM event"
+    },
+    "pagehide": {
+        "prefix": "pagehide",
+        "body": "pagehide",
+        "description": "DOM event"
+    },
+    "PageTransitionEvent": {
+        "prefix": "PageTransitionEvent",
+        "body": "PageTransitionEvent",
+        "description": "DOM event"
+    },
+    "pageshow": {
+        "prefix": "pageshow",
+        "body": "pageshow",
+        "description": "DOM event"
+    },
+    "paste": {
+        "prefix": "paste",
+        "body": "paste",
+        "description": "DOM event"
+    },
+    "pause": {
+        "prefix": "pause",
+        "body": "pause",
+        "description": "DOM event"
+    },
+    "play": {
+        "prefix": "play",
+        "body": "play",
+        "description": "DOM event"
+    },
+    "playing": {
+        "prefix": "playing",
+        "body": "playing",
+        "description": "DOM event"
+    },
+    "PopStateEvent": {
+        "prefix": "PopStateEvent",
+        "body": "PopStateEvent",
+        "description": "DOM event"
+    },
+    "progress": {
+        "prefix": "progress",
+        "body": "progress",
+        "description": "DOM event"
+    },
+    "ratechange": {
+        "prefix": "ratechange",
+        "body": "ratechange",
+        "description": "DOM event"
+    },
+    "reset": {
+        "prefix": "reset",
+        "body": "reset",
+        "description": "DOM event"
+    },
+    "scroll": {
+        "prefix": "scroll",
+        "body": "scroll",
+        "description": "DOM event"
+    },
+    "search": {
+        "prefix": "search",
+        "body": "search",
+        "description": "DOM event"
+    },
+    "seeked": {
+        "prefix": "seeked",
+        "body": "seeked",
+        "description": "DOM event"
+    },
+    "seeking": {
+        "prefix": "seeking",
+        "body": "seeking",
+        "description": "DOM event"
+    },
+    "select": {
+        "prefix": "select",
+        "body": "select",
+        "description": "DOM event"
+    },
+    "show": {
+        "prefix": "show",
+        "body": "show",
+        "description": "DOM event"
+    },
+    "stalled": {
+        "prefix": "stalled",
+        "body": "stalled",
+        "description": "DOM event"
+    },
+    "StorageEvent": {
+        "prefix": "StorageEvent",
+        "body": "StorageEvent",
+        "description": "DOM event"
+    },
+    "submit": {
+        "prefix": "submit",
+        "body": "submit",
+        "description": "DOM event"
+    },
+    "suspend": {
+        "prefix": "suspend",
+        "body": "suspend",
+        "description": "DOM event"
+    },
+    "timeupdate": {
+        "prefix": "timeupdate",
+        "body": "timeupdate",
+        "description": "DOM event"
+    },
+    "toggle": {
+        "prefix": "toggle",
+        "body": "toggle",
+        "description": "DOM event"
+    },
+    "touchcancel": {
+        "prefix": "touchcancel",
+        "body": "touchcancel",
+        "description": "DOM event"
+    },
+    "TouchEvent": {
+        "prefix": "TouchEvent",
+        "body": "TouchEvent",
+        "description": "DOM event"
+    },
+    "touchend": {
+        "prefix": "touchend",
+        "body": "touchend",
+        "description": "DOM event"
+    },
+    "touchmove": {
+        "prefix": "touchmove",
+        "body": "touchmove",
+        "description": "DOM event"
+    },
+    "touchstart": {
+        "prefix": "touchstart",
+        "body": "touchstart",
+        "description": "DOM event"
+    },
+    "transitionend": {
+        "prefix": "transitionend",
+        "body": "transitionend",
+        "description": "DOM event"
+    },
+    "TransitionEvent": {
+        "prefix": "TransitionEvent",
+        "body": "TransitionEvent",
+        "description": "DOM event"
+    },
+    "unload": {
+        "prefix": "unload",
+        "body": "unload",
+        "description": "DOM event"
+    },
+    "volumechange": {
+        "prefix": "volumechange",
+        "body": "volumechange",
+        "description": "DOM event"
+    },
+    "waiting": {
+        "prefix": "waiting",
+        "body": "waiting",
+        "description": "DOM event"
+    },
+    "altKey": {
+        "prefix": "altKey",
+        "body": "altKey",
+        "description": "DOM event"
+    },
+    "bubbles": {
+        "prefix": "bubbles",
+        "body": "bubbles",
+        "description": "DOM event"
+    },
+    "button": {
+        "prefix": "button",
+        "body": "button",
+        "description": "DOM event"
+    },
+    "buttons": {
+        "prefix": "buttons",
+        "body": "buttons",
+        "description": "DOM event"
+    },
+    "cancelable": {
+        "prefix": "cancelable",
+        "body": "cancelable",
+        "description": "DOM event"
+    },
+    "charCode": {
+        "prefix": "charCode",
+        "body": "charCode",
+        "description": "DOM event"
+    },
+    "clientX": {
+        "prefix": "clientX",
+        "body": "clientX",
+        "description": "DOM event"
+    },
+    "clientY": {
+        "prefix": "clientY",
+        "body": "clientY",
+        "description": "DOM event"
+    },
+    "ClipboardData": {
+        "prefix": "ClipboardData",
+        "body": "ClipboardData",
+        "description": "DOM event"
+    },
+    "code": {
+        "prefix": "code",
+        "body": "code",
+        "description": "DOM event"
+    },
+    "createEvent()": {
+        "prefix": "createEvent()",
+        "body": "createEvent()",
+        "description": "DOM event"
+    },
+    "ctrlKey": {
+        "prefix": "ctrlKey",
+        "body": "ctrlKey",
+        "description": "DOM event"
+    },
+    "currentTarget": {
+        "prefix": "currentTarget",
+        "body": "currentTarget",
+        "description": "DOM event"
+    },
+    "data": {
+        "prefix": "data",
+        "body": "data",
+        "description": "DOM event"
+    },
+    "defaultPrevented": {
+        "prefix": "defaultPrevented",
+        "body": "defaultPrevented",
+        "description": "DOM event"
+    },
+    "deltaX": {
+        "prefix": "deltaX",
+        "body": "deltaX",
+        "description": "DOM event"
+    },
+    "deltaY": {
+        "prefix": "deltaY",
+        "body": "deltaY",
+        "description": "DOM event"
+    },
+    "deltaZ": {
+        "prefix": "deltaZ",
+        "body": "deltaZ",
+        "description": "DOM event"
+    },
+    "deltaMode": {
+        "prefix": "deltaMode",
+        "body": "deltaMode",
+        "description": "DOM event"
+    },
+    "detail": {
+        "prefix": "detail",
+        "body": "detail",
+        "description": "DOM event"
+    },
+    "elapsedTime": {
+        "prefix": "elapsedTime",
+        "body": "elapsedTime",
+        "description": "DOM event"
+    },
+    "eventPhase": {
+        "prefix": "eventPhase",
+        "body": "eventPhase",
+        "description": "DOM event"
+    },
+    "getModifierState()": {
+        "prefix": "getModifierState()",
+        "body": "getModifierState()",
+        "description": "DOM event"
+    },
+    "inputType": {
+        "prefix": "inputType",
+        "body": "inputType",
+        "description": "DOM event"
+    },
+    "isTrusted": {
+        "prefix": "isTrusted",
+        "body": "isTrusted",
+        "description": "DOM event"
+    },
+    "key": {
+        "prefix": "key",
+        "body": "key",
+        "description": "DOM event"
+    },
+    "keyCode": {
+        "prefix": "keyCode",
+        "body": "keyCode",
+        "description": "DOM event"
+    },
+    "metaKey": {
+        "prefix": "metaKey",
+        "body": "metaKey",
+        "description": "DOM event"
+    },
+    "newURL": {
+        "prefix": "newURL",
+        "body": "newURL",
+        "description": "DOM event"
+    },
+    "HasChangeEvent": {
+        "prefix": "HasChangeEvent",
+        "body": "HasChangeEvent",
+        "description": "DOM event"
+    },
+    "oldURL": {
+        "prefix": "oldURL",
+        "body": "oldURL",
+        "description": "DOM event"
+    },
+    "pageX": {
+        "prefix": "pageX",
+        "body": "pageX",
+        "description": "DOM event"
+    },
+    "pageY": {
+        "prefix": "pageY",
+        "body": "pageY",
+        "description": "DOM event"
+    },
+    "persisted": {
+        "prefix": "persisted",
+        "body": "persisted",
+        "description": "DOM event"
+    },
+    "preventDefault()": {
+        "prefix": "preventDefault()",
+        "body": "preventDefault()",
+        "description": "DOM event"
+    },
+    "propertyName": {
+        "prefix": "propertyName",
+        "body": "propertyName",
+        "description": "DOM event"
+    },
+    "relatedTarget": {
+        "prefix": "relatedTarget",
+        "body": "relatedTarget",
+        "description": "DOM event"
+    },
+    "shiftKey": {
+        "prefix": "shiftKey",
+        "body": "shiftKey",
+        "description": "DOM event"
+    },
+    "stopImmediatePropagation()": {
+        "prefix": "stopImmediatePropagation()",
+        "body": "stopImmediatePropagation()",
+        "description": "DOM event"
+    },
+    "stopPropagation()": {
+        "prefix": "stopPropagation()",
+        "body": "stopPropagation()",
+        "description": "DOM event"
+    },
+    "target": {
+        "prefix": "target",
+        "body": "target",
+        "description": "DOM event"
+    },
+    "targetTouches": {
+        "prefix": "targetTouches",
+        "body": "targetTouches",
+        "description": "DOM event"
+    },
+    "timeStamp": {
+        "prefix": "timeStamp",
+        "body": "timeStamp",
+        "description": "DOM event"
+    },
+    "touches": {
+        "prefix": "touches",
+        "body": "touches",
+        "description": "DOM event"
+    },
+    "type": {
+        "prefix": "type",
+        "body": "type",
+        "description": "DOM event"
+    },
+    "which": {
+        "prefix": "which",
+        "body": "which",
+        "description": "DOM event"
+    },
+    "view": {
+        "prefix": "view",
+        "body": "view",
+        "description": "DOM event"
+    },
+    "activeElement": {
+        "prefix": "activeElement",
+        "body": "activeElement",
+        "description": "DOM Document"
+    },
+    "addEventListener()": {
+        "prefix": "addEventListener()",
+        "body": "addEventListener()",
+        "description": "DOM Document"
+    },
+    "adoptNode()": {
+        "prefix": "adoptNode()",
+        "body": "adoptNode()",
+        "description": "DOM Document"
+    },
+    "anchors": {
+        "prefix": "anchors",
+        "body": "anchors",
+        "description": "DOM Document"
+    },
+    "applets": {
+        "prefix": "applets",
+        "body": "applets",
+        "description": "DOM Document"
+    },
+    "baseURI": {
+        "prefix": "baseURI",
+        "body": "baseURI",
+        "description": "DOM Document"
+    },
+    "body": {
+        "prefix": "body",
+        "body": "body",
+        "description": "DOM Document"
+    },
+    "close()": {
+        "prefix": "close()",
+        "body": "close()",
+        "description": "DOM Document"
+    },
+    "cookie": {
+        "prefix": "cookie",
+        "body": "cookie",
+        "description": "DOM Document"
+    },
+    "charset": {
+        "prefix": "charset",
+        "body": "charset",
+        "description": "DOM Document"
+    },
+    "characterSet": {
+        "prefix": "characterSet",
+        "body": "characterSet",
+        "description": "DOM Document"
+    },
+    "createAttribute()": {
+        "prefix": "createAttribute()",
+        "body": "createAttribute()",
+        "description": "DOM Document"
+    },
+    "createComment()": {
+        "prefix": "createComment()",
+        "body": "createComment()",
+        "description": "DOM Document"
+    },
+    "createDocumentFragment()": {
+        "prefix": "createDocumentFragment()",
+        "body": "createDocumentFragment()",
+        "description": "DOM Document"
+    },
+    "createElement()": {
+        "prefix": "createElement()",
+        "body": "createElement()",
+        "description": "DOM Document"
+    },
+    "createTextNode()": {
+        "prefix": "createTextNode()",
+        "body": "createTextNode()",
+        "description": "DOM Document"
+    },
+    "defaultView": {
+        "prefix": "defaultView",
+        "body": "defaultView",
+        "description": "DOM Document"
+    },
+    "designMode": {
+        "prefix": "designMode",
+        "body": "designMode",
+        "description": "DOM Document"
+    },
+    "doctype": {
+        "prefix": "doctype",
+        "body": "doctype",
+        "description": "DOM Document"
+    },
+    "documentElement": {
+        "prefix": "documentElement",
+        "body": "documentElement",
+        "description": "DOM Document"
+    },
+    "documentMode": {
+        "prefix": "documentMode",
+        "body": "documentMode",
+        "description": "DOM Document"
+    },
+    "documentURI": {
+        "prefix": "documentURI",
+        "body": "documentURI",
+        "description": "DOM Document"
+    },
+    "domain": {
+        "prefix": "domain",
+        "body": "domain",
+        "description": "DOM Document"
+    },
+    "embeds": {
+        "prefix": "embeds",
+        "body": "embeds",
+        "description": "DOM Document"
+    },
+    "execCommand()": {
+        "prefix": "execCommand()",
+        "body": "execCommand()",
+        "description": "DOM Document"
+    },
+    "forms": {
+        "prefix": "forms",
+        "body": "forms",
+        "description": "DOM Document"
+    },
+    "fullscreenElement": {
+        "prefix": "fullscreenElement",
+        "body": "fullscreenElement",
+        "description": "DOM Document"
+    },
+    "fullscreenEnabled()": {
+        "prefix": "fullscreenEnabled()",
+        "body": "fullscreenEnabled()",
+        "description": "DOM Document"
+    },
+    "getElementById()": {
+        "prefix": "getElementById()",
+        "body": "getElementById()",
+        "description": "DOM Document"
+    },
+    "getElementsByClassName()": {
+        "prefix": "getElementsByClassName()",
+        "body": "getElementsByClassName()",
+        "description": "DOM Document"
+    },
+    "getElementsByName()": {
+        "prefix": "getElementsByName()",
+        "body": "getElementsByName()",
+        "description": "DOM Document"
+    },
+    "getElementsByTagName()": {
+        "prefix": "getElementsByTagName()",
+        "body": "getElementsByTagName()",
+        "description": "DOM Document"
+    },
+    "hasFocus()": {
+        "prefix": "hasFocus()",
+        "body": "hasFocus()",
+        "description": "DOM Document"
+    },
+    "head": {
+        "prefix": "head",
+        "body": "head",
+        "description": "DOM Document"
+    },
+    "images": {
+        "prefix": "images",
+        "body": "images",
+        "description": "DOM Document"
+    },
+    "implementation": {
+        "prefix": "implementation",
+        "body": "implementation",
+        "description": "DOM Document"
+    },
+    "importNode()": {
+        "prefix": "importNode()",
+        "body": "importNode()",
+        "description": "DOM Document"
+    },
+    "inputEncoding": {
+        "prefix": "inputEncoding",
+        "body": "inputEncoding",
+        "description": "DOM Document"
+    },
+    "lastModified": {
+        "prefix": "lastModified",
+        "body": "lastModified",
+        "description": "DOM Document"
+    },
+    "links": {
+        "prefix": "links",
+        "body": "links",
+        "description": "DOM Document"
+    },
+    "normalize()": {
+        "prefix": "normalize()",
+        "body": "normalize()",
+        "description": "DOM Document"
+    },
+    "normalizeDocument()": {
+        "prefix": "normalizeDocument()",
+        "body": "normalizeDocument()",
+        "description": "DOM Document"
+    },
+    "querySelector()": {
+        "prefix": "querySelector()",
+        "body": "querySelector()",
+        "description": "DOM Document"
+    },
+    "querySelectorAll()": {
+        "prefix": "querySelectorAll()",
+        "body": "querySelectorAll()",
+        "description": "DOM Document"
+    },
+    "readyState": {
+        "prefix": "readyState",
+        "body": "readyState",
+        "description": "DOM Document"
+    },
+    "referrer": {
+        "prefix": "referrer",
+        "body": "referrer",
+        "description": "DOM Document"
+    },
+    "removeEventListener()": {
+        "prefix": "removeEventListener()",
+        "body": "removeEventListener()",
+        "description": "DOM Document"
+    },
+    "renameNode()": {
+        "prefix": "renameNode()",
+        "body": "renameNode()",
+        "description": "DOM Document"
+    },
+    "scripts": {
+        "prefix": "scripts",
+        "body": "scripts",
+        "description": "DOM Document"
+    },
+    "strictErrorChecking": {
+        "prefix": "strictErrorChecking",
+        "body": "strictErrorChecking",
+        "description": "DOM Document"
+    },
+    "title": {
+        "prefix": "title",
+        "body": "title",
+        "description": "DOM Document"
+    },
+    "URL": {
+        "prefix": "URL",
+        "body": "URL",
+        "description": "DOM Document"
+    },
+    "write()": {
+        "prefix": "write()",
+        "body": "write()",
+        "description": "DOM Document"
+    },
+    "writeln()": {
+        "prefix": "writeln()",
+        "body": "writeln()",
+        "description": "DOM Document"
+    },
+    // DOM Element
+    "accessKey": {
+        "prefix": "accessKey",
+        "body": "accessKey",
+        "description": "DOM Element"
+    },
+    "appendChild()": {
+        "prefix": "appendChild()",
+        "body": "appendChild()",
+        "description": "DOM Element"
+    },
+    "attributes": {
+        "prefix": "attributes",
+        "body": "attributes",
+        "description": "DOM Element"
+    },
+    "childElementCount": {
+        "prefix": "childElementCount",
+        "body": "childElementCount",
+        "description": "DOM Element"
+    },
+    "childNodes": {
+        "prefix": "childNodes",
+        "body": "childNodes",
+        "description": "DOM Element"
+    },
+    "children": {
+        "prefix": "children",
+        "body": "children",
+        "description": "DOM Element"
+    },
+    "classList": {
+        "prefix": "classList",
+        "body": "classList",
+        "description": "DOM Element"
+    },
+    "className": {
+        "prefix": "className",
+        "body": "className",
+        "description": "DOM Element"
+    },
+    "click()": {
+        "prefix": "click()",
+        "body": "click()",
+        "description": "DOM Element"
+    },
+    "clientHeight": {
+        "prefix": "clientHeight",
+        "body": "clientHeight",
+        "description": "DOM Element"
+    },
+    "clientLeft": {
+        "prefix": "clientLeft",
+        "body": "clientLeft",
+        "description": "DOM Element"
+    },
+    "clientTop": {
+        "prefix": "clientTop",
+        "body": "clientTop",
+        "description": "DOM Element"
+    },
+    "clientWidth": {
+        "prefix": "clientWidth",
+        "body": "clientWidth",
+        "description": "DOM Element"
+    },
+    "cloneNode()": {
+        "prefix": "cloneNode()",
+        "body": "cloneNode()",
+        "description": "DOM Element"
+    },
+    "compareDocumentPosition()": {
+        "prefix": "compareDocumentPosition()",
+        "body": "compareDocumentPosition()",
+        "description": "DOM Element"
+    },
+    "contains()": {
+        "prefix": "contains()",
+        "body": "contains()",
+        "description": "DOM Element"
+    },
+    "contentEditable": {
+        "prefix": "contentEditable",
+        "body": "contentEditable",
+        "description": "DOM Element"
+    },
+    "dir": {
+        "prefix": "dir",
+        "body": "dir",
+        "description": "DOM Element"
+    },
+    "exitFullscreen()": {
+        "prefix": "exitFullscreen()",
+        "body": "exitFullscreen()",
+        "description": "DOM Element"
+    },
+    "firstChild": {
+        "prefix": "firstChild",
+        "body": "firstChild",
+        "description": "DOM Element"
+    },
+    "firstElementChild": {
+        "prefix": "firstElementChild",
+        "body": "firstElementChild",
+        "description": "DOM Element"
+    },
+    "getAttribute()": {
+        "prefix": "getAttribute()",
+        "body": "getAttribute()",
+        "description": "DOM Element"
+    },
+    "getAttributeNode()": {
+        "prefix": "getAttributeNode()",
+        "body": "getAttributeNode()",
+        "description": "DOM Element"
+    },
+    "getBoundingClientRect()": {
+        "prefix": "getBoundingClientRect()",
+        "body": "getBoundingClientRect()",
+        "description": "DOM Element"
+    },
+    "hasAttribute()": {
+        "prefix": "hasAttribute()",
+        "body": "hasAttribute()",
+        "description": "DOM Element"
+    },
+    "hasAttributes()": {
+        "prefix": "hasAttributes()",
+        "body": "hasAttributes()",
+        "description": "DOM Element"
+    },
+    "hasChildNodes()": {
+        "prefix": "hasChildNodes()",
+        "body": "hasChildNodes()",
+        "description": "DOM Element"
+    },
+    "id": {
+        "prefix": "id",
+        "body": "id",
+        "description": "DOM Element"
+    },
+    "innerHTML": {
+        "prefix": "innerHTML",
+        "body": "innerHTML",
+        "description": "DOM Element"
+    },
+    "innerText": {
+        "prefix": "innerText",
+        "body": "innerText",
+        "description": "DOM Element"
+    },
+    "insertAdjacentElement()": {
+        "prefix": "insertAdjacentElement()",
+        "body": "insertAdjacentElement()",
+        "description": "DOM Element"
+    },
+    "insertAdjacentHTML()": {
+        "prefix": "insertAdjacentHTML()",
+        "body": "insertAdjacentHTML()",
+        "description": "DOM Element"
+    },
+    "insertAdjacentText()": {
+        "prefix": "insertAdjacentText()",
+        "body": "insertAdjacentText()",
+        "description": "DOM Element"
+    },
+    "insertBefore()": {
+        "prefix": "insertBefore()",
+        "body": "insertBefore()",
+        "description": "DOM Element"
+    },
+    "isContentEditable": {
+        "prefix": "isContentEditable",
+        "body": "isContentEditable",
+        "description": "DOM Element"
+    },
+    "isDefaultNamespace()": {
+        "prefix": "isDefaultNamespace()",
+        "body": "isDefaultNamespace()",
+        "description": "DOM Element"
+    },
+    "isEqualNode()": {
+        "prefix": "isEqualNode()",
+        "body": "isEqualNode()",
+        "description": "DOM Element"
+    },
+    "isSameNode()": {
+        "prefix": "isSameNode()",
+        "body": "isSameNode()",
+        "description": "DOM Element"
+    },
+    "isSupported()": {
+        "prefix": "isSupported()",
+        "body": "isSupported()",
+        "description": "DOM Element"
+    },
+    "lang": {
+        "prefix": "lang",
+        "body": "lang",
+        "description": "DOM Element"
+    },
+    "lastChild": {
+        "prefix": "lastChild",
+        "body": "lastChild",
+        "description": "DOM Element"
+    },
+    "lastElementChild": {
+        "prefix": "lastElementChild",
+        "body": "lastElementChild",
+        "description": "DOM Element"
+    },
+    "namespaceURI": {
+        "prefix": "namespaceURI",
+        "body": "namespaceURI",
+        "description": "DOM Element"
+    },
+    "nextSibling": {
+        "prefix": "nextSibling",
+        "body": "nextSibling",
+        "description": "DOM Element"
+    },
+    "nextElementSibling": {
+        "prefix": "nextElementSibling",
+        "body": "nextElementSibling",
+        "description": "DOM Element"
+    },
+    "nodeName": {
+        "prefix": "nodeName",
+        "body": "nodeName",
+        "description": "DOM Element"
+    },
+    "nodeType": {
+        "prefix": "nodeType",
+        "body": "nodeType",
+        "description": "DOM Element"
+    },
+    "nodeValue": {
+        "prefix": "nodeValue",
+        "body": "nodeValue",
+        "description": "DOM Element"
+    },
+    "offsetHeight": {
+        "prefix": "offsetHeight",
+        "body": "offsetHeight",
+        "description": "DOM Element"
+    },
+    "offsetWidth": {
+        "prefix": "offsetWidth",
+        "body": "offsetWidth",
+        "description": "DOM Element"
+    },
+    "offsetLeft": {
+        "prefix": "offsetLeft",
+        "body": "offsetLeft",
+        "description": "DOM Element"
+    },
+    "offsetParent": {
+        "prefix": "offsetParent",
+        "body": "offsetParent",
+        "description": "DOM Element"
+    },
+    "offsetTop": {
+        "prefix": "offsetTop",
+        "body": "offsetTop",
+        "description": "DOM Element"
+    },
+    "ownerDocument": {
+        "prefix": "ownerDocument",
+        "body": "ownerDocument",
+        "description": "DOM Element"
+    },
+    "parentNode": {
+        "prefix": "parentNode",
+        "body": "parentNode",
+        "description": "DOM Element"
+    },
+    "parentElement": {
+        "prefix": "parentElement",
+        "body": "parentElement",
+        "description": "DOM Element"
+    },
+    "previousSibling": {
+        "prefix": "previousSibling",
+        "body": "previousSibling",
+        "description": "DOM Element"
+    },
+    "previousElementSibling": {
+        "prefix": "previousElementSibling",
+        "body": "previousElementSibling",
+        "description": "DOM Element"
+    },
+    "removeAttribute()": {
+        "prefix": "removeAttribute()",
+        "body": "removeAttribute()",
+        "description": "DOM Element"
+    },
+    "removeAttributeNode()": {
+        "prefix": "removeAttributeNode()",
+        "body": "removeAttributeNode()",
+        "description": "DOM Element"
+    },
+    "removeChild()": {
+        "prefix": "removeChild()",
+        "body": "removeChild()",
+        "description": "DOM Element"
+    },
+    "replaceChild()": {
+        "prefix": "replaceChild()",
+        "body": "replaceChild()",
+        "description": "DOM Element"
+    },
+    "requestFullscreen()": {
+        "prefix": "requestFullscreen()",
+        "body": "requestFullscreen()",
+        "description": "DOM Element"
+    },
+    "scrollHeight": {
+        "prefix": "scrollHeight",
+        "body": "scrollHeight",
+        "description": "DOM Element"
+    },
+    "scrollIntoView()": {
+        "prefix": "scrollIntoView()",
+        "body": "scrollIntoView()",
+        "description": "DOM Element"
+    },
+    "scrollLeft": {
+        "prefix": "scrollLeft",
+        "body": "scrollLeft",
+        "description": "DOM Element"
+    },
+    "scrollTop": {
+        "prefix": "scrollTop",
+        "body": "scrollTop",
+        "description": "DOM Element"
+    },
+    "scrollWidth": {
+        "prefix": "scrollWidth",
+        "body": "scrollWidth",
+        "description": "DOM Element"
+    },
+    "setAttribute()": {
+        "prefix": "setAttribute()",
+        "body": "setAttribute()",
+        "description": "DOM Element"
+    },
+    "setAttributeNode()": {
+        "prefix": "setAttributeNode()",
+        "body": "setAttributeNode()",
+        "description": "DOM Element"
+    },
+    "style": {
+        "prefix": "style",
+        "body": "style",
+        "description": "DOM Element"
+    },
+    "tabIndex": {
+        "prefix": "tabIndex",
+        "body": "tabIndex",
+        "description": "DOM Element"
+    },
+    "tagName": {
+        "prefix": "tagName",
+        "body": "tagName",
+        "description": "DOM Element"
+    },
+    "textContent": {
+        "prefix": "textContent",
+        "body": "textContent",
+        "description": "DOM Element"
+    },
+}

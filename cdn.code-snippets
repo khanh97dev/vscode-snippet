@@ -1,0 +1,79 @@
+{
+	"cdn-image-color": {
+		"prefix": "cdn-image-color",
+		"body": [
+			"http://placeimg.com/${1:w}/${2:h}/any"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"cdn-image-color-2": {
+		"prefix": "cdn-image-color-2",
+		"body": [
+			"https://picsum.photos/${1:w}/${2:h}"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"cdn-image": {
+		"prefix": "cdn-image",
+		"body": [
+			"http://via.placeholder.com/${1:w}x${2:h}"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"bootstrap-css-4": {
+		"prefix": "cdn:bootstrap-css-4",
+		"body": [
+			"<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"jquery": {
+		"prefix": "cdn:jquery",
+		"body": [
+			"<script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"bootstrap-popper": {
+		"prefix": "cdn:bootstrap-popper",
+		"body": [
+			"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"bootstrap-js": {
+		"prefix": "cdn:bootstrap-js",
+		"body": [
+			"<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"fullcalendar-css": {
+		"prefix": "cdn:fullcalendar-css",
+		"body": [
+			"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.min.css\" integrity=\"sha256-saO3mkZVAcyqsfgsGMrmE7Cs/TLN1RgVykZ5dnnJKug=\" crossorigin=\"anonymous\" />"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"fullcalendar-js": {
+		"prefix": "cdn:fullcalendar-js",
+		"body": [
+			"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.min.js\" integrity=\"sha256-q57s73NpMCTQ4ZXqb1X5bIywrICySeB6WvYxFGfz/PA=\" crossorigin=\"anonymous\"></script>"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"jquery-ui": {
+		"prefix": "cdn:jquery-ui",
+		"body": [
+			"<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.min.js\"></script>"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+	"momment-js": {
+		"prefix": "cdn:momment-js",
+		"body": [
+			"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js\" integrity=\"sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=\" crossorigin=\"anonymous\"></script>"
+		],
+		"description": "cdn | cdn.code-snippets"
+	},
+}
