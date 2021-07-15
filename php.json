@@ -1,23 +1,23 @@
 {
-    "this":{
-      "prefix": "this",
-      "body": [
-        "\\$this->"
-      ],
-      "description": "$this->"
+    "this": {
+        "prefix": "this",
+        "body": [
+            "\\$this->"
+        ],
+        "description": "$this-> | php.json"
     },
-    "function_exists-not_if":{
-      "prefix": "function_exists-not_if",
-      "body": [
+    "function_exists-not_if": {
+        "prefix": "function_exists-not_if",
+        "body": [
             "if (!function_exists('$1')) :\n\tfunction $1()\n\t{\n\t\t$2\n\t}\nendif;",
-      ]
+        ]
     },
-    "ret":{
-      "prefix": "ret",
-      "body": [
-           "return "
-      ],
-      "description": "return"
+    "ret": {
+        "prefix": "ret",
+        "body": [
+            "return "
+        ],
+        "description": "return | php.json"
     },
     "static_function": {
         "prefix": "static_function",
@@ -26,28 +26,28 @@
             "    $3",
             "}",
         ],
-        "description": "php"
+        "description": "php | php.json"
     },
-    "wp_%%":{
-      "prefix": "%%",
-      "body": [
-           "%${1:1}$$s"
-      ],
-      "description": "WP"
+    "wp_%%": {
+        "prefix": "%%",
+        "body": [
+            "%${1:1}$$s"
+        ],
+        "description": "WP | php.json"
     },
-    "isset_post":{
-      "prefix": "isset_post",
-      "body": [
-           "isset( $_POST['$1'] )"
-      ],
-      "description": "PHP"
+    "isset_post": {
+        "prefix": "isset_post",
+        "body": [
+            "isset( $_POST['$1'] )"
+        ],
+        "description": "PHP | php.json"
     },
-    "isset_get":{
-      "prefix": "isset_get",
-      "body": [
-           "isset( $_GET['$1'] )"
-      ],
-      "description": "PHP"
+    "isset_get": {
+        "prefix": "isset_get",
+        "body": [
+            "isset( $_GET['$1'] )"
+        ],
+        "description": "PHP | php.json"
     },
     "wp_class_megamenu": {
         "prefix": "wp_class_megamenu",
@@ -202,7 +202,7 @@
             "    }",
             "}",
         ],
-        "description": "WP"
+        "description": "WP | php.json"
     },
     "wp_config_url": {
         "prefix": "wp_config_url",
@@ -210,7 +210,7 @@
             "define('WP_SITEURL','http://${1:localhost/wordpress}');",
             "define('WP_HOME',WP_SITEURL);",
         ],
-        "description": "WP"
+        "description": "WP | php.json"
     },
     "wp_add_section": {
         "prefix": "wp_add_section",
@@ -223,51 +223,51 @@
             "    )",
             ");",
         ],
-        "description": "WP"
+        "description": "WP | php.json"
     },
-    "wp_add_control":{
-      "prefix": "wp_add_control",
-      "body": [
-        "$$wp_customize->add_setting('${1:id_setting}', array(",
-        "    'transport' => 'refresh',",
-        "));",
-        "",
-        "$$wp_customize->add_control(new \\WP_Customize_Control",
-        "($$wp_customize, '${1:id_setting}', array(",
-        "    'label' => __('Slider Color', '${3:text_domain}'),",
-        "    'section' => '${2:id_section}',",
-        "    'settings' => '${1:id_setting}',",
-        ")));",
-      ],
-      "description": "WP"
+    "wp_add_control": {
+        "prefix": "wp_add_control",
+        "body": [
+            "$$wp_customize->add_setting('${1:id_setting}', array(",
+            "    'transport' => 'refresh',",
+            "));",
+            "",
+            "$$wp_customize->add_control(new \\WP_Customize_Control",
+            "($$wp_customize, '${1:id_setting}', array(",
+            "    'label' => __('Slider Color', '${3:text_domain}'),",
+            "    'section' => '${2:id_section}',",
+            "    'settings' => '${1:id_setting}',",
+            ")));",
+        ],
+        "description": "WP | php.json"
     },
-    "wp_add_panel":{
-      "prefix": "wp_add_panel",
-      "body": [
-        "$$wp_customize->add_panel('panel', array(",
-        "    'priority' => 10,",
-        "    'capability' => 'edit_theme_options',",
-        "    'theme_supports' => '',",
-        "    'title' => __('Theme Options', '${3:text_domain}'),",
-        "));",
-      ],
-      "description": "WP"
+    "wp_add_panel": {
+        "prefix": "wp_add_panel",
+        "body": [
+            "$$wp_customize->add_panel('panel', array(",
+            "    'priority' => 10,",
+            "    'capability' => 'edit_theme_options',",
+            "    'theme_supports' => '',",
+            "    'title' => __('Theme Options', '${3:text_domain}'),",
+            "));",
+        ],
+        "description": "WP | php.json"
     },
-    "method_exists-if":{
-      "prefix": "method_exists-if",
-      "body": [
+    "method_exists-if": {
+        "prefix": "method_exists-if",
+        "body": [
             "if(method_exists($this,'$1')) {",
             "    $1;",
             "}",
-      ],
-      "description": "PHP"
+        ],
+        "description": "PHP | php.json"
     },
-    "for_endfor":{
-      "prefix": "for_endfor",
-      "body": [
-           "for (\\$$i= $1; \\$$i <$2; \\$$i++) : \r\n\t$0\r\nendfor;"
-      ],
-      "description": ""
+    "for_endfor": {
+        "prefix": "for_endfor",
+        "body": [
+            "for (\\$$i= $1; \\$$i <$2; \\$$i++) : \r\n\t$0\r\nendfor;"
+        ],
+        "description": " | php.json"
     },
 
     "php-html": {
@@ -275,14 +275,14 @@
         "body": [
             "?>${0:html}<?php"
         ],
-        "description": "?> HTML <?php"
+        "description": "?> HTML <?php | php.json"
     },
-    "response-json":{
-      "prefix": "return-response-json",
-      "body": [
-          "return response()->json($1${2:, 200});"
-      ],
-      "description": "LARAVEL | response()"
+    "response-json": {
+        "prefix": "return-response-json",
+        "body": [
+            "return response()->json($1${2:, 200});"
+        ],
+        "description": "LARAVEL | response() | php.json"
     },
     // function support
 }
