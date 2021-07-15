@@ -1,0 +1,12 @@
+{
+    "opencart-get": {
+        "prefix": "opencart-get",
+        "body": "$this->request->get[$1]",
+        "description": "opencart-get | opencart.ocde-snippets"
+    },
+    "opencart-post": {
+        "prefix": "opencart-post",
+        "body": "$this->request->post[$1]",
+        "description": "opencart-post | opencart.ocde-snippets"
+    },
+}
