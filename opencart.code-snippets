@@ -2,11 +2,22 @@
     "opencart-get": {
         "prefix": "opencart-get",
         "body": "$this->request->get[$1]",
-        "description": "opencart-get | opencart.ocde-snippets"
+        "description": "opencart-get | opencart.code-snippets",
+        "scope": "php"
     },
     "opencart-post": {
         "prefix": "opencart-post",
         "body": "$this->request->post[$1]",
-        "description": "opencart-post | opencart.ocde-snippets"
+        "description": "opencart-post | opencart.code-snippets",
+        "scope": "php"
+    },
+    "opencart-response-json":{
+      "prefix": "opencart-response-json",
+      "body": [
+           "$this->response->addHeader('Content-Type: application/json');",
+           "$this->response->setOutput(json_encode($json));",
+      ],
+      "description": "opencart-response-json | opencart.code-snippets",
+      "scope": "php"
     },
 }
