@@ -20,22 +20,22 @@
         "description": "opencart-response-json | opencart.code-snippets",
         "scope": "php"
     },
-    "oepncart-escape": {
-        "prefix": "oepncart-escape",
+    "opencart-escape": {
+        "prefix": "opencart-escape",
         "body": "\\$this->db->escape($1)",
-        "description": "oepncart-escape | opencart.code-snippets",
+        "description": "opencart-escape | opencart.code-snippets",
         "scope": "php"
     },
     "opencart-template-panel": {
         "prefix": "opencart-template-panel",
         "body": "<div class=\"panel panel-default\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Title</h3>\n    </div>\n    <div class=\"panel-body\">\n        <!-- form body or content -->\n        <div class=\"form-group text-right\">\n            <button type=\"button\"><i class=\"fa fa-filter\"></i> Filter</button>\n        </div>\n    </div>\n</div>",
-        "description": "oepncart-template-panel | opencart.code-snippets",
+        "description": "opencart-template-panel | opencart.code-snippets",
         "scope": "twig",
     },
     "opencart-template-header": {
         "prefix": "opencart-template-header",
         "body": "{# Header #}\n<div class=\"page-header\">\n    <div class=\"container-fluid\">\n        <h1>{{ msg['heading_title'] }}</h1>\n        <ul class=\"breadcrumb\">\n            {% for breadcrumb in breadcrumbs %}\n            <li><a href=\"{{ breadcrumb.href }}\">{{ breadcrumb.text }}</a></li>\n            {% endfor %}\n        </ul>\n    </div>\n</div>",
-        "description": "oepncart-template-header | opencart.code-snippets",
+        "description": "opencart-template-header | opencart.code-snippets",
         "scope": "twig",
     },
 }
