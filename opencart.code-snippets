@@ -51,7 +51,7 @@
     },
     "opencart-link": {
         "prefix": "opencart-link",
-        "body": "\\$this->url->link($1, http_build_query([$2]))",
+        "body": "\\$this->url->link($1, http_build_query([$2]), true)",
         "description": "opencart-link | opencart.code-snippets",
         "scope": "php"
     },
