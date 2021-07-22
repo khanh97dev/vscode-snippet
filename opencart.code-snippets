@@ -5,6 +5,12 @@
         "description": "opencart-get | opencart.code-snippets",
         "scope": "php"
     },
+    "opencart-redirect": {
+        "prefix": "opencart-redirect",
+        "body": "\\$this->resposne->redirect($1)",
+        "description": "opencart-redirect | opencart.code-snippets",
+        "scope": "php"
+    },
     "opencart-post": {
         "prefix": "opencart-post",
         "body": "\\$this->request->post[$1]",
@@ -20,15 +26,32 @@
         "description": "opencart-response-json | opencart.code-snippets",
         "scope": "php"
     },
+    "opencart-admin-partials": {
+        "prefix": "opencart-admin-partials",
+        "body": [
+            "\\$data['header'] = \\$this->load->controller('common/header');",
+            "\\$data['column_left'] = \\$this->load->controller('common/column_left');",
+            "\\$data['footer'] = \\$this->load->controller('common/footer');",
+        ],
+        "description": "opencart-admin-partials | opencart.code-snippets"
+    },
     "opencart-escape": {
         "prefix": "opencart-escape",
         "body": "\\$this->db->escape($1)",
         "description": "opencart-escape | opencart.code-snippets",
         "scope": "php"
     },
+    "opencart-user_token": {
+        "prefix": "opencart-user_token",
+        "body": [
+            "\\$this->session->data['user_token']",
+        ],
+        "description": "opencart-user_token | opencart.code-snippets",
+        "scope": "php"
+    },
     "opencart-link": {
         "prefix": "opencart-link",
-        "body": "\\$this->link->url($1, http_build_query([$2]))",
+        "body": "\\$this->url->link($1, http_build_query([$2]))",
         "description": "opencart-link | opencart.code-snippets",
         "scope": "php"
     },
