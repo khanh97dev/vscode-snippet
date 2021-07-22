@@ -26,6 +26,21 @@
         "description": "opencart-escape | opencart.code-snippets",
         "scope": "php"
     },
+    "opencart-link": {
+        "prefix": "opencart-link",
+        "body": "\\$this->link->url($1, http_build_query([$2]))",
+        "description": "opencart-link | opencart.code-snippets",
+        "scope": "php"
+    },
+    "opencart-config-get": {
+        "prefix": "opencart-config-get",
+        "body": [
+            "$this->load->model('setting/setting')",
+            "\\$this->config->get($1)"
+        ],
+        "description": "opencart-config-get | opencart.code-snippets",
+        "scope": "php"
+    },
     "opencart-template-panel": {
         "prefix": "opencart-template-panel",
         "body": "<div class=\"panel panel-default\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Title</h3>\n    </div>\n    <div class=\"panel-body\">\n        <!-- form body or content -->\n        <div class=\"form-group text-right\">\n            <button type=\"button\"><i class=\"fa fa-filter\"></i> Filter</button>\n        </div>\n    </div>\n</div>",
@@ -38,4 +53,5 @@
         "description": "opencart-template-header | opencart.code-snippets",
         "scope": "twig",
     },
+
 }
