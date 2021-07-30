@@ -1,4 +1,9 @@
 {
+    "die-var_dump":{
+      "prefix": "die-var_dump",
+      "body": "die(var_dump($1));",
+      "description": "die-var_dump | php.json"
+    },
     "this": {
         "prefix": "this",
         "body": [
