@@ -1,4 +1,9 @@
 {
+    "inputMessageCli":{
+      "prefix": "inputMessageCli",
+      "body": "function inputMessageCli($message = '')\n{\n    echo $message ?? \"Input: \";\n    $handle = fopen(\"php://stdin\", \"r\");\n    \\$result = trim(fgets($handle));\n    fclose($handle);\n    return \\$result;\n}",
+      "description": "method: inputMessageCli | php.json"
+    },
     "die-var_dump":{
       "prefix": "die-var_dump",
       "body": "die(var_dump($1));",
