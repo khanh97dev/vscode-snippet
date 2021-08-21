@@ -246,20 +246,20 @@
         "description": "To include the first view that exists from a given array of views, you may use the includeFirst directive | blade-html.code-snippets",
         "scope": "html"
     },
-    "input class": {
-        "prefix": "inputToken",
+    "laravel-input_token": {
+        "prefix": "laravel-input_token",
         "body": [
             "<input type=\"hidden\" name=\"_token\" id=\"csrf-token\" value=\"{{ Session::token() }}\" />"
         ],
-        "description": "token laravel in input form | blade-html.code-snippets",
+        "description": "laravel-input_token | blade-html.code-snippets",
         "scope": "html"
     },
-    "method delete": {
-        "prefix": "inputDelete",
+    "laravel-inputDelete": {
+        "prefix": "laravel-inputDelete",
         "body": [
             "<input type=\"hidden\" name=\"_method\" id=\"$delete\" value=\"DELETE\" />"
         ],
-        "description": "delete mothod POST | blade-html.code-snippets",
+        "description": "laravel-inputDelete | blade-html.code-snippets",
         "scope": "html"
     },
     "$ajax": {
