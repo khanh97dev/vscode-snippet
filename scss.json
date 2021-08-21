@@ -41,8 +41,8 @@
       ],
       "description": "Scss"
     },
-    "inclu":{
-      "prefix": "inclu",
+    "inlcude":{
+      "prefix": "inlcude",
       "body": [
            "@include $1($2);"
       ],
