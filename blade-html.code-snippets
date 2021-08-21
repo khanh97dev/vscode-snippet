@@ -262,7 +262,7 @@
         "description": "delete mothod POST | blade-html.code-snippets",
         "scope": "html"
     },
-    "$.ajax new": {
+    "$ajax": {
         "prefix": "$ajax",
         "body": [
             "e.eventDefault;",
@@ -274,7 +274,9 @@
             "\t success: function(reponse){ $5 } ",
             "\t error: function(){ $6 }",
             "});"
-        ]
+        ],
+        "description": "$.ajax | blade-html.code-snippets",
+        "scope": "javascript,html,blade"
     },
     "mysqli utf-8": {
         "prefix": "mysqli-utf8",
@@ -369,48 +371,56 @@
         "body": [
             "\\$_REQUEST['$1']"
         ],
+        "scope": "blade,php"
     },
     "$_COOKIE": {
         "prefix": "$_COOKIE",
         "body": [
             "\\$_COOKIE['$1']"
         ],
+        "scope": "blade,php"
     },
     "$_GET": {
         "prefix": "$_GET",
         "body": [
             "\\$_GET['$1']"
         ],
+        "scope": "blade,php"
     },
     "$_POST": {
         "prefix": "$_POST",
         "body": [
             "\\$_POST['$1']"
         ],
+        "scope": "blade,php"
     },
     "$_SESSION": {
         "prefix": "$_SESSION",
         "body": [
             "\\$_SESSION['$1']"
         ],
+        "scope": "blade,php"
     },
     "$_SERVER": {
         "prefix": "$_SERVER",
         "body": [
             "\\$_SERVER['$1']"
         ],
+        "scope": "blade,php"
     },
     "$_ENV": {
         "prefix": "$_ENV",
         "body": [
             "\\$_ENV['$1']"
         ],
+        "scope": "blade,php"
     },
     "$_FILES": {
         "prefix": "$_FILES",
         "body": [
             "\\$_FILES['$1']"
         ],
+        "scope": "blade,php"
     },
     "CommentCSS": {
         "prefix": "CommentCSS-PHP-JS",

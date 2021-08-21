@@ -183,7 +183,7 @@
 		],
 		"description": "delete mothod POST | blade.json"
 	},
-	"$.ajax new":{
+	"$ajax":{
 		"prefix":"$ajax",
 		"body":[
 			"e.eventDefault;",

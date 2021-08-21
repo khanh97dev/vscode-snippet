@@ -3,1075 +3,1075 @@
 		"prefix": "add",
 		"body": "add('${1:selector/elements/html}')$0",
 		"description": ".add() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"addback": {
 		"prefix": "addback",
 		"body": "addBack('${1:selector}')$0",
 		"description": ".addBack() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"addClass": {
 		"prefix": "addClass",
 		"body": "addClass('${1:class_name}')$0",
 		"description": ".addClass() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"after": {
 		"prefix": "after",
 		"body": "after('${1:Some text}')$0",
 		"description": ".after() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ajax": {
 		"prefix": "ajax",
 		"body": "$.ajax({\n\turl: '${1:/path/to/file}',\n\t${2:type: '${3:default GET (Other values: POST)}',}\n\t${4:dataType: '${5:default: Intelligent Guess (Other values: xml, json, script, or html)}',}\n\t${6:data: {param1: 'value1'\\},}\n})\n${7:.done(function() {\n\tconsole.log(\"success\");\n\\})}\n${8:.fail(function() {\n\tconsole.log(\"error\");\n\\})}\n${9:.always(function() {\n\tconsole.log(\"complete\");\n\\})};\n$0",
 		"description": "$.ajax() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ajaxComplete": {
 		"prefix": "ajaxComplete",
 		"body": "ajaxComplete(function(event, xhr, settings) {\n\t${1:/* executes whenever an AJAX request completes */}\n});$0",
 		"description": ".ajaxComplete() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ajaxerror": {
 		"prefix": "ajaxerror",
 		"body": "ajaxError(function(${1:event, xhr, settings, thrownError}) {\n\t${2:/* Stuff to do when an AJAX call returns an error */};\n});$0",
 		"description": ".ajaxerror() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"andSelf": {
 		"prefix": "andSelf",
 		"body": "andSelf()$0",
 		"description": ".andSelf() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"animate": {
 		"prefix": "animate",
 		"body": "animate({\n\t${2:param1}: ${3:value1}${4:,\n\t${5:param2}: ${6:value2}}},\n\t${7:speed}, function() {\n\t${0:/* stuff to do after animation is complete */}\n});",
 		"description": ".animate() with callback jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"animate1": {
 		"prefix": "animate",
 		"body": "animate({${1:${2:param1}: ${3:value1}${4:, ${5:param2}: ${6:value2}}}}, ${7:speed})$0",
 		"description": ".animate() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"append": {
 		"prefix": "append",
 		"body": "append('${1:Some text}')$0",
 		"description": ".append() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"appendTo": {
 		"prefix": "appendTo",
 		"body": "appendTo('${1:selector}')$0",
 		"description": ".appendTo() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"attr": {
 		"prefix": "attr",
 		"body": "attr({\n\t${1:property1}: '${2:value1}'${3:,\n\t${4:property2}: '${5:value2}'\n\\}});$0",
 		"description": ".attr() - multiple jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"attr1": {
 		"prefix": "attr",
 		"body": "attr('${1:attribute}', '${2:value}');$0",
 		"description": ".attr() - single jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"before": {
 		"prefix": "before",
 		"body": "before('${1:content}');$0",
 		"description": ".before() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"bind": {
 		"prefix": "bind",
 		"body": "bind('${1:event name}', ${2:eventData}, function(${3:event}) {\n\t${0:/* Act on the event */}\n});",
 		"description": ".bind() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"blur": {
 		"prefix": "blur",
 		"body": "blur(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".blur() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"change": {
 		"prefix": "change",
 		"body": "change(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".change() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"children": {
 		"prefix": "children",
 		"body": "children('${1:selector}')$0",
 		"description": ".children() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"clearQueue": {
 		"prefix": "clearQueue",
 		"body": "clearQueue(${1:queueName});$0",
 		"description": ".clearQueue() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"click": {
 		"prefix": "click",
 		"body": "click(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".click() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"clone": {
 		"prefix": "clone",
 		"body": "clone(${1:boolean}, ${2:boolean})$0",
 		"description": ".clone() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"closest": {
 		"prefix": "closest",
 		"body": "closest('${1:selector}')$0",
 		"description": ".closest() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"contains": {
 		"prefix": "contains",
 		"body": "contains('${1:text to find}');$0",
 		"description": ".contains() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"contents": {
 		"prefix": "contents",
 		"body": "contents();$0",
 		"description": ".contents() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"css": {
 		"prefix": "css",
 		"body": "css({\n\t${1:property1}: '${2:value1}'${3:,\n\t${4:property2}: '${5:value2}'\n\\}});$0",
 		"description": ".css() - multiple jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"css1": {
 		"prefix": "css",
 		"body": "css('${1:property}', '${2:value}');$0",
 		"description": ".css() - single jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"data": {
 		"prefix": "data",
 		"body": "data('${1:name}', ${2:'value'})$0",
 		"description": ".data() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"dblclick": {
 		"prefix": "dblclick",
 		"body": "dblclick(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".dblclick() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"delay": {
 		"prefix": "delay",
 		"body": "delay(${1:milliseconds}${2:, 'queueName'})$0",
 		"description": ".delay() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"delegate": {
 		"prefix": "delegate",
 		"body": "delegate('${1:selector}', '${2:eventType}', function(${4:event}) {\n\t$1\n});$0",
 		"description": ".delegate() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"dequeue": {
 		"prefix": "dequeue",
 		"body": "dequeue(${1:queueName})$0",
 		"description": ".dequeue() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"die": {
 		"prefix": "die",
 		"body": "die('${1:eventType}')$0",
 		"description": ".die() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ready": {
 		"prefix": "ready",
 		"body": "jQuery(document).ready(function($) {\n\t$1\n});$0",
 		"description": "jQuery(document).ready jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ready1": {
 		"prefix": "ready",
 		"body": "$(document).ready(function() {\n\t$1\n});$0",
 		"description": "$(document).ready jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ready2": {
 		"prefix": "ready",
 		"body": "$(function() {\n\t$1\n});$0",
 		"description": "document.ready - $(function(){}) jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"each": {
 		"prefix": "each",
 		"body": "each(${1:function(${2:index}${3:, el}) {\n\t$4\n\\}});$0",
 		"description": ".each() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"end": {
 		"prefix": "end",
 		"body": "end()$0",
 		"description": ".end() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"eq": {
 		"prefix": "eq",
 		"body": "eq(${1:index})$0",
 		"description": ".eq() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"error": {
 		"prefix": "error",
 		"body": "error(${1:function() {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".error() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"fadeIn": {
 		"prefix": "fadeIn",
 		"body": "fadeIn(${1:'slow/400/fast'}${2:, function() {\n\t$3\n\\}});$0",
 		"description": ".fadeIn() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"fadeOut": {
 		"prefix": "fadeOut",
 		"body": "fadeOut('${1:slow/400/fast}'${2:, function() {\n\t$3\n\\}});$0",
 		"description": ".fadeOut() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"fadeto": {
 		"prefix": "fadeto",
 		"body": "fadeTo('${1:slow/400/fast}', ${2:0.5}${3:, function() {\n\t$4\n\\}});$0",
 		"description": ".fadeTo() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"fadeToggle": {
 		"prefix": "fadeToggle",
 		"body": "fadeToggle('${1:slow/400/fast}'${2:, function() {\n\t$3\n\\}});$0",
 		"description": ".fadeToggle() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"filter": {
 		"prefix": "filter",
 		"body": "filter(function(index) {\n\t${1:return ${2:something};}\n});$0",
 		"description": ".filter() function jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"filter1": {
 		"prefix": "filter",
 		"body": "filter($1);$0",
 		"description": ".filter() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"find": {
 		"prefix": "find",
 		"body": "find('${1:selector}')$0",
 		"description": ".find() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"finish": {
 		"prefix": "finish",
 		"body": "finish('${1:queue name}')$0",
 		"description": ".finish() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"first": {
 		"prefix": "first",
 		"body": "first()$0",
 		"description": ".first() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"focus": {
 		"prefix": "focus",
 		"body": "focus(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".focus() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"focusin": {
 		"prefix": "focusin",
 		"body": "focusin(${1:function(${2:event}) {\n\t${3:/* Act on the event */}\n\\}});$0",
 		"description": ".focusin() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"focusout": {
 		"prefix": "focusout",
 		"body": "focusout(${1:function(${2:event}) {\n\t${3:/* Act on the event */}\n\\}});",
 		"description": ".focusout() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"get": {
 		"prefix": "get",
 		"body": "get(${1:element index})$0",
 		"description": ".get() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"getjson": {
 		"prefix": "getjson",
 		"body": "$.getJSON('${1:/path/to/file}'${2:, {param1: 'value1'\\}}, function(json, textStatus) {\n\t\t${3:/*optional stuff to do after success */}\n});$0",
 		"description": "$.getjson() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"has": {
 		"prefix": "has",
 		"body": "has(${1:contained selector/element})$0",
 		"description": ".has() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"hasClass": {
 		"prefix": "hasClass",
 		"body": "hasClass('${1:className}')$0",
 		"description": ".hasClass() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"height": {
 		"prefix": "height",
 		"body": "height(${1:integer})$0",
 		"description": ".height() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"hide": {
 		"prefix": "hide",
 		"body": "hide('${1:slow/400/fast}'${2:, function() {\n\t$3\n\\}});$0",
 		"description": ".hide() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"hover": {
 		"prefix": "hover",
 		"body": "hover(function() {\n\t${1:/* Stuff to do when the mouse enters the element */}\n}, function() {\n\t${2:/* Stuff to do when the mouse leaves the element */}\n});$0",
 		"description": ".hover() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"html": {
 		"prefix": "html",
 		"body": "html(${1:Some text and markup})$0",
 		"description": ".html() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"index": {
 		"prefix": "index",
 		"body": "index(${1:selector/element})$0",
 		"description": ".index() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"innerHeight": {
 		"prefix": "innerHeight",
 		"body": "innerHeight()$0",
 		"description": ".innerHeight() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"innerWidth": {
 		"prefix": "innerWidth",
 		"body": "innerWidth()$0",
 		"description": ".innerWidth() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"insertAfter": {
 		"prefix": "insertAfter",
 		"body": "insertAfter('${1:selector}')$0",
 		"description": ".insertAfter() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"insertBefore": {
 		"prefix": "insertBefore",
 		"body": "insertBefore('${1:selector}')$0",
 		"description": ".insertBefore() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"is": {
 		"prefix": "is",
 		"body": "is('${1:selector}')$0",
 		"description": ".is() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"keydown": {
 		"prefix": "keydown",
 		"body": "keydown(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".keydown() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"keypress": {
 		"prefix": "keypress",
 		"body": "keypress(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".keypress() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"keyup": {
 		"prefix": "keyup",
 		"body": "keyup(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".keyup() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"last": {
 		"prefix": "last",
 		"body": "last()$0",
 		"description": ".last() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"live": {
 		"prefix": "live",
 		"body": "live('${1:click}', function(${2:event}) {\n\t${0:/* Act on the event */}\n});",
 		"description": ".live() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"load": {
 		"prefix": "load",
 		"body": "load(${1:function() {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".load() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"load1": {
 		"prefix": "load",
 		"body": "load('/path/to/file',{\n${2:param1: \"value1\", param2: \"value2\"\\} },\n\tfunction(){\n\t${3:/* Stuff to do after the page is loaded */}\n});\n$0",
 		"description": ".load() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"map": {
 		"prefix": "map",
 		"body": "map(function(${1:index}${2:, ${3:elem}}) {\n\t${4:return ${5:something};}\n})",
 		"description": ".map() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"mousedown": {
 		"prefix": "mousedown",
 		"body": "mousedown(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".mousedown() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"mouseenter": {
 		"prefix": "mouseenter",
 		"body": "mouseenter(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".mouseenter() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"mouseleave": {
 		"prefix": "mouseleave",
 		"body": "mouseleave(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".mouseleave() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"mousemove": {
 		"prefix": "mousemove",
 		"body": "mousemove(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".mousemove() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"mouseout": {
 		"prefix": "mouseout",
 		"body": "mouseout(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".mouseout() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"mouseover": {
 		"prefix": "mouseover",
 		"body": "mouseover(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".mouseover() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"mouseup": {
 		"prefix": "mouseup",
 		"body": "mouseup(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".mouseup() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"next": {
 		"prefix": "next",
 		"body": "next(${1:selector})$0",
 		"description": ".next() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"nextAll": {
 		"prefix": "nextAll",
 		"body": "nextAll(${1:selector})$0",
 		"description": ".nextAll() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"nextUntil": {
 		"prefix": "nextUntil",
 		"body": "nextUntil(${1:selector})$0",
 		"description": ".nextUntil() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"not": {
 		"prefix": "not",
 		"body": "not('${1:selector}')$0",
 		"description": ".not() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"off": {
 		"prefix": "off",
 		"body": "off();",
 		"description": ".off() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"offset": {
 		"prefix": "offset",
 		"body": "offset(function(index, currentCoordinates) {\n\t${1:return ${2:someObject};}\n})",
 		"description": ".offset() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"offset1": {
 		"prefix": "offset",
 		"body": "offset(${1:coordinates})$0",
 		"description": ".offset() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"offsetParent": {
 		"prefix": "offsetParent",
 		"body": "offsetParent();$0",
 		"description": ".offsetParent() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"on": {
 		"prefix": "on",
 		"body": "on('${1:click}'${2:, '${3:.selector}'}, function(${4:event}) {\n\t${5:event.preventDefault();}\n\t${6:/* Act on the event */}\n});",
 		"description": ".on() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"one": {
 		"prefix": "one",
 		"body": "one('${1:event name}', function(${2:event}) {\n\t${0:/* Act on the event */}\n});",
 		"description": ".one() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"outerHeight": {
 		"prefix": "outerHeight",
 		"body": "outerHeight()$0",
 		"description": ".outerHeight() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"outerWidth": {
 		"prefix": "outerWidth",
 		"body": "outerWidth()$0",
 		"description": ".outerWidth() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"parent": {
 		"prefix": "parent",
 		"body": "parent(${1:selector})$0",
 		"description": ".parent() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"parents": {
 		"prefix": "parents",
 		"body": "parents(${1:selector})$0",
 		"description": ".parents() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"parentsUntil": {
 		"prefix": "parentsUntil",
 		"body": "parentsUntil(${1:selector})$0",
 		"description": ".parentsUntil() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"prepend": {
 		"prefix": "prepend",
 		"body": "prepend('${1:Some text}')$0",
 		"description": ".prepend() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"prependTo": {
 		"prefix": "prependTo",
 		"body": "prependTo('${1:selector}')$0",
 		"description": ".prependTo() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"prev": {
 		"prefix": "prev",
 		"body": "prev(${1:selector})$0",
 		"description": ".prev() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"prevAll": {
 		"prefix": "prevAll",
 		"body": "prevAll(${1:selector})$0",
 		"description": ".prevAll() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"prevUntil": {
 		"prefix": "prevUntil",
 		"body": "prevUntil(${1:selector})$0",
 		"description": ".prevUntil() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"promise": {
 		"prefix": "promise",
 		"body": "promise(${1:'${2:type}'${3:, target} })$0",
 		"description": ".promise() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"prop": {
 		"prefix": "prop",
 		"body": "prop({\n\t${1:property1}: '${2:value1}',\n\t${3:property2}: '${4:value2}',\n})$0",
 		"description": ".prop() - multiple jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"prop1": {
 		"prefix": "prop",
 		"body": "prop('${1:property}', '${2:value}')$0",
 		"description": ".prop() - single jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"reject": {
 		"prefix": "reject",
 		"body": "reject(${1:args})$0",
 		"description": ".reject() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"remove": {
 		"prefix": "remove",
 		"body": "remove()$0",
 		"description": ".remove() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"removeAttr": {
 		"prefix": "removeAttr",
 		"body": "removeAttr('${1:attribute name}')$0",
 		"description": ".removeAttr() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"removeClass": {
 		"prefix": "removeClass",
 		"body": "removeClass('${1:class name}')$0",
 		"description": ".removeClass() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"removeData": {
 		"prefix": "removeData",
 		"body": "removeData('${1:data name}')$0",
 		"description": ".removeData() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"removeprop": {
 		"prefix": "removeprop",
 		"body": "removeProp('${1:property name}')$0",
 		"description": ".removeProp() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"replaceAll": {
 		"prefix": "replaceAll",
 		"body": "replaceAll('${1:data name}')$0",
 		"description": ".replaceAll() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"replaceWith": {
 		"prefix": "replaceWith",
 		"body": "replaceWith('${1:htmlString/DOMElement/jQueryObject}'${2:, function() {\n\t$3\n\\}});$0",
 		"description": ".replaceWith() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"reset": {
 		"prefix": "reset",
 		"body": "reset(${1:function(${2:event}) {\n\t${3:/* Act on the event */}\n\\}});$0",
 		"description": ".reset() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"resize": {
 		"prefix": "resize",
 		"body": "resize(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".resize() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"resolve": {
 		"prefix": "resolve",
 		"body": "resolve(${1:args})$0",
 		"description": ".resolve() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"resolveWith": {
 		"prefix": "resolveWith",
 		"body": "resolveWith(${1:context}${2:, args})$0",
 		"description": ".resolveWith() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"scroll": {
 		"prefix": "scroll",
 		"body": "scroll(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".scroll() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"scrollLeft": {
 		"prefix": "scrollLeft",
 		"body": "scrollLeft(${1:value})$0",
 		"description": ".scrollLeft() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"scrollTop": {
 		"prefix": "scrollTop",
 		"body": "scrollTop(${1:value})$0",
 		"description": ".scrollTop() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"select": {
 		"prefix": "select",
 		"body": "select(${1:function(${2:event}) {\n\t${2:/* Act on the event */}\n\\}});$0",
 		"description": ".select() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"serialize": {
 		"prefix": "serialize",
 		"body": "serialize()$0",
 		"description": ".serialize() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"serializeArray": {
 		"prefix": "serializeArray",
 		"body": "serializeArray()$0",
 		"description": ".serializeArray() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"show": {
 		"prefix": "show",
 		"body": "show('${1:slow/400/fast}'${2:, function() {\n\t$3\n\\}});$0",
 		"description": ".show() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"siblings": {
 		"prefix": "siblings",
 		"body": "siblings('${1:selector}')$0",
 		"description": ".siblings() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"size": {
 		"prefix": "size",
 		"body": "size();$0",
 		"description": ".size() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"slice": {
 		"prefix": "slice",
 		"body": "slice(${1:start}${2:, end})$0",
 		"description": ".slice() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"slideDown": {
 		"prefix": "slideDown",
 		"body": "slideDown('${1:slow/400/fast}'${2:, function() {\n\t$3\n\\}});$0",
 		"description": ".slideDown() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"slideToggle": {
 		"prefix": "slideToggle",
 		"body": "slideToggle(${1:slow/400/fast})$0",
 		"description": ".slideToggle() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"slideUp": {
 		"prefix": "slideUp",
 		"body": "slideUp(${1:slow/400/fast})$0",
 		"description": ".slideUp() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"stop": {
 		"prefix": "stop",
 		"body": "stop(${1:clearQueue}${2:, gotoEnd})$0",
 		"description": ".stop() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"submit": {
 		"prefix": "submit",
 		"body": "submit(${1:function(${2:event}) {\n\t${0:/* Act on the event */}\n\\}});",
 		"description": ".submit() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"text": {
 		"prefix": "text",
 		"body": "text(${1:'some text'})$0",
 		"description": ".text() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"then": {
 		"prefix": "then",
 		"body": "then(${1:doneCallbacks}, ${2:failCallbacks})$0",
 		"description": ".then() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"this": {
 		"prefix": "this",
 		"body": "$(this)$0",
 		"description": "$(this) jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"toArray": {
 		"prefix": "toArray",
 		"body": "toArray()$0",
 		"description": ".toArray() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"toggle": {
 		"prefix": "toggle",
 		"body": "toggle(${1:slow/400/fast})$0",
 		"description": ".toggle() (show/hide) jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"toggleClass": {
 		"prefix": "toggleClass",
 		"body": "toggleClass('${1:selector}');$0",
 		"description": ".toggleClass() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"toggle1": {
 		"prefix": "toggle",
 		"body": "toggle(function() {\n\t${1:/* Stuff to do every *odd* time the element is clicked */}\n}, function() {\n\t${2:/* Stuff to do every *even* time the element is clicked */}\n});\n$0",
 		"description": ".toggle() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"trigger": {
 		"prefix": "trigger",
 		"body": "trigger('${1:event name}')$0",
 		"description": ".trigger() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"triggerHandler": {
 		"prefix": "triggerHandler",
 		"body": "triggerHandler('${1:event name}')$0",
 		"description": ".triggerHandler() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"unbind": {
 		"prefix": "unbind",
 		"body": "unbind('${1:event name(s)}', ${2:function name})$0",
 		"description": ".unbind() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"undelegate": {
 		"prefix": "undelegate",
 		"body": "undelegate('${1:selector}', '${2:event type}', '${3:function}');",
 		"description": ".undelegate() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"unwrap": {
 		"prefix": "unwrap",
 		"body": "unwrap(${1:queueName});$0",
 		"description": ".unwrap() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"val": {
 		"prefix": "val",
 		"body": "val(${1:text})$0",
 		"description": ".val() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"width": {
 		"prefix": "width",
 		"body": "width(${1:integer})$0",
 		"description": ".width() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"wrap": {
 		"prefix": "wrap",
 		"body": "wrap('${1:<div class=\"extra-wrapper\"></div>}')$0",
 		"description": ".wrap() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"wrapAll": {
 		"prefix": "wrapAll",
 		"body": "wrapAll('${1:<div class=\"extra-wrapper\"></div>}')$0",
 		"description": ".wrapAll() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"wrapInner": {
 		"prefix": "wrapInner",
 		"body": "wrapInner('${1:<div class=\"extra-wrapper\"></div>}')$0",
 		"description": ".wrapInner() jQuery | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	// dollar
 	"$": {
 		"prefix": "$",
 		"body": "$('${1:string/element/array/function/jQuery object/string, context}')$0",
 		"description": " JQUERY | $('#select DOM Element') | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ajaxsend": {
 		"prefix": "ajaxsend",
 		"body": "$.ajaxSend(function(${1:event, xhr, settings}) {\n\t${2:/* stuff to do before an AJAX request is sent */};\n});\n$0",
 		"description": "$1 JQUERY | $.ajaxSend() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ajaxsetup": {
 		"prefix": "ajaxsetup",
 		"body": "$.ajaxSetup({\n\turl: '${1:/path/to/file}',\n\t${2:type: '${3:default GET (Other values: POST)}',}\n\t${4:dataType: '${5:default: Intelligent Guess (Other values: xml, json, script, or html)}',}\n\t${6:data: {param1: 'value1'\\},}\n})\n${7:.done(function() {\n\tconsole.log(\"success\");\n\\})}\n${8:.fail(function() {\n\tconsole.log(\"error\");\n\\})}\n${9:.always(function() {\n\tconsole.log(\"complete\");\n\\})};\n$0",
 		"description": " JQUERY | $.ajaxSetup() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ajaxstart": {
 		"prefix": "ajaxstart",
 		"body": "$.ajaxStart(function() {\n\t${1:/* Stuff to do when an AJAX call is started and no other AJAX calls are in progress */};\n});\n$0",
 		"description": " JQUERY | $.ajaxStart() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ajaxstop": {
 		"prefix": "ajaxstop",
 		"body": "$.ajaxStop((function() {\n\t${1:/* stuff to do when all AJAX calls have completed */};\n});\n$0",
 		"description": " JQUERY | $.ajaxStop() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"ajaxsuccess": {
 		"prefix": "ajaxsuccess",
 		"body": "$.ajaxSuccess(function(event, xhr, settings) {\n\t${1:/* executes whenever an AJAX request completes successfully */}\n});$0",
 		"description": " JQUERY | $.ajaxSuccess() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"boxmodel": {
 		"prefix": "boxmodel",
 		"body": "$.boxModel(${1:DOMelementArray});\n$0",
 		"description": " JQUERY | $.boxModel() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"browser": {
 		"prefix": "browser",
 		"body": "$.browser.version",
 		"description": " JQUERY | $.browser.version | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"browser1": {
 		"prefix": "browser",
 		"body": "$.browser.${1:webkit/opera/msie/mozilla}$0",
 		"description": " JQUERY | $.browser() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"$each": {
 		"prefix": "each",
 		"body": "$.each(${1:array/object}, function(${2:index}${3:, ${4:val}}) {\n\t${0: /* iterate through array or object */}\n});",
 		"description": " JQUERY | $.each() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"extend": {
 		"prefix": "extend",
 		"body": "$.extend(${1:true}${2:, target object}${3:, object1});\n$0",
 		"description": " JQUERY | $.extend() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"$get": {
 		"prefix": "get",
 		"body": "$.get('${1:/path/to/file}', function(data) {\n\t${3:/*optional stuff to do after success */}\n});$0",
 		"description": " JQUERY | $.get() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"get1": {
 		"prefix": "get",
 		"body": "$.getScript('${1:path/to/file}', function(data, textStatus) {\n\t${3:/*optional stuff to do after getScript */ }\n});$0",
 		"description": " JQUERY | $.getScript() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"holdready": {
 		"prefix": "holdready",
 		"body": "\\$.holdReady(${1:true/false});",
 		"description": " JQUERY | $.holdReady() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"inarray": {
 		"prefix": "inarray",
 		"body": "$.inArray(${1:value}, ${2:array});$0",
 		"description": " JQUERY | $.inArray() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"$is": {
 		"prefix": "is",
 		"body": "$.isEmptyObject('${1:object}');$0",
 		"description": " JQUERY | $.isEmptyObject() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"is1": {
 		"prefix": "is",
 		"body": "$.isNumeric('${1:object}');$0",
 		"description": " JQUERY | $.isNumeric() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"is2": {
 		"prefix": "is",
 		"body": "$.isPlainObject('${1:object}');$0",
 		"description": " JQUERY | $.isPlainObject() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"is3": {
 		"prefix": "is",
 		"body": "$.isWindow('${1:object}');$0",
 		"description": " JQUERY | $.isWindow() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"$map": {
 		"prefix": "map",
 		"body": "$.map(${1:array}, function(${2:item}${3:, ${4:index}}) {\n\t${5:return ${6:something};}\n});",
 		"description": " JQUERY | $.map() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"merge": {
 		"prefix": "merge",
 		"body": "$.merge(${1:array1}, ${2:array2});",
 		"description": " JQUERY | $.merge() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"noop": {
 		"prefix": "noop",
 		"body": "$.noop();$0",
 		"description": " JQUERY | $.noop() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"now": {
 		"prefix": "now",
 		"body": "$.now();$0",
 		"description": " JQUERY | $.now() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"parse": {
 		"prefix": "parse",
 		"body": "$.parseJSON('${1:json}');$0",
 		"description": " JQUERY | $.parseJSON() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"parse1": {
 		"prefix": "parse",
 		"body": "$.parseXML('${1:XML}');$0",
 		"description": " JQUERY | $.parseXML() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"post": {
 		"prefix": "post",
 		"body": "$.post('${1:/path/to/file}'${2:, {param1: 'value1'}}, function(data, textStatus, xhr) {\n\t${3:/*optional stuff to do after success */}\n});$0",
 		"description": " JQUERY | $.post() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"sub": {
 		"prefix": "sub",
 		"body": "$.sub();$0",
 		"description": " JQUERY | $.sub() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"trim": {
 		"prefix": "trim",
 		"body": "$.trim(${1:'${2:string}'})$0",
 		"description": " JQUERY | $.trim() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"type": {
 		"prefix": "type",
 		"body": "$.type(${1:DOMelementArray});$0",
 		"description": " JQUERY | $.type() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"unique": {
 		"prefix": "unique",
 		"body": "$.unique(${1:DOMelementArray});\n$0",
 		"description": " JQUERY | $.unique() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	},
 	"when": {
 		"prefix": "when",
 		"body": "$.when(${1:deferreds});\n$0",
 		"description": " JQUERY | $.when() | jquery.code-snippets",
-		"scope": ""
+		"scope": "javascript"
 	}
 }
