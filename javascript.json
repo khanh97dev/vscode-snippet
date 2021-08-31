@@ -1,36 +1,36 @@
 {
-    "Promise-demo":{
-      "prefix": "Promise-demo",
-      "body": [
-           "return new Promise((resolve, reject) => {}"
-      ],
-      "description": ""
+    "Promise-demo": {
+        "prefix": "Promise-demo",
+        "body": [
+            "return new Promise((resolve, reject) => {}"
+        ],
+        "description": ""
     },
-    "is-dark-mode":{
-      "prefix": "is-dark-mode",
-      "body": "if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {\r\n    alert('dark')\r\n} else { \r\n    alert('light') \r\n}",
-      "description": "Handle dark mode"
+    "is-dark-mode": {
+        "prefix": "is-dark-mode",
+        "body": "if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {\r\n    alert('dark')\r\n} else { \r\n    alert('light') \r\n}",
+        "description": "Handle dark mode"
     },
-    "helpers-create-file-from-url":{
-      "prefix": "helpers-create-file-from-url",
-      "body": [
-        "createFileFromUrl = urlFile => {\r\n  return new Promise((resolve, reject) => {\r\n    fetch(urlFile)\r\n      .then(res => res.blob())\r\n      .then(blob => {\r\n        const format = blob.type.replace('image/', '')\r\n        const file = new File([blob], (new Date()).getTime() + '.' + format, blob)\r\n        const reader = new FileReader()\r\n        reader.readAsDataURL(blob)\r\n        reader.onloadend = () => {\r\n          const base64 = reader.result.replace(/data:image\\/\\w+;base64,/g, '')\r\n          resolve({\r\n            format,\r\n            file,\r\n            blob,\r\n            base64\r\n          })\r\n        }\r\n      })\r\n  })\r\n}"
-      ],
-      "description": "helpers"
+    "helpers-create-file-from-url": {
+        "prefix": "helpers-create-file-from-url",
+        "body": [
+            "createFileFromUrl = urlFile => {\r\n  return new Promise((resolve, reject) => {\r\n    fetch(urlFile)\r\n      .then(res => res.blob())\r\n      .then(blob => {\r\n        const format = blob.type.replace('image/', '')\r\n        const file = new File([blob], (new Date()).getTime() + '.' + format, blob)\r\n        const reader = new FileReader()\r\n        reader.readAsDataURL(blob)\r\n        reader.onloadend = () => {\r\n          const base64 = reader.result.replace(/data:image\\/\\w+;base64,/g, '')\r\n          resolve({\r\n            format,\r\n            file,\r\n            blob,\r\n            base64\r\n          })\r\n        }\r\n      })\r\n  })\r\n}"
+        ],
+        "description": "helpers"
     },
-    "document-ready":{
-      "prefix": "document-ready",
-      "body": [
-        "document.addEventListener(\"DOMContentLoaded\", function() {",
+    "document-ready": {
+        "prefix": "document-ready",
+        "body": [
+            "document.addEventListener(\"DOMContentLoaded\", function() {",
             "\t$1",
-        "});"
-      ],
-      "description": ""
+            "});"
+        ],
+        "description": ""
     },
-    "deviceready":{
-      "prefix": "deviceready",
-      "body": "document.addEventListener('deviceready', () => {\r\n  $1\r\n})",
-      "description": "addEventListener deviceready"
+    "deviceready": {
+        "prefix": "deviceready",
+        "body": "document.addEventListener('deviceready', () => {\r\n  $1\r\n})",
+        "description": "addEventListener deviceready"
     },
     "handsontable-renderer-arguments": {
         "prefix": "handsontable-renderer-arguments",
@@ -236,11 +236,11 @@
         "prefix": "js-onUploadPgrogress",
         "body": [
             "onUploadProgress: (progressEvent) => {",
-            "            const totalLength = progressEvent.lengthComputable ? progressEvent.total : progressEvent.target.getResponseHeader('content-length') || progressEvent.target.getResponseHeader('x-decompressed-content-length');",
-            "            if (totalLength !== null) {",
-            "                this.progressValue = Math.round((progressEvent.loaded * 100) / totalLength);",
-            "            }",
-            "        }",
+            "          const totalLength = progressEvent.lengthComputable ? progressEvent.total : progressEvent.target.getResponseHeader('content-length') || progressEvent.target.getResponseHeader('x-decompressed-content-length');",
+            "          if (totalLength !== null) {",
+            "              this.progressValue = Math.round((progressEvent.loaded * 100) / totalLength);",
+            "          }",
+            "      }",
         ],
         "description": "onUploadPgrogress"
     },
@@ -255,8 +255,8 @@
         "prefix": "js-interval",
         "body": [
             "const interval = setInterval(() => {",
-            "    clearInterval(interval);",
-            "   $1",
+            "  clearInterval(interval);",
+            " $1",
             "}, ${2:100});",
         ],
         "description": "interval"
@@ -265,7 +265,7 @@
         "prefix": "vue-Map_Properties",
         "body": [
             "Object.defineProperties(Vue.prototype,{",
-            "  $${1:property}: { get(){ return ${2:Object} } }",
+            "$${1:property}: { get(){ return ${2:Object} } }",
             "})",
         ],
         "description": "map_vue_javascript"
@@ -278,11 +278,6 @@
         "description": "return"
     },
     // methods support string
-    "constructor": {
-        "prefix": "constructor",
-        "body": "constructor",
-        "description": "js string"
-    },
     "length": {
         "prefix": "length",
         "body": "length",
@@ -529,9 +524,9 @@
         "body": "toPrecision(x)",
         "description": "js Number"
     },
-    "  constructor": {
-        "prefix": "  constructor",
-        "body": "  constructor",
+    "constructor": {
+        "prefix": "constructor",
+        "body": "constructor",
         "description": "js Array"
     },
     "copyWithin()": {
@@ -660,9 +655,9 @@
         "description": "js Array"
     },
     // js Date
-    "  getDate()": {
-        "prefix": "  getDate()",
-        "body": "  getDate()",
+    "getDate()": {
+        "prefix": "getDate()",
+        "body": "getDate()",
         "description": "js Date"
     },
     "getDay()": {
