@@ -4,6 +4,6 @@
 		"body": [
 			":to=\"{ name: '${1:string}'}\""
 		],
-		"description": "to-vue"
+		"description": "to-vue | vue-html.json"
 	},
 }

@@ -1,2 +1,9 @@
 {
+    "demo_snippet":{
+      "prefix": "demo_snippet",
+      "body": [
+
+      ],
+      "description": ""
+    },
 }

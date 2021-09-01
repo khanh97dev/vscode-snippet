@@ -1,0 +1,78 @@
+{
+	// "vue-created":{
+	//   "prefix": "vue-",
+	//   "body": "",
+	//   "description": " | vue-js.code-snippets",
+	//   "scope": "javascript"
+	// },
+	"vue-map_vue_javascript": {
+		"prefix": "vue-Map_Properties",
+		"body": [
+			"Object.defineProperties(Vue.prototype,{",
+			"\t$${1:property}: { get(){ return ${2:Object} } }",
+			"})",
+		],
+		"description": "map_vue_javascript",
+		"scope": "javascript"
+	},
+	"vue-data": {
+		"prefix": "vue-data",
+		"body": "data() {\r\n  return {$1};\r\n},",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue-computed": {
+		"prefix": "vue-computed",
+		"body": "computed: {$1}",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue-components": {
+		"prefix": "vue-components",
+		"body": "components: {$1}",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue-watch": {
+		"prefix": "vue-watch",
+		"body": "watch: {$1}",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue-props": {
+		"prefix": "vue-props",
+		"body": "props: {$1}",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue-prop-demo": {
+		"prefix": "vue-prop-demo",
+		"body": "${1:prop}: {\r\n  default: $2,\r\n},",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue-methods": {
+		"prefix": "vue-methods",
+		"body": "methods: {$1}",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue-mounted": {
+		"prefix": "vue-mounted",
+		"body": "mounted() {$1},",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue-destroyed": {
+		"prefix": "vue-destroyed",
+		"body": "destroyed() {$1},",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue-created": {
+		"prefix": "vue-created",
+		"body": "created() {$1},",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+}

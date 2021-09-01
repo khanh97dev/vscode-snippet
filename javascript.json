@@ -261,15 +261,6 @@
         ],
         "description": "interval"
     },
-    "map_vue_javascript": {
-        "prefix": "vue-Map_Properties",
-        "body": [
-            "Object.defineProperties(Vue.prototype,{",
-            "$${1:property}: { get(){ return ${2:Object} } }",
-            "})",
-        ],
-        "description": "map_vue_javascript"
-    },
     "return": {
         "prefix": "ret",
         "body": [
