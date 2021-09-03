@@ -1,59 +1,64 @@
 {
-    "wordpress-demo":{
-      "prefix": "wordpress-demo",
-      "body": "# BEGIN WordPress\n\nRewriteEngine On\nRewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]\nRewriteBase /\nRewriteRule ^index\\.php$ - [L]\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\nRewriteRule . /index.php [L]\n\n# END WordPress\n",
-      "description": ""
+    "htaccess-WordpressDemo": {
+        "prefix": "wordpress-demo",
+        "body": "# BEGIN WordPress\n\nRewriteEngine On\nRewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]\nRewriteBase /\nRewriteRule ^index\\.php$ - [L]\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\nRewriteRule . /index.php [L]\n\n# END WordPress\n",
+        "description": "apacheconf.json"
     },
-    "VirtualHost":{
-      "prefix": "VirtualHost",
-      "body": [
-           "<VirtualHost *:80>\r\n\tServerName ${1:site.com}\r\n    ServerAlias www.${1:site.com}\r\n\r\n\tServerAdmin webmaster@localhost\r\n\tDocumentRoot /var/www/${1:site.com}/public_html\r\n\r\n\tErrorLog \\${APACHE_LOG_DIR}/error.log\r\n\tCustomLog \\${APACHE_LOG_DIR}/access.log combined\r\n\r\n\t# Include conf-available/serve-cgi-bin.conf\r\n</VirtualHost>"
-      ],
-      "description": ""
+    "htaccess-VueSubFolder":{
+      "prefix": "htaccess-VueSubFolder",
+      "body": "DirectoryIndex FolderName/dist/index.html\n\n<IfModule mod_rewrite.c>\n    RewriteRule ^(FolderName/dist)($|/) - [L]\n    RewriteEngine On\n    RewriteBase /\n    RewriteCond %{REQUEST_URI} ^/?(css|fonts|img|js)(/.*)?$ [NC]\n    RewriteRule ^.*$ FolderName/dist/%1%2 [L]\n    RewriteRule . FolderName/dist/index.html [L]\n</IfModule>\n",
+      "description": "apacheconf.json"
+    },
+    "VirtualHost": {
+        "prefix": "VirtualHost",
+        "body": [
+            "<VirtualHost *:80>\r\n\tServerName ${1:site.com}\r\n    ServerAlias www.${1:site.com}\r\n\r\n\tServerAdmin webmaster@localhost\r\n\tDocumentRoot /var/www/${1:site.com}/public_html\r\n\r\n\tErrorLog \\${APACHE_LOG_DIR}/error.log\r\n\tCustomLog \\${APACHE_LOG_DIR}/access.log combined\r\n\r\n\t# Include conf-available/serve-cgi-bin.conf\r\n</VirtualHost>"
+        ],
+        "description": "apacheconf.json"
     },
     "ServerName": {
         "prefix": "ServerName",
         "body": [
             "ServerName $1"
         ],
-        "description": "APACHE"
+        "description": "apacheconf.json"
     },
     "ServerAlias": {
         "prefix": "ServerAlias",
         "body": [
             "ServerAlias www.$1"
         ],
-        "description": "APACHE"
+        "description": "apacheconf.json"
     },
     "ServerAdmin": {
         "prefix": "ServerAdmin",
         "body": [
             "ServerAdmin"
         ],
-        "description": "APACHE"
+        "description": "apacheconf.json"
     },
     "DocumentRoot": {
         "prefix": "DocumentRoot",
         "body": [
             "DocumentRoot"
         ],
-        "description": "APACHE"
+        "description": "apacheconf.json"
     },
     "ErrorLog": {
         "prefix": "ErrorLog",
         "body": [
             "ErrorLog"
         ],
-        "description": "APACHE"
+        "description": "apacheconf.json"
     },
     "CustomLog": {
         "prefix": "CustomLog",
         "body": [
             "CustomLog"
         ],
-        "description": "APACHE"
+        "description": "apacheconf.json"
     },
-    "Allow to refresh in react-router": {
+    "a-allow-to-refresh-in-react-router": {
         "prefix": "a-allow-to-refresh-in-react-router",
         "description": "Allow to refresh in react-router",
         "body": [
@@ -65,7 +70,7 @@
             "RewriteRule . /index.html [L]"
         ]
     },
-    "Force www": {
+    "a-force-www": {
         "prefix": "a-force-www",
         "description": "Force www",
         "body": [
@@ -74,7 +79,7 @@
             "RewriteRule ^(.*)$ http://www.example.com/$1 [L,R=301,NC]"
         ]
     },
-    "Force www in a Generic Way": {
+    "a-force-www-in-a-generic-way": {
         "prefix": "a-force-www-in-a-generic-way",
         "description": "Force www in a Generic Way",
         "body": [
@@ -85,7 +90,7 @@
             "RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]"
         ]
     },
-    "Force non-www": {
+    "a-force-non-www": {
         "prefix": "a-force-non-www",
         "description": "Force non-www",
         "body": [
@@ -94,7 +99,7 @@
             "RewriteRule ^(.*)$ http://example.com/$1 [L,R=301]"
         ]
     },
-    "Force non-www in a Generic Way": {
+    "a-force-non-www-in-a-generic-way": {
         "prefix": "a-force-non-www-in-a-generic-way",
         "description": "Force non-www in a Generic Way",
         "body": [
@@ -105,7 +110,7 @@
             "RewriteRule ^ %1%3%{REQUEST_URI} [R=301,L]"
         ]
     },
-    "Force HTTPS": {
+    "a-force-https": {
         "prefix": "a-force-https",
         "description": "Force HTTPS",
         "body": [
@@ -117,7 +122,7 @@
             "</IfModule>"
         ]
     },
-    "Force HTTPS Behind a Proxy": {
+    "a-force-https-behind-a-proxy": {
         "prefix": "a-force-https-behind-a-proxy",
         "description": "Force HTTPS Behind a Proxy",
         "body": [
@@ -126,7 +131,7 @@
             "RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]"
         ]
     },
-    "Force Trailing Slash": {
+    "a-force-trailing-slash": {
         "prefix": "a-force-trailing-slash",
         "description": "Force Trailing Slash",
         "body": [
@@ -135,7 +140,7 @@
             "RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]"
         ]
     },
-    "Remove Trailing Slash": {
+    "a-remove-trailing-slash": {
         "prefix": "a-remove-trailing-slash",
         "description": "Remove Trailing Slash",
         "body": [
@@ -145,14 +150,14 @@
             "RewriteRule ^ %1 [R=301,L]"
         ]
     },
-    "Redirect a Single Page": {
+    "a-redirect-a-single-page": {
         "prefix": "a-redirect-a-single-page",
         "description": "Redirect a Single Page",
         "body": [
             "Redirect 301 /oldpage.html http://example.com/newpage.html"
         ]
     },
-    "Redirect Using RedirectMatch": {
+    "a-redirect-using-redirectmatch": {
         "prefix": "a-redirect-using-redirectmatch",
         "description": "Redirect Using RedirectMatch.",
         "body": [
@@ -167,7 +172,7 @@
             "RedirectMatch 301 ^/z/(.*)$ http://static.askapache.com/$1"
         ]
     },
-    "Alias a Single Directory": {
+    "a-alias-a-single-directory": {
         "prefix": "a-alias-a-single-directory",
         "description": "Alias a Single Directory",
         "body": [
@@ -175,21 +180,21 @@
             "RewriteRule ^source-directory/(.*) /target-directory/$1 [R=301,L]"
         ]
     },
-    "Alias Paths To Script": {
+    "a-alias-paths-to-script": {
         "prefix": "a-alias-paths-to-script",
         "description": "Alias Paths To Script",
         "body": [
             "FallbackResource /index.fcgi"
         ]
     },
-    "Redirect an Entire Site": {
+    "a-redirect-an-entire-site": {
         "prefix": "a-redirect-an-entire-site",
         "description": "Redirect an Entire Site",
         "body": [
             "Redirect 301 / http://newsite.com/"
         ]
     },
-    "Alias “Clean” URLs": {
+    "a-alias-clean-urls": {
         "prefix": "a-alias-clean-urls",
         "description": "Alias “Clean” URLs",
         "body": [
@@ -198,7 +203,7 @@
             "RewriteRule ^([^.]+)$ $1.php [NC,L]"
         ]
     },
-    "Deny All Access": {
+    "a-deny-all-access": {
         "prefix": "a-deny-all-access",
         "description": "Deny All Access",
         "body": [
@@ -209,7 +214,7 @@
             "# Require all denied"
         ]
     },
-    "Deny All Access Except Yours": {
+    "a-deny-all-access-except-yours": {
         "prefix": "a-deny-all-access-except-yours",
         "description": "Deny All Access Except Yours",
         "body": [
@@ -223,7 +228,7 @@
             "# Require ip xxx.xxx.xxx.xxx"
         ]
     },
-    "Allow All Access Except Spammers'": {
+    "a-allow-all-access-except-spammers'": {
         "prefix": "a-allow-all-access-except-spammers'",
         "description": "Allow All Access Except Spammers'",
         "body": [
@@ -238,7 +243,7 @@
             "# Require not ip xxx.xxx.xxx.xxy"
         ]
     },
-    "Deny Access to Hidden Files and Directories": {
+    "a-deny-access-to-hidden-files-and-directories": {
         "prefix": "a-deny-access-to-hidden-files-and-directories",
         "description": "Deny Access to Hidden Files and Directories",
         "body": [
@@ -247,7 +252,7 @@
             "RewriteRule \"(^|/)\\.\" - [F]"
         ]
     },
-    "Deny Access to Backup and Source Files": {
+    "a-deny-access-to-backup-and-source-files": {
         "prefix": "a-deny-access-to-backup-and-source-files",
         "description": "Deny Access to Backup and Source Files",
         "body": [
@@ -262,14 +267,14 @@
             "</FilesMatch>"
         ]
     },
-    "Disable Directory Browsing": {
+    "a-disable-directory-browsing": {
         "prefix": "a-disable-directory-browsing",
         "description": "Disable Directory Browsing",
         "body": [
             "Options All -Indexes"
         ]
     },
-    "Disable Image Hotlinking": {
+    "a-disable-image-hotlinking": {
         "prefix": "a-disable-image-hotlinking",
         "description": "Disable Image Hotlinking",
         "body": [
@@ -285,7 +290,7 @@
             "# RewriteRule \\.(jpe?g|png|gif|bmp) http://example.com/blocked.png [R,L]"
         ]
     },
-    "Disable Image Hotlinking for Specific Domains": {
+    "a-disable-image-hotlinking-for-specific-domains": {
         "prefix": "a-disable-image-hotlinking-for-specific-domains",
         "description": "Disable Image Hotlinking for Specific Domains",
         "body": [
@@ -299,14 +304,14 @@
             "# RewriteRule \\.(jpe?g|png|gif|bmp) http://example.com/blocked.png [R,L]"
         ]
     },
-    "Password Protect a Directory": {
+    "a-password-protect-a-directory": {
         "prefix": "a-password-protect-a-directory",
         "description": "Password Protect a Directory",
         "body": [
             "htpasswd -c /home/fellowship/.htpasswd boromir"
         ]
     },
-    "Password Protect a File or Several Files": {
+    "a-password-protect-a-file-or-several-files": {
         "prefix": "a-password-protect-a-file-or-several-files",
         "description": "Password Protect a File or Several Files",
         "body": [
@@ -323,7 +328,7 @@
             "</FilesMatch>"
         ]
     },
-    "Block Visitors by Referrer": {
+    "a-block-visitors-by-referrer": {
         "prefix": "a-block-visitors-by-referrer",
         "description": "Block Visitors by Referrer",
         "body": [
@@ -334,7 +339,7 @@
             "RewriteRule .* - [F]"
         ]
     },
-    "Prevent Framing the Site": {
+    "a-prevent-framing-the-site": {
         "prefix": "a-prevent-framing-the-site",
         "description": "Prevent Framing the Site",
         "body": [
@@ -342,7 +347,7 @@
             "Header set X-Frame-Options SAMEORIGIN env=!allow_framing"
         ]
     },
-    "Compress Text Files": {
+    "a-compress-text-files": {
         "prefix": "a-compress-text-files",
         "description": "Compress Text Files",
         "body": [
@@ -384,7 +389,7 @@
             "</IfModule>"
         ]
     },
-    "Set Expires Headers": {
+    "a-set-expires-headers": {
         "prefix": "a-set-expires-headers",
         "description": "Set Expires Headers",
         "body": [
@@ -439,7 +444,7 @@
             "</IfModule>"
         ]
     },
-    "Turn eTags Off": {
+    "a-turn-etags-off": {
         "prefix": "a-turn-etags-off",
         "description": "Turn eTags Off",
         "body": [
@@ -449,7 +454,7 @@
             "FileETag None"
         ]
     },
-    "Set PHP Variables": {
+    "a-set-php-variables": {
         "prefix": "a-set-php-variables",
         "description": "Set PHP Variables",
         "body": [
@@ -460,7 +465,7 @@
             "php_value max_execution_time 240"
         ]
     },
-    "Custom Error Pages": {
+    "a-custom-error-pages": {
         "prefix": "a-custom-error-pages",
         "description": "Custom Error Pages",
         "body": [
@@ -469,7 +474,7 @@
             "ErrorDocument 404 /errors/halflife3.html"
         ]
     },
-    "Force Downloading": {
+    "a-force-downloading": {
         "prefix": "a-force-downloading",
         "description": "Force Downloading",
         "body": [
@@ -479,7 +484,7 @@
             "</Files>"
         ]
     },
-    "Prevent Downloading": {
+    "a-prevent-downloading": {
         "prefix": "a-prevent-downloading",
         "description": "Prevent Downloading",
         "body": [
@@ -488,7 +493,7 @@
             "</FilesMatch>"
         ]
     },
-    "Allow Cross-Domain Fonts": {
+    "a-allow-cross-domain-fonts": {
         "prefix": "a-allow-cross-domain-fonts",
         "description": "Allow Cross-Domain Fonts",
         "body": [
@@ -499,7 +504,7 @@
             "</IfModule>"
         ]
     },
-    "Auto UTF-8 Encode": {
+    "a-auto-utf-8-encode": {
         "prefix": "a-auto-utf-8-encode",
         "description": "Auto UTF-8 Encode",
         "body": [
@@ -510,7 +515,7 @@
             "AddCharset utf-8 .atom .css .js .json .rss .vtt .xml"
         ]
     },
-    "Switch to Another PHP Version": {
+    "a-switch-to-another-php-version": {
         "prefix": "a-switch-to-another-php-version",
         "description": "Switch to Another PHP Version",
         "body": [
@@ -520,7 +525,7 @@
             "AddType application/x-httpd-php56 .php"
         ]
     },
-    "Disable Internet Explorer Compatibility View": {
+    "a-disable-internet-explorer-compatibility-view": {
         "prefix": "a-disable-internet-explorer-compatibility-view",
         "description": "Disable Internet Explorer Compatibility View",
         "body": [
@@ -530,7 +535,7 @@
             "</IfModule>"
         ]
     },
-    "Serve WebP Images": {
+    "a-serve-webp-images": {
         "prefix": "a-serve-webp-images",
         "description": "Serve WebP Images",
         "body": [
