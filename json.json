@@ -1,16 +1,1 @@
-{
-	"Snippet vscode": {
-		"prefix": "autoSnippet",
-		"body": [
-			"\"$1\": {",
-			"\t\"prefix\": \"$2\",",
-			"\t\"body\": [",
-			"\t\t\"$3\",",
-			"\t\t\"$4\"",
-			"\t],",
-			"\t\"description\": \"$5\"",
-			"}"
-		],
-		"description": ""
-	},
-}
+{}

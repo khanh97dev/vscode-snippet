@@ -1,10 +1,4 @@
 {
-	// "vue-created":{
-	//   "prefix": "vue-",
-	//   "body": "",
-	//   "description": " | vue-js.code-snippets",
-	//   "scope": "javascript"
-	// },
 	"vue-map_vue_javascript": {
 		"prefix": "vue-Map_Properties",
 		"body": [
