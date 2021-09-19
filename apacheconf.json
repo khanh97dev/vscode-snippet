@@ -1,13 +1,23 @@
 {
+    "htaccess-LaravelPublic": {
+        "prefix": "htaccess-LaravelPublic",
+        "body": "<IfModule mod_rewrite.c>\n    <IfModule mod_negotiation.c>\n        Options -MultiViews -Indexes\n    </IfModule>\n\n    RewriteEngine On\n\n    # Handle Authorization Header\n    RewriteCond %{HTTP:Authorization} .\n    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]\n\n    # Redirect Trailing Slashes If Not A Folder...\n    RewriteCond %{REQUEST_FILENAME} !-d\n    RewriteCond %{REQUEST_URI} (.+)/$\n    RewriteRule ^ %1 [L,R=301]\n\n    # Handle Front Controller...\n    RewriteCond %{REQUEST_FILENAME} !-d\n    RewriteCond %{REQUEST_FILENAME} !-f\n    RewriteRule ^ index.php [L]\n</IfModule>\n",
+        "description": "apacheconf.json"
+    },
+    "htaccess-LaravelRoot": {
+        "prefix": "htaccess-LaravelRoot",
+        "body": "<IfModule mod_rewrite.c>\n    RewriteEngine On\n    RewriteRule ^(.*)$ public/$1 [L]\n</IfModule>\n",
+        "description": "apacheconf.json"
+    },
     "htaccess-WordpressDemo": {
         "prefix": "wordpress-demo",
         "body": "# BEGIN WordPress\n\nRewriteEngine On\nRewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]\nRewriteBase /\nRewriteRule ^index\\.php$ - [L]\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\nRewriteRule . /index.php [L]\n\n# END WordPress\n",
         "description": "apacheconf.json"
     },
-    "htaccess-VueSubFolder":{
-      "prefix": "htaccess-VueSubFolder",
-      "body": "DirectoryIndex FolderName/dist/index.html\n\n<IfModule mod_rewrite.c>\n    RewriteRule ^(FolderName/dist)($|/) - [L]\n    RewriteEngine On\n    RewriteBase /\n    RewriteCond %{REQUEST_URI} ^/?(css|fonts|img|js)(/.*)?$ [NC]\n    RewriteRule ^.*$ FolderName/dist/%1%2 [L]\n    RewriteRule . FolderName/dist/index.html [L]\n</IfModule>\n",
-      "description": "apacheconf.json"
+    "htaccess-VueSubFolder": {
+        "prefix": "htaccess-VueSubFolder",
+        "body": "DirectoryIndex FolderName/dist/index.html\n\n<IfModule mod_rewrite.c>\n    RewriteRule ^(FolderName/dist)($|/) - [L]\n    RewriteEngine On\n    RewriteBase /\n    RewriteCond %{REQUEST_URI} ^/?(css|fonts|img|js)(/.*)?$ [NC]\n    RewriteRule ^.*$ FolderName/dist/%1%2 [L]\n    RewriteRule . FolderName/dist/index.html [L]\n</IfModule>\n",
+        "description": "apacheconf.json"
     },
     "VirtualHost": {
         "prefix": "VirtualHost",

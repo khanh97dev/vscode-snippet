@@ -1,0 +1,7 @@
+{
+	"OP-":{
+	  "prefix": "OP-",
+	  "body": "[OP-$1] - $2",
+	  "description": "MBACommit.code-snippets"
+	},
+}

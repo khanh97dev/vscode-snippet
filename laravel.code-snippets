@@ -156,7 +156,7 @@
             "\t}",
             "}",
         ],
-        "description": "global.code-snippets"
+        "description": "laravel.code-snippets"
     },
     "laravel-resource_paginate": {
         "prefix": "laravel-resource_paginate",
@@ -168,7 +168,7 @@
             "'current_page' => $this->currentPage(),",
             "'total_pages' => $this->lastPage()",
         ],
-        "description": "laravel-resource_paginate | global.code-snippets"
+        "description": "laravel-resource_paginate | laravel.code-snippets"
     },
     "laravel-Schema::defaultStringLength": {
         "prefix": "laravel-Schema::defaultStringLength",
@@ -176,7 +176,7 @@
         "body": [
             " Schema::defaultStringLength(191);"
         ],
-        "description": "laravel-Schema::defaultStringLength | global.code-snippets"
+        "description": "laravel-Schema::defaultStringLength | laravel.code-snippets"
     },
     "laravel-meta_csrf": {
         "prefix": "laravel-meta_csrf",
@@ -184,7 +184,7 @@
         "body": [
             "<meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">"
         ],
-        "description": "laravel-meta_csrf | global.code-snippets"
+        "description": "laravel-meta_csrf | laravel.code-snippets"
     },
     "laravel-Request_CURL": {
         "prefix": "laravel-Request_CURL",
@@ -192,7 +192,7 @@
         "body": [
             "$$request = Request::create('url', 'POST', \\$data);"
         ],
-        "description": "laravel-Request_CURL | global.code-snippets"
+        "description": "laravel-Request_CURL | laravel.code-snippets"
     },
     "laravel_unsigned": {
         "prefix": "unsigned",
@@ -200,7 +200,7 @@
         "body": [
             "unsigned()"
         ],
-        "description": "laravel_unsigned | global.code-snippets"
+        "description": "laravel_unsigned | laravel.code-snippets"
     },
     "laravel_migration_column_nullable": {
         "prefix": "nullalbe",
@@ -208,7 +208,7 @@
         "body": [
             "nullable();"
         ],
-        "description": "laravel_migration_column_nullable | global.code-snippets"
+        "description": "laravel_migration_column_nullable | laravel.code-snippets"
     },
     "laravel-faker_image": {
         "scope": "laravel-faker_image",
@@ -239,7 +239,7 @@
     },
     "laravel-login_token": {
         "scope": "php",
-        "prefix": "login_token",
+        "prefix": "laravel-login_token",
         "body": [
             "public function login(Request \\$request)",
             "{",
@@ -277,7 +277,7 @@
             "return view('$1');",
             "})->where(['all' => '.*']);",
         ],
-        "description": "global.code-snippets"
+        "description": "laravel.code-snippets"
     },
     "laravel_usercontroller_passport": {
         "prefix": "laravel_usercontroller_passport",
@@ -374,14 +374,14 @@
             "",
             ""
         ],
-        "description": "laravel_usercontroller_passport | global.code-snippets"
+        "description": "laravel_usercontroller_passport | laravel.code-snippets"
     },
     "laravel-inputToken": {
         "prefix": "laravel-inputToken",
         "body": [
             "<input type=\"hidden\" name=\"_token\" id=\"csrf-token\" value=\"{{ Session: :token()}}\" />"
         ],
-        "description": "token laravel in input form | global.code-snippets"
+        "description": "token laravel in input form | laravel.code-snippets"
     },
     "laravel-model-boot": {
         "prefix": "laravel-model-boot",
