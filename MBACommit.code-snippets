@@ -4,4 +4,9 @@
 	  "body": "[OP-$1] - $2",
 	  "description": "MBACommit.code-snippets"
 	},
+	"QR-":{
+	  "prefix": "QR-",
+	  "body": "[QR-$1] - $2",
+	  "description": "MBACommit.code-snippets"
+	},
 }
