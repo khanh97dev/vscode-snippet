@@ -1,7 +1,7 @@
 {
-    "task_demo":{
-      "prefix": "task_demo",
-      "body": "{\n    \"version\": \"2.0.0\",\n    \"windows\": {\n        \"options\": {\n            \"shell\": {\n                \"executable\": \"cmd.exe\",\n                \"args\": [\n                    \"/d\", \"/c\"\n                ]\n            }\n        }\n    },\n    \"tasks\": [\n        {\n            \"label\": \"Label\",\n            \"type\": \"shell\",\n            \"command\": \"cd \\\"Folder\\\" && echo ok\",\n            \"problemMatcher\": []\n        }\n    ]\n}\n",
-      "description": "jsonc.json"
-    },
+  "task_demo": {
+    "prefix": "task_demo",
+    "body": "{\n    \"version\": \"2.0.0\",\n    \"windows\": {\n        \"options\": {\n            \"shell\": {\n                \"executable\": \"cmd.exe\",\n                \"args\": [\n                    \"/d\", \"/c\"\n                ]\n            }\n        }\n    },\n    \"tasks\": [\n        {\n            \"label\": \"Label\",\n            \"type\": \"shell\",\n            \"command\": \"cd \\\"Folder\\\" && echo ok\",\n            \"problemMatcher\": []\n        }\n    ]\n}\n",
+    "description": "jsonc.json"
+  },
 }

@@ -1,0 +1,9 @@
+{
+	"Perl::use-current-directory":{
+	  "prefix": "Perl::use-current-directory",
+	  "body": [
+		   "use File::Basename qw< dirname >;\nuse lib dirname(__FILE__) . '/../PerlModules'; #$< = The real user ID (uid) of this process."
+	  ],
+	  "description": "perl.json"
+	},
+}
