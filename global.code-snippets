@@ -1,5 +1,4 @@
 {
-
     "demo_snippet": {
         "prefix": "demo_snippet",
         "scope": "json,jsonc",

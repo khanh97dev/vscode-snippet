@@ -1,6 +1,6 @@
 {
-    "php-EX-runCmdAndSendMail":{
-      "prefix": "php-EX-runCmdAndSendMail",
+    "php__EX-runCmdAndSendMail":{
+      "prefix": "php__EX-runCmdAndSendMail",
       "body": "function cmd() {\n    exec('echo do something');\n}\n\nfunction sendMail() {\n    \\$mailto = \"mailto@example.com\";\n    \n    \\$subject = \"Subject\";\n    \\$message = \"\n        html\n    \";\n    \\$fromName = \"From Name\";\n    \\$fromMail = \"mail@example.com\";\n    \n    \n    \\$file = \\$_SERVER['HOME'] . \"/.ssh/id_dsa.pub\";\n    \\$content = file_get_contents( \\$file);\n    \\$content = chunk_split(base64_encode(\\$content));\n    \\$filename = basename(\\$file);\n\n    // a random hash will be necessary to send mixed content\n    \\$separator = md5(time());\n\n    // carriage return type (RFC)\n    \\$eol = \"\\r\\n\";\n\n    // main header (multipart mandatory)\n    \\$headers = \"From: \\$fromName <\\$fromMail>\" . \\$eol;\n    \\$headers .= \"MIME-Version: 1.0\" . \\$eol;\n    \\$headers .= \"Content-Type: multipart/mixed; boundary=\\\"\" . \\$separator . \"\\\"\" . \\$eol;\n    \\$headers .= \"Content-Transfer-Encoding: 7bit\" . \\$eol;\n    \\$headers .= \"This is a MIME encoded message.\" . \\$eol;\n\n    // message\n    \\$body = \"--\" . \\$separator . \\$eol;\n    \\$body .= \"Content-Type: text/html; charset=\\\"UTF-8\\\"\" . \\$eol;\n    \\$body .= \"Content-Transfer-Encoding: 8bit\" . \\$eol;\n    \\$body .= \\$message . \\$eol;\n\n    // attachment\n    \\$body .= \"--\" . \\$separator . \\$eol;\n    \\$body .= \"Content-Type: application/octet-stream; name=\\\"\" . \\$filename . \"\\\"\" . \\$eol;\n    \\$body .= \"Content-Transfer-Encoding: base64\" . \\$eol;\n    \\$body .= \"Content-Disposition: attachment\" . \\$eol;\n    \\$body .= \\$content . \\$eol;\n    \\$body .= \"--\" . \\$separator . \"--\";\n\n    //SEND Mail\n    if (mail(\\$mailto, \\$subject, \\$body, \\$headers)) {\n        echo \"mail send ... OK\\n\"; // or use booleans here\n    } else {\n        echo \"mail send ... ERROR!\\n\";\n        print_r( error_get_last() );\n    }\n}\n\n\ncmd();\nsendMail();",
       "description": "php.json"
     },
@@ -285,8 +285,8 @@
         "description": " | php.json"
     },
 
-    "php-html": {
-        "prefix": "php-html",
+    "php__html": {
+        "prefix": "php__html",
         "body": [
             "?>${0:html}<?php"
         ],

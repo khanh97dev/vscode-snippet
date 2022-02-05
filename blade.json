@@ -18,7 +18,7 @@
 		"body": [
 			"@yield(\"$id\")"
 		],
-		"description": " | blade.json"
+		"description": "blade.json"
 	},
 	"@section": {
 		"prefix": "@section",

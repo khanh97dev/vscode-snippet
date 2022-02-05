@@ -1,79 +1,79 @@
 {
-    "opencart-get": {
-        "prefix": "opencart-get",
+    "opencart__get": {
+        "prefix": "opencart__get",
         "body": "\\$this->request->get[$1]",
-        "description": "opencart-get | opencart.code-snippets",
+        "description": "opencart__get | opencart.code-snippets",
         "scope": "php"
     },
-    "opencart-redirect": {
-        "prefix": "opencart-redirect",
+    "opencart__redirect": {
+        "prefix": "opencart__redirect",
         "body": "\\$this->resposne->redirect($1)",
-        "description": "opencart-redirect | opencart.code-snippets",
+        "description": "opencart__redirect | opencart.code-snippets",
         "scope": "php"
     },
-    "opencart-post": {
-        "prefix": "opencart-post",
+    "opencart__post": {
+        "prefix": "opencart__post",
         "body": "\\$this->request->post[$1]",
-        "description": "opencart-post | opencart.code-snippets",
+        "description": "opencart__post | opencart.code-snippets",
         "scope": "php"
     },
-    "opencart-response-json": {
-        "prefix": "opencart-response-json",
+    "opencart__response-json": {
+        "prefix": "opencart__response-json",
         "body": [
             "\\$this->response->addHeader('Content-Type: application/json');",
             "\\$this->response->setOutput(json_encode($json));",
         ],
-        "description": "opencart-response-json | opencart.code-snippets",
+        "description": "opencart__response-json | opencart.code-snippets",
         "scope": "php"
     },
-    "opencart-admin-partials": {
-        "prefix": "opencart-admin-partials",
+    "opencart__admin-partials": {
+        "prefix": "opencart__admin-partials",
         "body": [
             "\\$data['header'] = \\$this->load->controller('common/header');",
             "\\$data['column_left'] = \\$this->load->controller('common/column_left');",
             "\\$data['footer'] = \\$this->load->controller('common/footer');",
         ],
-        "description": "opencart-admin-partials | opencart.code-snippets"
+        "description": "opencart__admin-partials | opencart.code-snippets"
     },
-    "opencart-escape": {
-        "prefix": "opencart-escape",
+    "opencart__escape": {
+        "prefix": "opencart__escape",
         "body": "\\$this->db->escape($1)",
-        "description": "opencart-escape | opencart.code-snippets",
+        "description": "opencart__escape | opencart.code-snippets",
         "scope": "php"
     },
-    "opencart-user_token": {
-        "prefix": "opencart-user_token",
+    "opencart__user_token": {
+        "prefix": "opencart__user_token",
         "body": [
             "\\$this->session->data['user_token']",
         ],
-        "description": "opencart-user_token | opencart.code-snippets",
+        "description": "opencart__user_token | opencart.code-snippets",
         "scope": "php"
     },
-    "opencart-link": {
-        "prefix": "opencart-link",
+    "opencart__link": {
+        "prefix": "opencart__link",
         "body": "\\$this->url->link($1, http_build_query([$2]), true)",
-        "description": "opencart-link | opencart.code-snippets",
+        "description": "opencart__link | opencart.code-snippets",
         "scope": "php"
     },
-    "opencart-config-get": {
-        "prefix": "opencart-config-get",
+    "opencart__config-get": {
+        "prefix": "opencart__config-get",
         "body": [
             "$this->load->model('setting/setting')",
             "\\$this->config->get($1)"
         ],
-        "description": "opencart-config-get | opencart.code-snippets",
+        "description": "opencart__config-get | opencart.code-snippets",
         "scope": "php"
     },
-    "opencart-template-panel": {
-        "prefix": "opencart-template-panel",
+    "opencart__template-panel": {
+        "prefix": "opencart__template-panel",
         "body": "<div class=\"panel panel-default\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Title</h3>\n    </div>\n    <div class=\"panel-body\">\n        <!-- form body or content -->\n        <div class=\"form-group text-right\">\n            <button type=\"button\"><i class=\"fa fa-filter\"></i> Filter</button>\n        </div>\n    </div>\n</div>",
-        "description": "opencart-template-panel | opencart.code-snippets",
+        "description": "opencart__template-panel | opencart.code-snippets",
         "scope": "twig",
     },
-    "opencart-template-header": {
-        "prefix": "opencart-template-header",
+    "opencart__template-header": {
+        "prefix": "opencart__template-header",
         "body": "{# Header #}\n<div class=\"page-header\">\n    <div class=\"container-fluid\">\n        <h1>{{ msg['heading_title'] }}</h1>\n        <ul class=\"breadcrumb\">\n            {% for breadcrumb in breadcrumbs %}\n            <li><a href=\"{{ breadcrumb.href }}\">{{ breadcrumb.text }}</a></li>\n            {% endfor %}\n        </ul>\n    </div>\n</div>",
-        "description": "opencart-template-header | opencart.code-snippets",
+        "description": "opencart__template-header | opencart.code-snippets",
         "scope": "twig",
     },
 

@@ -1,0 +1,7 @@
+{
+	"launch__vuejs-firefox": {
+		"prefix": "launch__vuejs-firefox",
+		"body": "{\n    \"name\": \"vuejs: firefox\",\n    \"profile\": \"VueJS_3\",\n    \"type\": \"firefox\",\n    \"request\": \"launch\",\n    \"reAttach\": true,\n    \"keepProfileChanges\": true,\n    \"url\": \"http://localhost:8080\",\n    \"webRoot\": \"\\${workspaceFolder}/src\",\n    \"pathMappings\": [\n        {\n            \"url\": \"webpack:///src\",\n            \"path\": \"\\${workspaceFolder}/src\"\n        },\n        {\n            \"url\": \"webpack:///src/\",\n            \"path\": \"\\${webRoot}/\"\n        }\n    ]\n}",
+		"description": "launch.json.code-snippets"
+	},
+}

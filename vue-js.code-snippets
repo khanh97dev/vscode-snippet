@@ -1,6 +1,6 @@
 {
-	"vue-map_vue_javascript": {
-		"prefix": "vue-Map_Properties",
+	"vue__map_vue_javascript": {
+		"prefix": "vue__Map_Properties",
 		"body": [
 			"Object.defineProperties(Vue.prototype,{",
 			"\t$${1:property}: { get(){ return ${2:Object} } }",
@@ -9,63 +9,69 @@
 		"description": "map_vue_javascript",
 		"scope": "javascript"
 	},
-	"vue-data": {
-		"prefix": "vue-data",
+	"vue__data": {
+		"prefix": "vue__data",
 		"body": "data() {\r\n  return {$1};\r\n},",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},
-	"vue-computed": {
-		"prefix": "vue-computed",
+	"vue__computed": {
+		"prefix": "vue__computed",
 		"body": "computed: {$1}",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},
-	"vue-components": {
-		"prefix": "vue-components",
+	"vue__components": {
+		"prefix": "vue__components",
 		"body": "components: {$1}",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},
-	"vue-watch": {
-		"prefix": "vue-watch",
+	"vue__watch": {
+		"prefix": "vue__watch",
 		"body": "watch: {$1}",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},
-	"vue-props": {
-		"prefix": "vue-props",
+	"vue__props": {
+		"prefix": "vue__props",
 		"body": "props: {$1}",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},
-	"vue-prop-demo": {
-		"prefix": "vue-prop-demo",
+	"vue__prop-demo": {
+		"prefix": "vue__prop-demo",
 		"body": "${1:prop}: {\r\n  default: $2,\r\n},",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},
-	"vue-methods": {
-		"prefix": "vue-methods",
+	"vue__methods": {
+		"prefix": "vue__methods",
 		"body": "methods: {$1}",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},
-	"vue-mounted": {
-		"prefix": "vue-mounted",
+	"vue__mounted": {
+		"prefix": "vue__mounted",
 		"body": "mounted() {$1},",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},
-	"vue-destroyed": {
-		"prefix": "vue-destroyed",
+	"vue__destroyed": {
+		"prefix": "vue__destroyed",
 		"body": "destroyed() {$1},",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},
-	"vue-created": {
-		"prefix": "vue-created",
+	"vue__created": {
+		"prefix": "vue__created",
 		"body": "created() {$1},",
+		"description": " | vue-js.code-snippets",
+		"scope": "javascript"
+	},
+	"vue__comment": {
+		"prefix": "vue__comment",
+		"body": "/**\n * ${1:Description}\n * \n * @params $2 \n * @return $3\n*/",
 		"description": " | vue-js.code-snippets",
 		"scope": "javascript"
 	},

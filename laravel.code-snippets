@@ -1,6 +1,6 @@
 {
-    "laravel-JWT-AuthController": {
-        "prefix": "laravel-JWT-AuthController",
+    "laravel__JWT-AuthController": {
+        "prefix": "laravel__JWT-AuthController",
         "scope": "php",
         "body": [
             "",
@@ -158,8 +158,8 @@
         ],
         "description": "laravel.code-snippets"
     },
-    "laravel-resource_paginate": {
-        "prefix": "laravel-resource_paginate",
+    "laravel__resource_paginate": {
+        "prefix": "laravel__resource_paginate",
         "scope": "php",
         "body": [
             "'total' => $this->total(),",
@@ -168,58 +168,58 @@
             "'current_page' => $this->currentPage(),",
             "'total_pages' => $this->lastPage()",
         ],
-        "description": "laravel-resource_paginate | laravel.code-snippets"
+        "description": "laravel__resource_paginate | laravel.code-snippets"
     },
-    "laravel-Schema::defaultStringLength": {
-        "prefix": "laravel-Schema::defaultStringLength",
+    "laravel__Schema::defaultStringLength": {
+        "prefix": "laravel__Schema::defaultStringLength",
         "scope": "php",
         "body": [
             " Schema::defaultStringLength(191);"
         ],
-        "description": "laravel-Schema::defaultStringLength | laravel.code-snippets"
+        "description": "laravel__Schema::defaultStringLength | laravel.code-snippets"
     },
-    "laravel-meta_csrf": {
-        "prefix": "laravel-meta_csrf",
+    "laravel__meta_csrf": {
+        "prefix": "laravel__meta_csrf",
         "scope": "blade",
         "body": [
             "<meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">"
         ],
-        "description": "laravel-meta_csrf | laravel.code-snippets"
+        "description": "laravel__meta_csrf | laravel.code-snippets"
     },
-    "laravel-Request_CURL": {
-        "prefix": "laravel-Request_CURL",
+    "laravel__Request_CURL": {
+        "prefix": "laravel__Request_CURL",
         "scope": "php",
         "body": [
             "$$request = Request::create('url', 'POST', \\$data);"
         ],
-        "description": "laravel-Request_CURL | laravel.code-snippets"
+        "description": "laravel__Request_CURL | laravel.code-snippets"
     },
-    "laravel_unsigned": {
+    "laravel__unsigned": {
         "prefix": "unsigned",
         "scope": "php",
         "body": [
             "unsigned()"
         ],
-        "description": "laravel_unsigned | laravel.code-snippets"
+        "description": "laravel__unsigned | laravel.code-snippets"
     },
-    "laravel_migration_column_nullable": {
+    "laravel__migration_column_nullable": {
         "prefix": "nullalbe",
         "scope": "php",
         "body": [
             "nullable();"
         ],
-        "description": "laravel_migration_column_nullable | laravel.code-snippets"
+        "description": "laravel__migration_column_nullable | laravel.code-snippets"
     },
-    "laravel-faker_image": {
-        "scope": "laravel-faker_image",
+    "laravel__faker_image": {
+        "scope": "laravel__faker_image",
         "body": [
             "$faker->image(public_path('storage/images'), 400, 300),"
         ],
         "prefix": "factory_imgaes_download"
     },
-    "laravel-factory_demo": {
+    "laravel__factory_demo": {
         "scope": "php",
-        "prefix": "laravel-factory_demo",
+        "prefix": "laravel__factory_demo",
         "body": [
             "\\$products = new App\\Products;",
             "  \\$faker = Faker\\Factory::create();",
@@ -237,9 +237,9 @@
             "  }",
         ]
     },
-    "laravel-login_token": {
+    "laravel__login_token": {
         "scope": "php",
-        "prefix": "laravel-login_token",
+        "prefix": "laravel__login_token",
         "body": [
             "public function login(Request \\$request)",
             "{",
@@ -269,8 +269,8 @@
             "}",
         ],
     },
-    "laravel-route_all": {
-        "prefix": "laravel-route_all",
+    "laravel__route_all": {
+        "prefix": "laravel__route_all",
         "scope": "php",
         "body": [
             "Route::any('{all}', function () {",
@@ -279,8 +279,8 @@
         ],
         "description": "laravel.code-snippets"
     },
-    "laravel_usercontroller_passport": {
-        "prefix": "laravel_usercontroller_passport",
+    "laravel__usercontroller_passport": {
+        "prefix": "laravel__usercontroller_passport",
         "scope": "php",
         "body": [
             "namespace App\\Http\\Controllers\\API;",
@@ -374,27 +374,27 @@
             "",
             ""
         ],
-        "description": "laravel_usercontroller_passport | laravel.code-snippets"
+        "description": "laravel__usercontroller_passport | laravel.code-snippets"
     },
-    "laravel-inputToken": {
-        "prefix": "laravel-inputToken",
+    "laravel__inputToken": {
+        "prefix": "laravel__inputToken",
         "body": [
             "<input type=\"hidden\" name=\"_token\" id=\"csrf-token\" value=\"{{ Session: :token()}}\" />"
         ],
         "description": "token laravel in input form | laravel.code-snippets"
     },
-    "laravel-model-boot": {
-        "prefix": "laravel-model-boot",
+    "laravel__model-boot": {
+        "prefix": "laravel__model-boot",
         "body": "/**\n * The \"booting\" method of the model.\n *\n * @return void\n */\nprotected static function boot()\n{\n    parent::boot();\n    // remove deleted_at when reponse\n    static::addGlobalScope('deleted_at', function (Builder \\$builder) {\n        \\$builder->whereNull('deleted_at');\n    });\n}",
         "description": "boot | laravel.code-snippets"
     },
-    "laravel-get-all-columns": {
-        "prefix": "laravel-get-all-columns",
+    "laravel__get-all-columns": {
+        "prefix": "laravel__get-all-columns",
         "body": "$this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());",
         "description": "all-column | laravel.code-snippets"
     },
-    "laravel-add-cors": {
-        "prefix": "laravel-add-cors",
+    "laravel__add-cors": {
+        "prefix": "laravel__add-cors",
         "body": [
             "\\$response->headers->set('Access-Control-Allow-Credentials', 'false');",
             "\\$response->headers->set('Access-Control-Allow-Headers', '*');",
@@ -406,13 +406,13 @@
         ],
         "description": ""
     },
-    "laravel-db-log": {
-        "prefix": "laravel-db-log",
+    "laravel__db-log": {
+        "prefix": "laravel__db-log",
         "body": "\\DB::enableQueryLog();\ndd(\\DB::getQueryLog());",
         "description": "DB::log | laravel.code-snippets"
     },
-    "laravel-model-getAttribute": {
-        "prefix": "laravel-model-getAttribute",
+    "laravel__model-getAttribute": {
+        "prefix": "laravel__model-getAttribute",
         "body": [
             "public function get${1:attr}Attribute(\\$val) \r\n    {\r\n        \r\n    }"
         ],
@@ -429,15 +429,15 @@
         "description": "Validates | laravel.code-snippets"
     },
     // function
-    "laravel-migration-alter-demo": {
-        "prefix": "laravel-migration-alter-demo",
+    "laravel__migration-alter-demo": {
+        "prefix": "laravel__migration-alter-demo",
         "body": [
             "// up\r\nSchema::table('users', function (Blueprint \\$table) {\r\n    \\$table->char('user_name');\r\n});\r\n// down\r\nSchema::table('users', function (Blueprint \\$table) {\r\n    \\$table->dropColumn('user_name');\r\n});"
         ],
         "description": " | laravel.code-snippets"
     },
-    "laravel-paginate-transform": {
-        "prefix": "laravel-paginate-transform",
+    "laravel__paginate-transform": {
+        "prefix": "laravel__paginate-transform",
         "body": [
             "\\$items->getCollection()->transform(function (\\$item){\r\n    return \\$item\r\n})"
         ],
@@ -457,15 +457,15 @@
         ],
         "description": "Builder | laravel.code-snippets"
     },
-    "laravel_validate_demo": {
-        "prefix": "laravel_validate_demo",
+    "laravel__validate_demo": {
+        "prefix": "laravel__validate_demo",
         "body": [
             "$validator = validator($request->all(), [\r\n    'key' => 'required',\r\n], ${1:messages});\r\nif ($validator->fails()) {\r\n    return back()->withInput()->withErrors($validator->errors());\r\n    return response()->json($validator->errors(), 400);\r\n}"
         ],
         "description": "Validation | laravel.code-snippets"
     },
-    "laravel_model_demo": {
-        "prefix": "laravel_model_demo",
+    "laravel__model_demo": {
+        "prefix": "laravel__model_demo",
         "body": [
             "protected \\$table = \"table\";\n\n// Columns in table have fill\nprotected \\$guarded = [];"
         ],
@@ -1809,8 +1809,8 @@
         "description": "My Laravel | laravel.code-snippets",
         "scope": "php"
     },
-    "laravel-delete-foreach-builder": {
-        "prefix": "laravel-delete-foreach-builder",
+    "laravel__delete-foreach-builder": {
+        "prefix": "laravel__delete-foreach-builder",
         "body": "\r\nif ($slugMenu == 'menu_chuyen_muc') {\r\n    if(DB::table($slugMenu)->where('id', $id)->count()){\r\n        if(DB::table($slugMenu)->where('id', $id)->count()){\r\n            DB::table($slugMenu)->where('id', $id)->delete();\r\n        }\r\n        $queryRelationship = DB::table('menu_relationship')->where($slugMenu, $id);\r\n        foreach ($queryRelationship->get() as $key => $column) {\r\n            // Table children 1\r\n            if(DB::table('menu_nhom')->where('id', $column->menu_nhom)->count() ){\r\n                DB::table('menu_nhom')->where('id', $column->menu_nhom)->delete();\r\n            }\r\n            // Table children 2\r\n            if(DB::table('menu_loai')->where('id', $column->menu_loai)->count()){\r\n                DB::table('menu_loai')->where('id', $column->menu_loai)->delete();\r\n            }\r\n        }\r\n        if ($queryRelationship->count()) {\r\n            $queryRelationship->delete();\r\n        }\r\n    }\r\n    return ${1:$somthing};\r\n}",
         "description": "Laravel | laravel.code-snippets",
         "scope": "php"
@@ -1827,14 +1827,14 @@
         "description": "File::mimeTye | laravel.code-snippets",
         "scope": "php"
     },
-    "windows-laravel-csrf_blade_js": {
+    "laravel__windows-csrf_blade_js": {
         "prefix": "windows-laravel-csrf_blade_js",
         "body": "window.Laravel = <?php echo json_encode([\n   'csrfToken' => csrf_token(),\n]); ?>\n  ",
         "description": "windows-laravel-csrf_blade_js | laravel.code-snippets",
         "scope": "php"
     },
-    "laravel-start-limit": {
-        "prefix": "laravel-start-limit",
+    "laravel__start-limit": {
+        "prefix": "laravel__start-limit",
         "body": "\r\nskip(${1:start})->take(${2:limit}) //interger",
         "description": "laravel | laravel.code-snippets",
         "scope": "php"
@@ -1845,14 +1845,14 @@
         "description": "laravel | laravel.code-snippets",
         "scope": "php"
     },
-    "laravel-upload-file": {
-        "prefix": "laravel-upload-file",
+    "laravel__upload-file": {
+        "prefix": "laravel__upload-file",
         "body": "\r\nif (count($request->file)) {\r\n    $typeFileName = date('d_m_y_h_i_') . rand(1000, 999999999) . preg_replace('/(\\w+)\\//', '.', File::mimeType($request->file));\r\n    Storage::disk('public')->putFileAs(\"/client-files/\", $request->file, $typeFileName);\r\n    return response()->json(true, 200);\r\n}\r\nreturn response()->json(false, 500);",
         "description": "laravel | laravel.code-snippets",
         "scope": "php"
     },
-    "laravel_api_user": {
-        "prefix": "laravel_api_user",
+    "laravel__api_user": {
+        "prefix": "laravel__api_user",
         "body": "namespace App\\Http\\Controllers\\API;\n\nuse App\\Http\\Controllers\\Controller;\nuse App\\User;\nuse Carbon\\Carbon;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Support\\Facades\\DB;\nuse Laravel\\Passport\\Passport;\nuse Validator;\n\nclass UserController extends Controller\n{\n    public $successStatus = 200;\n    /**\n    * login api\n    *\n    * @return \\Illuminate\\Http\\Response\n    */\n    public function login(Request $request)\n    {\n        $input = $request->only('email', 'password');\n        if (Auth::attempt($input)) {\n            $user = Auth::user();\n\n            $checkToken = DB::table('oauth_access_tokens')->where('user_id', $user->id);\n\n            if ($checkToken->exists()) {\n                $checkToken->delete();\n            }\n            $token = $user->createToken($user->name)->accessToken;\n            Passport::tokensExpireIn(Carbon::now()->addDays(1));\n            return response()->json([\n                'success' => true,\n                'token' => $token,\n            ], $this->successStatus);\n        } else {\n            return response()->json([\n                'success' => false,\n                'error' => 'Unauthorised',\n            ], 401);\n        }\n    }\n    /**\n    * Register api\n    *\n    * @return \\Illuminate\\Http\\Response\n    */\n    public function register(Request $request)\n    {\n        $validator = Validator::make($request->all(), [\n            'name' => 'required',\n            'email' => 'required|email',\n            'password' => 'required',\n            // 'c_password' => 'required|same:password',\n        ]);\n        if ($validator->fails()) {\n            return response()->json(['error' => $validator->errors()], 401);\n        }\n        $input = $request->all();\n        $input['password'] = bcrypt($input['password']);\n        $user = User::create($input);\n        $success['token'] = $user->createToken('MyApp')->accessToken;\n        $success['name'] = $user->name;\n        return response()->json(['success' => $success], $this->successStatus);\n    }\n    /**\n    * details api\n    *\n    * @return \\Illuminate\\Http\\Response\n    */\n    public function details()\n    {\n        $user = Auth::user();\n        return response()->json(['success' => $user], $this->successStatus);\n    }\n\n    public function logout()\n    {\n        if (Auth::check()) {\n           $user = Auth::user();\n           $tokenAccess= DB::table('oauth_access_tokens')->where('user_id', $user->id);\n           $tokenAccess->delete();\n           return response()->json(true, 200);\n        }\n           return response()->json(false, 401);\n    }\n}\n\n",
         "description": " | laravel.code-snippets",
         "scope": "php"
@@ -1863,14 +1863,14 @@
         "description": "File::exists BOOLEAN | laravel.code-snippets",
         "scope": "php"
     },
-    "laravel_seeder_factory": {
-        "prefix": "laravel_seeder_factory",
+    "laravel__seeder_factory": {
+        "prefix": "laravel__seeder_factory",
         "body": "$products = new App\\Products;\n$faker = Faker\\Factory::create();\n\nfor ($i=1; $i <= 30; $i++) {\n    $products->insert([\n        'pro_title' => $faker->name,\n        'pro_imagePath' => \"storage/images/image-$i.jpg\",\n        'pro_description' => $faker->text,\n        'pro_price' => $faker->randomNumber(4,true),\n        'created_at' => date('Y-m-d H:i:s'),\n        'updated_at' => date('Y-m-d H:i:s'),\n    ]);\n}\n",
         "description": " | laravel.code-snippets",
         "scope": "php"
     },
-    "laravel_db_builder_beLongsToMany": {
-        "prefix": "laravel_db_builder_beLongsToMany",
+    "laravel__db_builder_beLongsToMany": {
+        "prefix": "laravel__db_builder_beLongsToMany",
         "body": [
             "// Liên kết 1 - n\r\n\\\\$query->leftJoinSub(\r\n  DB::table(\\\\$tableRelationships)\r\n    \\\\ Param query column\r\n    ->select(\r\n      \"\\\\$tableRelationships.post_id\",\r\n      DB::raw(\"GROUP_CONCAT( \\\\$tableTags.name SEPARATOR ',') AS tags\")\r\n    )\r\n    ->leftJoin(\\\\$tableTags, \"\\\\$tableTags.id\", \"=\", \"\\\\$tableRelationships.tag_id\")\r\n    ->groupBy(\"\\\\$tableRelationships.post_id\"),\r\n  \"table_relationships\",\r\n  \"table_relationships.post_id\", \"=\", \"\\\\$tablePost.id\"\r\n);"
         ],
