@@ -1,1 +1,1 @@
-git commit -am "Sync Snippets" && git push
+git add . && git commit -m "Sync Snippets" && git push
