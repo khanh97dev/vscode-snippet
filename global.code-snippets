@@ -223,8 +223,6 @@
         ],
         "description": "global.code-snippets"
     },
-
-
     // Tag
     "Tag-Style": {
         "prefix": "style-tag-scoped",
