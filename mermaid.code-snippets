@@ -1,0 +1,14 @@
+{
+	// "mermaid__":{
+	//   "prefix": "mermaid__",
+	//   "body": [
+
+	//   ],
+	//   "description": ""
+	// },
+	"mermaid__":{
+	  "prefix": "mermaid__flowchart-LR",
+	  "body": ["flowchart LR"],
+	  "description": "node "
+	},
+}
