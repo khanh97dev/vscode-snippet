@@ -1,0 +1,23 @@
+{
+	"POST form-data": {
+		"prefix": "form-data",
+		"body": [
+			"POST https://sdk.photoroom.com/v1/segment",
+			"x-api-key: 1e297de612c8e63fb327df04a003fcdf313cb47c",
+			"Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryCODE",
+			"",
+			"------WebKitFormBoundaryCODE",
+			"Content-Disposition: form-data; name=\"title\"",
+			"Content-Type: text/plain",
+			"",
+			"title_lorem",
+			"------WebKitFormBoundaryCODE",
+			"Content-Disposition: form-data; name=\"image_file\"; filename=\"filename.jpg\"",
+			"Content-Type: image/jpeg",
+			"",
+			"< /file_path.jpg",
+			"------WebKitFormBoundaryCODE--"
+		],
+		"description": "POST form-data"
+	}
+}
